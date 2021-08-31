@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Max Mosier - Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="../../index.html">Max Mosier</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#description">Project Description</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#patch-notes">Patch Notes</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" id="head">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">STAR WARS: Cantina Games</h1>
+                    <div><img style="margin-top: 10px; border: 5px solid white" class="img-fluid mb-3 mb-lg-0" src="assets/img/StarWarsCantinaGames.gif" alt="StarWarsCantinaGames" /></div>
+                </div>
+            </div>
+        </header>
+        <section class="about-section text-center" id="description">
+          <div class = "container">
+            <div class="col-lg-8 mx-auto">
+              <h2 style = "margin-top: -7em" class="text-white mb-4">Description</h2>
+              <p style = "margin-top: -15px" class="text-white-50">
+                Made using Unity 2020.1.15f1<br><br>
+                Using methods I learned in Data Structures to create a working deck that can be shuffled and dealt,
+                I created this game project originally in Java and ended up porting to Unity as it was easier to
+                create a GUI. I worked on this project on and off for a year until I finally decided I needed to plow
+                through and create a working product.
+              </p>
+            </div>
+            <div>
+              <a style = "margin-bottom: 50px" class="btn btn-primary js-scroll-trigger" href="https://github.com/Mmosier11/Star-Wars-Cantina-Games">SOURCE CODE (v0.2)</a>
+              <a style = "margin-bottom: 50px" class="btn btn-primary js-scroll-trigger" href="https://drive.google.com/file/d/19M34I1hTV0q_JuaMgRd5NOCkpR67_vmm/view?usp=sharing">DOWNLOAD HERE (v0.2)</a>
+            </div>
+        </div>
+
+        </section>
+        <!-- Projects: this is the projects section on the main page, altered for this -->
+        <section class="projects-section bg-light" id="patch-notes">
+          <!-- Here is where the buttons are going to be placed, I placed it in the scroll menu
+        in case there becomes too many buttons -->
+          <div style ="margin-top:-75px" class="scrollmenu container">
+            <div class = "tab">
+              <!-- TO ADD a new button simply move the current version down a button, newest version that I'm working on
+             so that I can update the current patch as needed -->
+              <button id = "defaultOpen" class = "btn btn-primary tablinks" onclick="openVersion(event, 'v1.0')"> v1.0 </button>
+              <button class = "btn btn-primary tablinks" onclick="openVersion(event, 'v0.2')"> v0.2 </button>
+              <button class = "btn btn-primary tablinks" onclick="openVersion(event, 'v0.1')"> v0.1 (Initial Release) </button>
+            </div>
+          </div>
+          <!-- Patch v1.0 -->
+            <div id = "v1.0" class="tabcontent container" style = "padding-top: 75px">
+              <h2 class="section-heading text-uppercase">STAR WARS: Cantina Games v1.0</h2>
+              <!-- Not started = (<font color="#cf2e2e"><b> Not Started </b> </font>)
+                  In Progress = (<font color="#FFD70F"><b> In-Progress </b> </font>)
+                  Completed = (<font color="#00d084"><b> Completed </b> </font>)
+                  Extra = (<font color="#0693e3"><b> Extra </b> </font>)-->
+                <div>
+                  <h2 class="section-heading text-uppercase">Planned Additions</h2>
+                  <ul>
+                    <li>Post-Solo Sabacc (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Pazaak (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Live Band (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Twilek Dancers (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Game Tutorials for Sabacc and Pazaak (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Swoop Bike Racing (Betting Game, like Horse betting) (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>More Profile Options (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <ul>
+                      <li>Savable Profile, so you don't have to keep remaking one (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                      <li>Player Credit Total that you can use for all the games (<font color="#cf2e2e"><b> Not Started </b> </font>) </li>
+                      <li>Player Voice Lines for Key Parts of the Game (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                      <li>More Player Icons (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    </ul>
+                    <li>Multiplayer (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Game Options (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <ul>
+                      <li>Screen Resolution(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                      <li>Fullscreen/Windowed(<font color="#cf2e2e"><b> Not Started </b> </font>) </li>
+                      <li>Music and Sound Effects Adjustable(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    </ul>
+                  </ul>
+                  <h2 class="section-heading text-uppercase">Planned Improvements</h2>
+                  <ul>
+                    <li>Add more lines of dialogue to AI (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Add a tie feature to Pre-Solo Sabacc, players with same score draw a card and highest value wins (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Add more AI Options (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Choose how many AI and which AI before a match (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Better AI Decisions for Pre-Solo Sabacc (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Unique Personalities for AI Players (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Improve Main Menu UI (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Improve Profile Selection UI (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Improve Pre-Solo Sabacc Game UI (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Improve Pre-Solo Sabacc Game Speed, some portions are too fast or too slow(<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Add 'Game Feel' to UI and to Pre-Solo Sabacc(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Enlarge Cards in center of Pre-Solo Sabacc (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                    <li>Add Number total values for AI players when their hands are revealed(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                    <li>Remove Suite reference (not used)(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                  </ul>
+                  <h2 class="section-heading text-uppercase">Known Bugs</h2>
+                  <ul>
+                    <li> Pre-Solo Sabacc
+                      <ul>
+                        <li>Players still calling despite not meeting all in total(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Players call an all in and it doesn't add to pot or remove from their credit value ( add someone called all in )(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Player Character always bets first despite first player moving to AI (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>No default bet value after first round? Should there be one or does everybody just check (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Players pay bomb out price despite not having any credits(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Players win despite bombing out (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>AI don't trade after they bomb out because they are 'close to 23', need to change distanceFrom23 code (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Font causes legibility issues(<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                        <li>Sabacc Shift doesn't continue after first player (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Going back (reloading) to Main Menu resets Player Profile (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Players still able to win despite being out and not having a hand (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Game dosen't process Winning a round correctly (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                        <li>Players who wins a round can't bet the following rounds(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Players win rounds despite another player being called the winner(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li>Fix AI calling All In if someone else calls All In (<font color="#FFD70F"><b> In-Progress </b> </font>)</li>
+                      </ul>
+                  </ul>
+                </div>
+              </div>
+              <!-- Patch v0.2 -->
+              <div id = "v0.2" class="tabcontent container"  style = "padding-top: 75px">
+                <h2 class="section-heading text-uppercase">STAR WARS: Cantina Games v0.2</h2>
+                <!-- Not started = (<font color="#cf2e2e"><b> Not Started </b> </font>)
+                    In Progress = (<font color="#FFD70F"><b> In-Progress </b> </font>)
+                    Completed = (<font color="#00d084"><b> Completed </b> </font>)
+                    Extra = (<font color="#0693e3"><b> Extra </b> </font>)-->
+                    <div>
+                      <h2 class="section-heading text-uppercase">What's new?</h2>
+                      <ul>
+                        <li> (<font color="#0693e3"><b> Extra </b> </font>) Add an assets used page in the Main Menu (<font color="#00d084"><b> Completed </b> </font>)</li>
+                      </ul>
+                      <h2 class="section-heading text-uppercase">Improvements</h2>
+                      <ul>
+                        <li> Comment code (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> Clean and refactor code (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> Adjust game speed so it is faster (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> Improved menu loading time (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> (<font color="#0693e3"><b> Extra </b> </font>) Fixed card variables to be only accessed by public functions (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> (<font color="#0693e3"><b> Extra </b> </font>) Removed credit script from gameplay, currently in Player script (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> (<font color="#0693e3"><b> Extra </b> </font>) Button Overhaul, get rid of individual functions, now only two functions (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> (<font color="#0693e3"><b> Extra </b> </font>) Adjust menu fade in and fade out speed (<font color="#00d084"><b> Completed </b> </font>)</li>
+                      </ul>
+                      <h2 class="section-heading text-uppercase">Fixes</h2>
+                      <ul>
+                        <li> Main Menu loads slowly causing it to stay up if player clicks on different menu (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> Option Menu does not close properly after going back to Main Menu (<font color="#00d084"><b> Completed </b> </font>)</li>
+                      </ul>
+                    </div>
+                </div>
+              <!-- Patch v0.1 -->
+              <div id = "v0.1" class="tabcontent container"  style = "padding-top: 75px">
+                <h2 class="section-heading text-uppercase">STAR WARS: Cantina Games v0.1 (Initial Release)</h2>
+                <!-- Not started = (<font color="#cf2e2e"><b> Not Started </b> </font>)
+                    In Progress = (<font color="#FFD70F"><b> In-Progress </b> </font>)
+                    Completed = (<font color="#00d084"><b> Completed </b> </font>)
+                    Extra = (<font color="#0693e3"><b> Extra </b> </font>)-->
+                    <div>
+                      <h2 class="section-heading text-uppercase">What's new?</h2>
+                      <ul>
+                        <li>Pre-Solo Sabacc (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <ul>
+                          <li> Implement Card Class Game Object (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li> Implement Deck Class Game Object (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li> Implement Betting System (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li> Create Game Coroutine to run the game (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li> Create wait for player input code (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li> Determine winning hands (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        </ul>
+                        <li> Implement Character Profile (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> Implement a Main Menu (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li> Implement Game UI (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <ul>
+                          <li> Change player name (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li> Change player image (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        </ul>
+                        <li>(<font color="#0693e3"><b> Extra </b> </font>)Website Page (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <li>Implement Game Audio (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        <ul>
+                          <li>Cantina Music (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li>Cantina Ambience (<font color="#00d084"><b> Completed </b> </font>)</li>
+                          <li>Character Voice Lines (<font color="#00d084"><b> Completed </b> </font>)</li>
+                        </ul>
+                      </ul>
+                      <h2 class="section-heading text-uppercase">Improvements</h2>
+                      <ul>
+                        <li>None for this patch.</li>
+                      </ul>
+                      <h2 class="section-heading text-uppercase">Fixes</h2>
+                      <ul>
+                        <li> Pre-Solo Sabacc
+                          <ul>
+                            <li>(<font color="#0693e3"><b> Extra </b> </font>)Alderaan doesn't reset, always called after a win(<font color="#00d084"><b> Completed </b> </font>)</li>
+                            <li>(<font color="#0693e3"><b> Extra </b> </font>)Fix Value under call moving extra values under(<font color="#00d084"><b> Completed </b> </font>)</li>
+                            <li>(<font color="#0693e3"><b> Extra </b> </font>)Fix discard card animation showing player discarding for everyone(<font color="#00d084"><b> Completed </b> </font>)</li>
+                            <li>(<font color="#0693e3"><b> Extra </b> </font>)Names don't follow players making decisions after round(<font color="#00d084"><b> Completed </b> </font>)</li>
+                          </ul>
+                      </ul>
+                    </div>
+                </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Location</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">Flagstaff, AZ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">max.lee.mosier@gmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">+1 (928) 587-0449</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://twitter.com/SenpaiSumpie"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.linkedin.com/in/max-mosier/"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="https://github.com/Mmosier11"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Max Mosier 2021</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+          function openVersion(evt, versionName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(versionName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+        </script>
+        <script>
+          // Get the element with id="defaultOpen" and click on it
+          document.getElementById("defaultOpen").click();
+        </script>
+    </body>
+</html>
