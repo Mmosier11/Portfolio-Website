@@ -70,6 +70,7 @@
             <div class = "tab">
               <!-- TO ADD a new button simply move the current version down a button, newest version that I'm working on
              so that I can update the current patch as needed -->
+              <button class = "btn btn-primary tablinks" onclick="openVersion(event, 'v1.1')"> v1.1 </button>
               <button id = "defaultOpen" class = "btn btn-primary tablinks" onclick="openVersion(event, 'v1.0')"> v1.0 </button>
             </div>
           </div>
@@ -228,6 +229,30 @@
                   </ul>
                 </div>
               </div>
+              <!-- Patch v1.1 -->
+                <div id = "v1.1" class="tabcontent container" style = "padding-top: 75px">
+                  <h2 class="section-heading text-uppercase">Unreal Engine Character UI Demo  v1.1</h2>
+                  <!-- Not started = (<font color="#cf2e2e"><b> Not Started </b> </font>)
+                      In Progress = (<font color="#FFD70F"><b> In-Progress </b> </font>)
+                      Completed = (<font color="#00d084"><b> Completed </b> </font>)
+                      Extra = (<font color="#0693e3"><b> Extra </b> </font>)-->
+                    <div>
+                      <h2 class="section-heading text-uppercase">Planned Additions</h2>
+                      <ul>
+                        <li> Add an options menu to adjust audio volume and screen size (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+
+                      </ul>
+                      <h2 class="section-heading text-uppercase">Planned Improvements</h2>
+                      <ul>
+                        <li> Make in game UI better (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                        <li> Make a seperate WBP for Inventory(<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                      </ul>
+                      <h2 class="section-heading text-uppercase">Known Bugs</h2>
+                      <ul>
+                        <li> WBP_InGameUI was already added to the screen after closing character selection to go back to game (<font color="#cf2e2e"><b> Not Started </b> </font>)</li>
+                      </ul>
+                    </div>
+                  </div>
         </section>
         <!-- Contact-->
         <section class="contact-section bg-black" id="contact">
