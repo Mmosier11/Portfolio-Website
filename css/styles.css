@@ -10451,3 +10451,14 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+.scrollmenu{
+  width: 40%;
+  margin:auto;
+  padding-top: -75px;
+  padding-bottom: 50px;
+}
+
+.tab{
+  border-bottom: 5px solid #64a19d;
+}

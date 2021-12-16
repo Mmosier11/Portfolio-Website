@@ -93,6 +93,8 @@
                           <a href="https://www.rpgmakerweb.com/products/rpg-maker-mv">RPG Maker MV</a>,
                           <a href="https://nodejs.org/en/">Node.js</a>,
                           <a href="https://www.yoyogames.com/en/gamemaker">Game Maker Studio 2</a>
+                          <a href="https://www.yoyogames.com/en/gamemaker">Express.js</a>
+                          <a href="https://www.yoyogames.com/en/gamemaker">PostgreSQL</a>
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -114,11 +116,22 @@
         </section>
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
+          <div  class="tab text-center container">
+            <h2 class="section-heading text-uppercase">Portfolio</h2>
+            <div class = "scrollmenu">
+              <!-- TO ADD a new button simply move the current version down a button, newest version that I'm working on
+             so that I can update the current patch as needed -->
+              <button id = "defaultOpen" class = "btn btn-link tablinks" onclick="openVersion(event, 'School')"> School Projects </button>
+              <button class = "btn btn-link tablinks" onclick="openVersion(event, 'Game')"> Game Projects </button>
 
-            <div class="container">
+            </div>
+          </div>
+
+            <div id="Game" class="container tabcontent">
+
                 <!-- Portfolio Title -->
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                <div style = "margin-top: 75px;" class="text-center">
+
                     <h3 class="section-subheading text-muted">Current Big Game Project</h3>
                 </div>
                 <!-- Featured Game Project Row-->
@@ -198,16 +211,15 @@
                 </div>
                 <!--Game Project Four Row-->
                 <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/project2.PNG" alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/AKIRA.PNG" alt="" /></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">(UPCOMING)CS413 - Project 2: ????</h4>
+                                    <h4 class="text-white">AKIRA</h4>
                                     <p class="mb-0 text-white-50">
-                                      This Fall 2021 for my CS 413 - Virtual Worlds class I will
-                                      be making 4 video game projects centered around what we
-                                      learned in class with groups.
+                                      AKIRA is a 2D platformer with a cyberpunk, synthwave theme. The goal is to prevent
+                                      all the bombs in the city from blowing up.
                                     </p>
                                     <hr class="d-none d-lg-block mb-0 mr-0" />
                                 </div>
@@ -217,16 +229,15 @@
                 </div>
                 <!--Game Project Five Row-->
                 <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/project3.PNG" alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/stop-n-flow.PNG" alt="" /></div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">(UPCOMING)CS413 - Project 3: ????</h4>
+                                    <h4 class="text-white">Stop-N-Flow</h4>
                                     <p class="mb-0 text-white-50">
-                                      This Fall 2021 for my CS 413 - Virtual Worlds class I will
-                                      be making 4 video game projects centered around what we
-                                      learned in class with groups.
+                                      Stop-N-Flow is inspired by Red Light, Green Light. The goal is to move while the music is playing
+                                      and to stop when the music is not playing.
                                     </p>
                                     <hr class="d-none d-lg-block mb-0 ml-0" />
                                 </div>
@@ -236,16 +247,14 @@
                 </div>
                 <!--Game Project Six Row-->
                 <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/project4.PNG" alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/akira2.PNG" alt="" /></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">(UPCOMING)CS413 - Project 4: ????</h4>
+                                    <h4 class="text-white">AKIRA II</h4>
                                     <p class="mb-0 text-white-50">
-                                      This Fall 2021 for my CS 413 - Virtual Worlds class I will
-                                      be making 4 video game projects centered around what we
-                                      learned in class with groups.
+                                      For our final project we decided to revisit AKIRA. We added more levels, more abilites for AKIRA, and more enemies for AKIRA to face.
                                     </p>
                                     <hr class="d-none d-lg-block mb-0 mr-0" />
                                 </div>
@@ -259,6 +268,8 @@
                       portfolio worthy projects
                     </p>
                 </div>
+              </div>
+              <div id="School" class="container tabcontent">
                 <!-- Schooling Sub Title of Portfolio -->
                 <div style = "margin-top: -75px; margin-bottom: -125px" class="projects-section text-center">
                     <!-- <h2 class="section-heading text-uppercase">Portfolio</h2>-->
@@ -283,6 +294,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div style = "margin-top: -75px; margin-bottom: -125px" class="projects-section text-center">
                     <!-- <h2 class="section-heading text-uppercase">Portfolio</h2>-->
                     <h3 class="section-subheading text-muted">School Projects</h3>
@@ -436,5 +448,31 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+          function openVersion(evt, versionName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(versionName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+        </script>
+        <script>
+          // Get the element with id="defaultOpen" and click on it
+          document.getElementById("defaultOpen").click();
+        </script>
     </body>
 </html>
