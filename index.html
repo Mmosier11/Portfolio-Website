@@ -1,478 +1,1527 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Max Mosier - Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="/css/styles.css" />
+
+        <!-- Add icon libraries -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+            crossorigin="anonymous"
+        />
+        
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <!-- Link JS file -->
+        <script src="/js/script.js"></script>
     </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Max Mosier</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                    </ul>
+    <body>
+        <div class="portfolio">
+            <!--Page Header, includes about me content-->
+            <div class="header">
+
+                <!-- Profile Picture -->
+                <div class="profile-picture">
+                    <img
+                        class="avatar"
+                        src="/assets/img/profile-picture.jpg"
+                        alt="Avatar"
+                    />
                 </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">Max Mosier</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Hello and welcome! Here you can find information about myself, my completed projects and projects I'm currently working on, as well as how you can contact me.</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">About Me</a>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2 class="text-white mb-4">About Me</h2>
-                        <p class="text-white-50">
-                          Currently attending Northern Arizona University in pursuit of a Bachelors of Science in Computer Science.
-                          I'm entering my 4th (and hopefully final) year of College this fall. I'm looking to enter the software development
-                          field upon completion of college, but I am considering pursuing a Master's degree as a fallback.
+
+                <!-- About Me  -->
+                <div class="about-me">
+                    <div class="overview">
+                        <h1 class="name">Max Mosier</h1>
+                        <h2 class="title">Front-End Developer</h2>
+                        <p class="welcome-text">
+                            Computer Science graduate currently working as a Front-End
+                            Developer at Cognizant. I enjoy being
+                            innovative and problem solving issues of varying complexity. 
+                            Looking to further my education in UI/UX 
+                            practices and enter Software Development for 
+                            creative applications, such as, video games, media, and film.
                         </p>
-                        <p class="text-white-50">
-                          I have recently started creating my own video games in my free time as a fun, productive hobby.
-                          I would like to join the game development industry, however, I am also interested in software engineering jobs.
-                        </p>
+
+                        <!-- Interests -->
+                        <div class="communication">
+                            <p>Interests:</p>
+                            <p class="grey-text"> The Midnight & Gunship Fanatic, 80s Film Enthusiast </p>
+                        </div>
+                        <div class="communication">
+                            <p class="grey-text"> RPG, RTS, and Card Game Player, Psychological Thriller Enjoyer </p>
+                        </div>
+
+                        <!-- Email & Phone  -->
+                        <div class="communication">
+                            <p>Business Inquires:</p>
+                            <p class="highlight">max.lee.mosier@gmail.com</p>
+                        </div>
+                        <div class="communication">
+                            <p>Phone Number:</p>
+                            <p class="highlight">(928) 587-0449</p>
+                        </div>
                     </div>
 
-                </div>
-                <!-- Work history and class course list-->
-                <div style="margin-bottom:50px; margin-top: -20px">
-                  <a class="btn btn-primary js-scroll-trigger" href="work-history/index.html">Work History</a>
-                  <a class="btn btn-primary js-scroll-trigger" href="class-list/northern-arizona-university/index.html">School Courses</a>
-                </div>
-              <!--  <img class="img-fluid" src="assets/img/ipad.png" alt="" /> -->
-            </div>
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="text-white mb-4">Proficiencies</h2>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                      <span class="fa-stack fa-4x">
-                          <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                          <i class="fas fa-desktop fa-stack-1x fa-inverse"></i>
-                      </span>
-                        <h4 class="my-3 text-primary">Languages</h4>
-                        <p class="text-white-50">Java, JavaScript, C, C#, C++, Python, HTML, CSS, SQL, R</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="far fa-file-code fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3 text-primary">Engines/Frameworks</h4>
-                        <p class="text-white-50">
-                          <a href="https://unity.com/">Unity</a>,
-                          <a href="https://www.unrealengine.com/en-US/?sessionInvalidated=true">Unreal Engine 4</a>,
-                          <a href="https://www.rpgmakerweb.com/products/rpg-maker-mv">RPG Maker MV</a>,
-                          <a href="https://nodejs.org/en/">Node.js</a>,
-                          <a href="https://www.yoyogames.com/en/gamemaker">Game Maker Studio 2</a>
-                          <a href="https://www.yoyogames.com/en/gamemaker">Express.js</a>
-                          <a href="https://www.yoyogames.com/en/gamemaker">PostgreSQL</a>
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-keyboard fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3 text-primary">Tools</h4>
-                        <p class="text-white-50">
-                          <a href="https://github.com/">GitHub</a>,
-                          <a href="https://trello.com/">Trello</a>,
-                          <a href="https://www.atlassian.com/software/jira">Jira</a>,
-                          <a href="https://www.servicenow.com/">ServiceNow</a>,
-                          Active Directory
-                        </p>
+                    <!-- Social Media and Resume Links -->
+                    <div class="icons">
+                        <a href="/assets/resume/MosierResume2022PostJoiningCognizant.pdf" target="_blank" class="fa fa-file-text"> Resume </a>
+                        <a href="https://twitter.com/SenpaiSumpie" target="_blank" class="fa fa-twitter"> Twitter </a>
+                        <a href="https://linkedin.com/in/max-mosier/" target="_blank" class="fa fa-linkedin"> LinkedIn </a>
+                        <a href="https://github.com/SenpaiSumpie" target="_blank" class="fa fa-github"> Github </a>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
-          <div  class="tab text-center container">
-            <h2 class="section-heading text-uppercase">Portfolio</h2>
-            <div class = "scrollmenu">
-              <!-- TO ADD a new button simply move the current version down a button, newest version that I'm working on
-             so that I can update the current patch as needed -->
-              <button id = "defaultOpen" class = "btn btn-link tablinks" onclick="openVersion(event, 'School')"> School Projects </button>
-              <button class = "btn btn-link tablinks" onclick="openVersion(event, 'Game')"> Game Projects </button>
+            <!--End Page Header-->
+
+            <!-- Projects, Career, and Skills Section -->
+            <div class="bottom-half">
+
+                <!-- Tabs for different sections -->
+                <div class="container">
+                    <a
+                        id="defaultOpen"
+                        class="tab not-active-tab tablinks"
+                        href=""
+                        onclick="active(this);openVersion('Projects')"
+                    >
+                        Projects
+                    </a>
+                    <a
+                        class="tab not-active-tab tablinks"
+                        href=""
+                        onclick="active(this);openVersion('Career')"
+                    >
+                        Career
+                    </a>
+                    <a
+                        class="tab not-active-tab tablinks"
+                        href=""
+                        onclick="active(this);openVersion('Skills')"
+                    >
+                        Skills
+                    </a>
+                </div>
+
+                <!-- Projects Content-->
+                <div id="Projects" class="tab-content content">
+                    <h1 class="banner">Projects</h1>
+                    <div class="project-content">
+
+                        <!-- Table of Contents -->
+                        <div class="table-of-contents">
+                            <h3>Web Projects</h3>
+                            <hr class="solid" />
+                            <div class="table-links">
+                                <a href="#team-bandit" class="pl"
+                                    >TeamBandit: Teams Manager</a
+                                >
+                            </div>
+                            <h3>Game Projects</h3>
+                            <hr class="solid" />
+                            <div class="table-links">
+                                <a href="#star-wars-poker" class="pl"
+                                    >STAR WARS: Cantina Games</a
+                                >
+                                <a href="#character-ui-demo" class="pl"
+                                    >UE: Character UI Demo</a
+                                >
+                            </div>
+                        </div>
+                        <!-- End Table of Contents -->
+
+                        <!-- Projects -->
+                        <div class="project-list">
+
+                            <!-- TeamBandit Project -->
+                            <div id="team-bandit">
+                                <div class="project-list-section">
+                                    <img
+                                        src="/assets/projects/team-bandit/teamBanditLogo.png"
+                                        alt="TeamBanditLogo"
+                                        height="50%"
+                                        width="50%"
+                                    />
+                                    <div>
+                                        <h1 class="project-name">
+                                            TeamBandit: Teams Manager
+                                        </h1>
+                                        <div class="tech">
+                                            <img
+                                                src="/assets/logos/pgsql.svg"
+                                                alt="PostgreSQL"
+                                                height="75"
+                                                width="75"
+                                            />
+                                            <img
+                                                src="/assets/logos/express.svg"
+                                                alt="Express"
+                                                height="75"
+                                                width="75"
+                                            />
+                                            <img
+                                                src="/assets/logos/react.svg"
+                                                alt="React"
+                                                height="75"
+                                                width="75"
+                                            />
+                                            <img
+                                                src="/assets/logos/nodejs.svg"
+                                                alt="Node"
+                                                height="75"
+                                                width="75"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="about-team-bandit">
+                                        <h1>About the Project</h1>
+                                        <p class="grey-text">
+                                            For my final year in college I was
+                                            assigned a team to work on a client
+                                            project for my Capstone. We were tasked
+                                            with creating TeamBandit, a web application
+                                            whose goal was to streamline course and team
+                                            management. This was primarily for my Capstone
+                                            course but there was possibilities to move beyond.
+                                        </p>
+                                        <h3>Built With:</h3>
+                                        <p class="grey-text">
+                                            PostgreSQL, Express.js, React, and
+                                            Node.js
+                                        </p>
+                                        <h3>GitHub Link</h3>
+                                        <a
+                                            href="https://github.com/eckdoerry/TeamBandit"
+                                            class="team-bandit-blue"
+                                            >https://github.com/eckdoerry/TeamBandit</a
+                                        >
+                                    </div>
+                                    <div class="team-bandit-contributions">
+                                        <h1>My Contributions</h1>
+                                        <div
+                                            class="team-bandit-contributions-content"
+                                        >
+                                            <div class="team-bandit-tasks">
+                                                <p class="grey-text">
+                                                    My contributions to this
+                                                    project focused heavily on
+                                                    building the foundation for
+                                                    this application. This
+                                                    included:
+                                                </p>
+                                                <ul>
+                                                    <li class="grey-text">
+                                                        Building the
+                                                        applications web page
+                                                        routing
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        Adding Different Users
+                                                        (Instructor/Student/Mentor)
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        Building our Express.js
+                                                        Routes
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        Building the React
+                                                        code/folder architecture
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        Focusing on UI/UX for
+                                                        Application
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="team-bandit-github">
+                                                <h3>GitHub Statistics</h3>
+                                                <p>45 Commits</p>
+                                                <p>LoC Added:</p>
+                                                <p class="green-text">
+                                                    42,174++
+                                                </p>
+                                                <p>LoC Removed:</p>
+                                                <p class="red-text">28,557--</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/searchFeature.PNG"
+                                            alt="searchFeature"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Organizer Search Feature
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            While not originally planned for, this
+                                            feature was adding towards the end of TeamBandit's
+                                            development. With this feature you can search
+                                            through the entirety of TeamBandit's Organizers
+                                            dynamically populating the output field. This gives
+                                            users who don't have accounts the ability to see
+                                            courses and projects.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            User Creation
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            User creation was an integral part of our
+                                            application. The different user types include:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">Students</li>
+                                            <li class="grey-text">Organizers</li>
+                                            <li class="grey-text">Mentors</li>
+                                        </ul>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            While Mentors aren't implemented yet, the
+                                            foundations for their implementation are there.
+                                            Students can't be created unless they have been 
+                                            added to an Organizer's course.
+                                        </p>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/userCreation.PNG"
+                                            alt="userCreation"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/courseOverview.PNG"
+                                            alt="courseOverview"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Course Overview
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Courses are the key to course management.
+                                            Here in the course overview page you can 
+                                            get an overview of all of your courses as 
+                                            well as some statistics such as:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">Course Organizer</li>
+                                            <li class="grey-text">Course Semester</li>
+                                            <li class="grey-text">Total Projects</li>
+                                            <li class="grey-text">Total Students</li>
+                                            <li class="grey-text">Date Created</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Client List
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            For the Capstone course, it is crucial for 
+                                            clients to propose projects that student teams
+                                            can work on. The client list makes it possible
+                                            to add and manage clients.
+                                        </p>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/clientList.PNG"
+                                            alt="clientList"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/clientEmail.PNG"
+                                            alt="clientEmail"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Client Email Overview
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            With managing one course being a small part
+                                            of ones college career, its hard to check
+                                            for specific emails from clients in regards
+                                            to specific courses. We designed a way to 
+                                            grab the emails regarding the specific
+                                            course and display them in the application.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Client Email View
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Another feature we implemented in regards to 
+                                            the client's emails was being able to see relevant
+                                            data in regards to specific emails. This includes:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">Sender</li>
+                                            <li class="grey-text">Subject</li>
+                                            <li class="grey-text">Date Sent</li>
+                                            <li class="grey-text">Body of Email</li>
+                                            <li class="grey-text">Any Attachments</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/emailDescription.PNG"
+                                            alt="emailDescription"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/csvUploader.PNG"
+                                            alt="csvUploader"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            CSV Uploader
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Our client for this project already had list
+                                            of students and clients ready for use in this
+                                            application. In order to make the transition
+                                            easier we created a CSV uploader. You could search
+                                            for CSVs on your PC to upload or Drag and Drop them
+                                            in.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Student List
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Like the client list there was important information 
+                                            to display for the students. This included:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">First and Last Name</li>
+                                            <li class="grey-text">Student ID</li>
+                                            <li class="grey-text">Student Email</li>
+                                            <li class="grey-text">Student GPA</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/studentList.PNG"
+                                            alt="studentList"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/addingInformation.PNG"
+                                            alt="addingInformation"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Adding Information
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Besides CSVs we added modals to make it 
+                                            easier to add any information. When relevant 
+                                            like for adding clients to a project we
+                                            made it be a drop down menu.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Project Preferences
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            At the beginning of a course, students were
+                                            able to submit their project preferences letting 
+                                            the course organizer know what projects they were
+                                            interested in.
+                                        </p>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/projectPreferences.PNG"
+                                            alt="projectPreferences"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/teamAssignment.PNG"
+                                            alt="teamAssignment"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Team Assignment
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Once all of the projects have been added 
+                                            and students have submitted their project preferences
+                                            the organizer is now able to assign students to teams 
+                                            with a very intuitive 'click to add' system. This
+                                            system provides:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">Color Coding</li>
+                                            <li class="grey-text">Student Statistics</li>
+                                            <li class="grey-text">Project Statistics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Project Lead Assignment
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Once students are added to a project the 
+                                            organizer has the capability to designate a 
+                                            student as the Team Leader. This will give 
+                                            them access to features they will need to 
+                                            run their team.
+                                        </p>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/projectLeadAssignment.PNG"
+                                            alt="projectLeadAssignment"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/teamLeadActions.PNG"
+                                            alt="teamLeadActions"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Team Lead Actions
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Team Leads are integral to filling out 
+                                            information for their team. This includes:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">Team Name</li>
+                                            <li class="grey-text">Team Logo</li>
+                                            <li class="grey-text">Team Assignments</li>
+                                            <li class="grey-text">Information about the Team</li>
+                                            <li class="grey-text">Website Information</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Pre-Generated Website
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            From the details given by the Team lead. We
+                                            provided Pre-Generated team websites. These 
+                                            websites were based on a format the client
+                                            pre-determined. Once the information is filled 
+                                            out the corresponding website is created.
+                                        </p>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/preGeneratedWebsite.PNG"
+                                            alt="preGeneratedWebsite"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/timeline.PNG"
+                                            alt="timeline"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Project Timeline
+                                        </h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            Ultimately we had 16 weeks to create this 
+                                            project. Here you can see our project timeline
+                                            we utilized when creating the product. We followed 
+                                            a more agile practice when determining what to accomplish
+                                            for the weeks, but this timeline is what we followed.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">End Result</h1>
+                                        <p
+                                            class="feature-description grey-text"
+                                        >
+                                            At the end of the 16 weeks, we were able to accomplish 
+                                            our clients MVP. This features include:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text">Projects List</li>
+                                            <li class="grey-text">Schedule</li>
+                                            <li class="grey-text">Student List</li>
+                                            <li class="grey-text">Assignments</li>
+                                            <li class="grey-text">Mentor List</li>
+                                            <li class="grey-text">Course Settings</li>
+                                            <li class="grey-text">Student Assignment Submission</li>
+                                            <li class="grey-text">Team Lead Actions</li>
+                                            <li class="grey-text">Pre-Generated Website</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/team-bandit/endResult.PNG"
+                                            alt="endResult"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Team Bandit Project -->
+
+                            <!-- Star Wars Cantina Games -->
+                            <hr class="thick" />
+                            <div id="star-wars-poker">
+                                <div class="project-list-section">
+                                    <img
+                                        src="/assets/projects/cantina-games/StarWarsCantinaGames.gif"
+                                        alt="temp"
+                                        height="50%"
+                                        width="50%"
+                                    />
+                                    <div>
+                                        <h1 class="project-name">
+                                            STAR WARS: Cantina Games
+                                        </h1>
+                                        <div class="tech">
+                                            <img
+                                                src="/assets/logos/unity.svg"
+                                                alt="Unity"
+                                                height="75"
+                                                width="75"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="about-team-bandit">
+                                        <h1>About the Project</h1>
+                                        <p class="grey-text">
+                                            During my Data Structures class,
+                                            I started this project to help me understand
+                                            some of the concepts being taught. I started this in Java
+                                            and when I had made progress I transitioned it into Unity
+                                            and C# because the GUI was easier to work with to make a 
+                                            working game.
+                                        </p>
+                                        <h3>Built With:</h3>
+                                        <p class="grey-text">
+                                            Unity and C#
+                                        </p>
+                                        <h3>GitHub Link</h3>
+                                        <a
+                                            href="https://github.com/SenpaiSumpie/Star-Wars-Cantina-Games"
+                                            class="team-bandit-blue"
+                                            >https://github.com/SenpaiSumpie/Star-Wars-Cantina-Games</a
+                                        >
+                                    </div>
+                                    <div class="team-bandit-contributions">
+                                        <h1>Gameplay Features</h1>
+                                        <div
+                                            class="team-bandit-contributions-content"
+                                        >
+                                            <div class="team-bandit-tasks">
+                                                <p class="grey-text">
+                                                    This iteration of Cantina Games is missing 
+                                                    a lot of gameplay features but for now it 
+                                                    includes:
+                                                </p>
+                                                <ul>
+                                                    <li class="grey-text">
+                                                        Pre-Solo Sabacc
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        How To Play Screen
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        User Profiles
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="team-bandit-github">
+                                                <h3>GitHub Statistics</h3>
+                                                
+                                                <p>Total LoC:</p>
+                                                <p class="blue-text">
+                                                    2150
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/cantina-games/StarWarsCantinaGamesv0.1.png"
+                                            alt="cantinaGames"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Pre-Solo Sabacc
+                                        </h1>
+                                        <p class="feature-description grey-text">
+                                            Before the STAR WARS movie SOLO came out 
+                                            there was only one version of Sabacc that was
+                                            featured in things such as the Darth Bane trilogy.
+                                            While similar to the Sabacc created in SOLO this 
+                                            one features its own gameplay mechanics.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Features to Come
+                                        </h1>
+                                        <p class="feature-description grey-text">
+                                            This project still has a lot of features and
+                                            improvements left that I am wanting to add. These include:
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text"> Post-Solo Sabacc </li>
+                                            <li class="grey-text"> Pazaak </li>
+                                            <li class="grey-text"> Live Band </li>
+                                            <li class="grey-text"> Twilek Dancers </li>
+                                            <li class="grey-text"> Game Tutorials for Sabacc and Pazaak </li>
+                                            <li class="grey-text"> Swoop Bike Racing (Betting Game, like Horse betting) </li>
+                                            <li class="grey-text"> More Profile Options</li>
+                                            <br>
+                                            <ul>
+                                                <li class="grey-text">Savable Profile, so you don't have to keep remaking one </li>
+                                                <li class="grey-text">Player Credit Total that you can use for all the games </li>
+                                                <li class="grey-text">Player Voice Lines for Key Parts of the Game </li>
+                                                <li class="grey-text">More Player Icons</li>
+                                            </ul>
+                                            <li class="grey-text">Multiplayer </li>
+                                            <li class="grey-text">Game Options </li>
+                                            <br>
+                                            <ul>
+                                                <li class="grey-text">Screen Resolution</li>
+                                                <li class="grey-text">Fullscreen/Windowed</li>
+                                                <li class="grey-text">Music and Sound Effects Adjustable</li>
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Star Wars Cantina Games -->
+
+
+                            <!-- Character UI Demo -->
+                            <hr class="thick" />
+                            <div id="character-ui-demo">
+                                <div class="project-list-section">
+                                    <img
+                                        src="/assets/projects/character-ui-demo/UnrealEngineUIGIF4.gif"
+                                        alt="temp"
+                                        height="50%"
+                                        width="50%"
+                                    />
+                                    <div>
+                                        <h1 class="project-name">
+                                            Unreal Engine: Character UI Demo
+                                        </h1>
+                                        <div class="tech">
+                                            <img
+                                                src="/assets/logos/unrealengine.svg"
+                                                alt="UnrealEngine"
+                                                height="75"
+                                                width="75"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="about-team-bandit">
+                                        <h1>About the Project</h1>
+                                        <p class="grey-text">
+                                            Having primarily only worked in Unity
+                                            I wanted to try Unreal Engines workflow 
+                                            with a simple more UI based project.
+                                        </p>
+                                        <h3>Built With:</h3>
+                                        <p class="grey-text">
+                                            Unreal Engine, Blueprints, and C++
+                                        </p>
+                                    </div>
+                                    <div class="team-bandit-contributions">
+                                        <h1>Gameplay Features</h1>
+                                        <div
+                                            class="team-bandit-contributions-content"
+                                        >
+                                            <div class="team-bandit-tasks">
+                                                <p class="grey-text">
+                                                    While simple, this project features some key UI/UX features 
+                                                    for a character based video game such as SMITE, League of Legends,
+                                                    or Overwatch. Features include: 
+                                                </p>
+                                                <ul>
+                                                    <li class="grey-text">
+                                                        Character Selection Screen
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        Various Details Specific to each Character
+                                                    </li>
+                                                    <li class="grey-text">
+                                                        Switch Character Based on Selection
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-list-section">
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/character-ui-demo/unrealEngineUI3.png"
+                                            alt="amira"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Core Functionality
+                                        </h1>
+                                        <p class="feature-description grey-text">
+                                            Key features include: 
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text"> Main Menu</li>
+                                            <li class="grey-text"> Music and UI Sounds</li>
+                                            <li class="grey-text"> Character Ability Overview </li>
+                                            <li class="grey-text"> Character Attributes Overview</li>
+                                            <li class="grey-text"> Character Inventory Overview </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="project-list-section">
+                                    <div class="feature-content">
+                                        <h1 class="feature-name">
+                                            Features to be Added 
+                                        </h1>
+                                        <p class="feature-description grey-text">
+                                            While this was meant to be a simple project here are some additional features 
+                                            I would like to be added.
+                                        </p>
+                                        <ul>
+                                            <li class="grey-text"> Work on Downloadable Project</li>
+                                            <li class="grey-text"> Add Options Menu to adjust screen size and audio settings</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-image">
+                                        <img
+                                            src="/assets/projects/character-ui-demo/unrealEngineUIAzrael.png"
+                                            alt="azrael"
+                                            width="100%"
+                                            height="100%"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Character UI Demo -->
+
+                </div>
+                <!--End Projects Page-->
+
+                <!--Career Page-->
+                <div id="Career" class="tab-content content">
+                    <div class="career">
+                        <div class="important-career">
+                            <div class="education">
+                                <h1 class="banner">Education</h1>
+                                <div>
+                                    <h2 style="margin-top: 20px">
+                                        Bachelors of Science in Computer Science
+                                        | Northern Arizona University
+                                    </h2>
+                                    <p>Flagstaff, AZ | 08/2018 - 05/2022</p>
+                                </div>
+                                <h1 class="banner">Certifications</h1>
+                                <p>*Content coming soon</p>
+                            </div>
+                            <div class="work-history">
+                                <h1 class="banner">Work History</h1>
+                                <div>
+                                    <h2 style="margin-top: 20px">
+                                        Front-End Developer | Cognizant
+                                    </h2>
+                                    <p>Plano, TX | 06/2022 - Present</p>
+                                    <p class="grey-text">
+                                        Responsible for developing new
+                                        user-facing features, determining the
+                                        structure and design of web pages,
+                                        building reusable codes, optimizing page
+                                        loading times, and using a variety of
+                                        markup languages to create the web
+                                        pages.
+                                    </p>
+                                    <h2 style="margin-top: 20px">
+                                        Senior Student Technician | Joseph City
+                                        School District #2
+                                    </h2>
+                                    <p>Joseph City, AZ | 06/2021 - 08/2021</p>
+                                    <p class="grey-text">
+                                        Complete district-wide technical
+                                        assistance. Duties included:
+                                        reformatting and cleaning of all
+                                        computers within the district,
+                                        installing new Promethean smart boards
+                                        to every class room, the programming of
+                                        ChromeOS machines, supervising other
+                                        student workers to accomplish tasks, and
+                                        rearranging teacher desks for their
+                                        wants in the classroom.
+                                    </p>
+                                    <h2 style="margin-top: 20px">
+                                        Help Desk User Support, Student
+                                        Contractor | United States Geological
+                                        Survey
+                                    </h2>
+                                    <p>Flagstaff, AZ | 07/2018 - 02/2020</p>
+                                    <p class="grey-text">
+                                        Perform standard troubleshooting and
+                                        support for hardware and software. Such
+                                        hardware and software include: various
+                                        operating systems, company-wide
+                                        programs, and hardware installation and
+                                        inventory. Additionally assist with the
+                                        composition & updates of on-line
+                                        documentation.
+                                    </p>
+                                    <h2 style="margin-top: 20px">
+                                        Student Technology Center, Student
+                                        Technician | Northern Arizona University
+                                    </h2>
+                                    <p>Flagstaff, AZ | 07/2018 - 04/2019</p>
+                                    <p class="grey-text">
+                                        Provide technical support to the
+                                        population of Northern Arizona
+                                        University through remote means. This
+                                        included communication via remote screen
+                                        sessions through Bomgar, phone calls,
+                                        and email conversations. Assist with the
+                                        installation of University-wide
+                                        applications, as well as support these
+                                        apps through coordination with other
+                                        teams.
+                                    </p>
+                                    <h2 style="margin-top: 20px">
+                                        IT Worker Assistant | Joseph City School
+                                        District #2
+                                    </h2>
+                                    <p>Joseph City, AZ | 06/2016 - 07/2018</p>
+                                    <p class="grey-text">
+                                        Complete district-wide technical
+                                        assistance. Duties included:
+                                        reformatting and cleaning of all
+                                        computers within the district,
+                                        installation of security cameras and
+                                        Ethernet wiring, and the programming of
+                                        ChromeOS machines, and supporting
+                                        SmartBoards and projectors within the
+                                        classroom.
+                                    </p>
+                                    <h2 style="margin-top: 20px">
+                                        Auditorium Worker | Joseph City School
+                                        District #2
+                                    </h2>
+                                    <p>Joseph City, AZ | 10/2015 - 07/2018</p>
+                                    <p class="grey-text">
+                                        Sound booth technician for concerts and
+                                        plays. Changed out cables; set up
+                                        speakers and microphones. Monitored
+                                        sound for volume and quality during
+                                        performances. Followed sound cues.
+                                        Worked the light system and changed out
+                                        lights. Spotlighting for plays.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Career Page-->
+
+                <!--Skills Page-->
+                <div id="Skills" class="tab-content content">
+                    <div class="skills">
+                        <div class="languages">
+                            <h1 class="banner">Languages</h1>
+                            <div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/html.svg"
+                                            alt="Html"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>HTML - 5+ Years</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/css.svg"
+                                            alt="Css"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>CSS - 5+ Years</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/java.svg"
+                                            alt="Java"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Java - 4 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/python.svg"
+                                            alt="Python"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Python - 4 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/js.svg"
+                                            alt="JavaScript"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>JavaScript - 3 Years</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/csharp.svg"
+                                            alt="C#"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>C# - 2 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/sql.svg"
+                                            alt="Sql"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>SQL - 2 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/json.svg"
+                                            alt="Json"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>JSON - 1 Year</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/c.svg"
+                                            alt="C"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>C - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/cplusplus.svg"
+                                            alt="C++"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>C++ - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/typescript.svg"
+                                            alt="Typescript"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Typescript - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/r.svg"
+                                            alt="R"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>R - 6 months</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="engines-frameworks">
+                            <h1 class="banner">Engines/Frameworks</h1>
+                            <div class="card">
+                                <div>
+                                    <img
+                                        src="/assets/logos/unity.svg"
+                                        alt="Unity"
+                                        width="100"
+                                        height="100"
+                                    />
+                                </div>
+                                <div class="card-content">
+                                    <h3>Unity - 3 Years</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/react.svg"
+                                            alt="React"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>React - 1 Year</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/express.svg"
+                                            alt="Express"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Express.js - 1 Year</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/nodejs.svg"
+                                            alt="Node"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Node.js - 1 Year</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/pgsql.svg"
+                                            alt="Pgsql"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>PostgreSQL - 1 Year</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/mysql.svg"
+                                            alt="Mysql"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>MySQL - 1 Year</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/materialui.svg"
+                                            alt="MaterialUI"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Material UI - 1 Year</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/reactrouter.svg"
+                                            alt="Reactrouter"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>React Router - 1 Year</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/unrealengine.svg"
+                                            alt="Unrealengine"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Unreal Engine - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/angular.svg"
+                                            alt="Angular"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Angular - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/aws.svg"
+                                            alt="Aws"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>AWS - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tools">
+                            <h1 class="banner">Tools</h1>
+                            <div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/github.svg"
+                                            alt="Github"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Github - 2 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/trello.svg"
+                                            alt="Trello"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Trello - 2 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/vscode.svg"
+                                            alt="Vscode"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>VS Code - 2 Years</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/git.svg"
+                                            alt="Git"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Git - 1 Year</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/jira.svg"
+                                            alt="Jira"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Jira - 1 Year</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div>
+                                        <img
+                                            src="/assets/logos/stack.svg"
+                                            alt="Stack"
+                                            width="100"
+                                            height="100"
+                                        />
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Stack Overflow - 5+ Years</h3>
+                                        <p>Advanced</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Skills Page -->
+
 
             </div>
-          </div>
+        </div>
 
-            <div id="Game" class="container tabcontent">
+        <!-- Go to Top Button -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <i class="fas fa-arrow-up"></i> BACK TO TOP
+        </button>
+        <!-- Go to Top Button -->
 
-                <!-- Portfolio Title -->
-                <div style = "margin-top: 75px;" class="text-center">
-
-                    <h3 class="section-subheading text-muted">Current Big Game Project</h3>
-                </div>
-                <!-- Featured Game Project Row-->
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/ProjectEquinox2.PNG" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Project Equinox</h4>
-                            <p class="text-black-50 mb-0">
-                              This is my current game project that I am working on.
-                              Project Equinox is a 3rd person, action RPG, centered around player decision.
-                              This has been a passion project of mine for the past couple of years.
-                              You can view the current progress <a href="game-projects/project-equinox/index.html">HERE</a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div style = "margin-top: -75px; margin-bottom: -125px" class="projects-section text-center">
-                    <!-- <h2 class="section-heading text-uppercase">Portfolio</h2> -->
-                    <h3 class="section-subheading text-muted">Game Projects</h3>
-                </div>
-                <!-- Game Project One Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/StarWarsCantinaGamesv0.1.PNG" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Star Wars Cantina Games</h4>
-                                    <p class="mb-0 text-white-50">
-                                      Game that contains different Sabacc variants presented in the Star Wars universe.
-                                      There are other fun plans as well! Currently in
-                                      version 0.1.1 you can find more information and a working demo <a href="game-projects/star-wars-cantina-games/index.html">HERE</a>.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Game Project Two Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/unrealEngineUIAzrael.PNG" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Unreal Engine Character UI Demo</h4>
-                                    <p class="mb-0 text-white-50">
-                                      A UI experience for a character details page that might
-                                      be found in games where you can choose various characters. You can find more info <a href="game-projects/unreal-engine-character-ui/index.html">HERE</a>.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Game Project Three Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/title.PNG" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Mix and Magic</h4>
-                                    <p class="mb-0 text-white-50">
-                                      Mix and Magic is the first group project for my
-                                      virtual worlds class. This is a simple memory matching game. You can find more info
-                                       <a href="game-projects/the-magic-match/index.html">HERE</a>.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Game Project Four Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/AKIRA.PNG" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">AKIRA</h4>
-                                    <p class="mb-0 text-white-50">
-                                      AKIRA is a 2D platformer with a cyberpunk, synthwave theme. The goal is to prevent
-                                      all the bombs in the city from blowing up.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Game Project Five Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/stop-n-flow.PNG" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Stop-N-Flow</h4>
-                                    <p class="mb-0 text-white-50">
-                                      Stop-N-Flow is inspired by Red Light, Green Light. The goal is to move while the music is playing
-                                      and to stop when the music is not playing.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Game Project Six Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/akira2.PNG" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">AKIRA II</h4>
-                                    <p class="mb-0 text-white-50">
-                                      For our final project we decided to revisit AKIRA. We added more levels, more abilites for AKIRA, and more enemies for AKIRA to face.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "text-center" style="margin:10px; padding:10px">
-                    <p>
-                      *I am currently going through my game projects and ideas to create more
-                      portfolio worthy projects
-                    </p>
-                </div>
-              </div>
-              <div id="School" class="container tabcontent">
-                <!-- Schooling Sub Title of Portfolio -->
-                <div style = "margin-top: -75px; margin-bottom: -125px" class="projects-section text-center">
-                    <!-- <h2 class="section-heading text-uppercase">Portfolio</h2>-->
-                    <h3 class="section-subheading text-muted">Capstone Project</h3>
-                </div>
-                <!-- In case I want to have a featured school project-->
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/TeamBandit2100x1500.png" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Capstone Experience - TeamBandit Teams Management Portal</h4>
-                            <p class="text-black-50 mb-0">
-                              This Fall 2021 I have started my year long capstone experience
-                              Northern Arizona University. This will be a culmination of all of my
-                              course work with the University. The project I was assigned is TeamBandit Teams Management Portal.
-                              You can view more information about the project <a href="https://www.ceias.nau.edu/~edo/Classes/CS_Capstone/Projects/F21/Doerry-TeamBandit.pdf">HERE</a>
-                              as well as view the other teams <a href="https://www.ceias.nau.edu/~edo/Classes/CS_Capstone/Projects/F21/F21_teams.html">HERE</a>.
-                            </p>
-                            <p class="text-black-50 mb-0">
-                              (I also designed my teams icon as seen here)
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style = "margin-top: -75px; margin-bottom: -125px" class="projects-section text-center">
-                    <!-- <h2 class="section-heading text-uppercase">Portfolio</h2>-->
-                    <h3 class="section-subheading text-muted">School Projects</h3>
-                </div>
-                <!-- Class Project One Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/bg-osSImulator.PNG" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Operating System Simulator</h4>
-                                    <p class="mb-0 text-white-50">
-                                      Using C, I worked on creating an Operating System Simulator for my <a href="http://catalog.nau.edu/Courses/course?courseId=009400&catalogYear=1920"> Operating Systems class </a>.
-                                      given a configuration file and a meta data file, my goal was to produce output that simulated an Operating System.
-                                      For privacy reasons the code is put on private unless asked for.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Class Project Two Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/bg-HalmaGame.PNG" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Halma Game with AI</h4>
-                                    <p class="mb-0 text-white-50">
-                                      For my <a href="http://catalog.nau.edu/Courses/course?courseId=001775&term=1211">Artificial Intelligence class</a>,
-                                      we were tasked with getting a group together, creating a playable Halma game between two Human oponents,
-                                      and then creating AI to play against either and AI opponent or a Human opponent. This was written in Python.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Class Project Three Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/bg-sociall.PNG" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">sociall: Group Project</h4>
-                                    <p class="mb-0 text-white-50">
-                                      For my <a href="http://catalog.nau.edu/Courses/course?courseId=001755&catalogYear=1314">Software Engineering class</a>,
-                                      we were tasked with joining a group, coming up with a product idea, and creating it throughout the semester. sociall is
-                                      a platform for someone to have all of their social media accounts in one convenient location. sociall is an open source
-                                      project on Github located <a href="https://github.com/cartertaylor/SociAll">HERE</a>. You can also view our completed project at <a href="http://sociall.live/">sociall.live</a>.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Game Project Four Row
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/BlockBreaker.png" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Block Breaker</h4>
-                                    <p class="mb-0 text-white-50">
-                                      Block Breaker was another simple project I made when I first started game dev.
-                                      Its a simple game where you move a paddle and hit the various blocks until there are no more.
-                                    </p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                -->
-            </div>
-        </section>
-        <!-- Signup-->
-        <!-- Kept this for the pretty picture :D -->
-        <section class="signup-section" id="contact">
-          <!-- Don't need this
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                        <form class="form-inline d-flex">
-                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-          -->
-        </section>
-        <!-- Contact-->
-        <section class="contact-section bg-black">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Location</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">Flagstaff, AZ</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50"><a href="#!">max.lee.mosier@gmail.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">+1 (928) 587-0449</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://twitter.com/SenpaiSumpie"><i class="fab fa-twitter"></i></a>
-                    <a class="mx-2" href="https://www.linkedin.com/in/max-mosier/"><i class="fab fa-linkedin"></i></a>
-                    <a class="mx-2" href="https://github.com/Mmosier11"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Max Mosier 2021</div></footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script>
-          function openVersion(evt, versionName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-              tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(versionName).style.display = "block";
-            evt.currentTarget.className += " active";
-          }
-        </script>
-        <script>
-          // Get the element with id="defaultOpen" and click on it
-          document.getElementById("defaultOpen").click();
-        </script>
     </body>
+    <footer>
+        <!-- Footer Content -->
+        <div>
+            Copyright @ Max Mosier 2022 ©| Built using HTML, CSS, and
+            JavaScript.
+        </div>
+
+        <!-- Script to get things rolling -->
+        <script>
+            document.getElementById("defaultOpen").click();
+            window.onscroll = function () {
+                scrollFunction();
+            };
+        </script>
+
+    </footer>
 </html>
