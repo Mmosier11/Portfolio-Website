@@ -456,7 +456,7 @@ hr.thick {
     08. Icons 
 ========================================================================== */
 
-.fa {
+.icon-button {
     padding: 25px;
     font-size: 20px !important;
     width: 5vw;
@@ -471,7 +471,7 @@ hr.thick {
     color: white !important;
 }
 
-.fa:hover {
+.icon-button:hover {
     transition: all 0.2s ease-out;
     opacity: 0.8;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
