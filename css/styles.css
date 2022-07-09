@@ -458,7 +458,7 @@ hr.thick {
 
 .fa {
     padding: 25px;
-    font-size: 40px !important;
+    font-size: 20px !important;
     width: 5vw;
     margin: 0.1vw;
     margin-left: 4.5vw;
@@ -467,12 +467,10 @@ hr.thick {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-family: "Lato";
     position: relative;
-    background: #3b5998;
-    color: white;
-    border-radius: 10px;
+    border-radius: 10px !important;
 }
 
-.fas:hover {
+.fa:hover {
     transition: all 0.2s ease-out;
     opacity: 0.8;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
@@ -482,25 +480,21 @@ hr.thick {
 .fa-file-text {
     background: #3b5998;
     color: white;
-    border-radius: 10px;
 }
 
 .fa-linkedin {
     background: #0072b1;
     color: white;
-    border-radius: 10px;
 }
 
 .fa-twitter {
     background: #55acee;
     color: white;
-    border-radius: 10px;
 }
 
 .fa-github {
     background: #333;
     color: white;
-    border-radius: 10px;
 }
 
 .icons {
