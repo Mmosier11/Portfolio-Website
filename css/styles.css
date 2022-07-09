@@ -477,22 +477,22 @@ hr.thick {
     top: -2px;
 }
 
-.fa-file-text {
+.fa-file-text-o {
     background: #3b5998;
     color: white;
 }
 
-.fa-linkedin {
+.fa-linkedin-square {
     background: #0072b1;
     color: white;
 }
 
-.fa-twitter {
+.fa-twitter-square {
     background: #55acee;
     color: white;
 }
 
-.fa-github {
+.fa-github-square {
     background: #333;
     color: white;
 }
