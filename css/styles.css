@@ -159,9 +159,9 @@ footer {
     background-color: white;
     color: #333;
     box-shadow: 5px -10px 10px -10px grey;
-    text-decoration: underline;
-    text-decoration-color: #032f31;
-    text-decoration-thickness: 15%;
+    text-decoration: underline !important;
+    text-decoration-color: #032f31 !important;
+    text-decoration-thickness: 15% !important;
     margin-bottom: -0.5vw;
 }
 
@@ -458,15 +458,18 @@ hr.thick {
 
 .fa {
     padding: 25px;
-    font-size: 40px;
+    font-size: 40px !important;
     width: 5vw;
     margin: 0.1vw;
     margin-left: 4.5vw;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-family: "Lato";
     position: relative;
+    background: #3b5998;
+    color: white;
+    border-radius: 10px;
 }
 
 .fas:hover {
