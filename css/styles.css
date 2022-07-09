@@ -468,6 +468,7 @@ hr.thick {
     font-family: "Lato";
     position: relative;
     border-radius: 10px !important;
+    color: white !important;
 }
 
 .fa:hover {
@@ -477,24 +478,20 @@ hr.thick {
     top: -2px;
 }
 
-.fa-file-text-o {
+.file-text-o {
     background: #3b5998;
-    color: white;
 }
 
-.fa-linkedin-square {
+.linkedin-square {
     background: #0072b1;
-    color: white;
 }
 
-.fa-twitter-square {
+.twitter-square {
     background: #55acee;
-    color: white;
 }
 
-.fa-github-square {
+.github-square {
     background: #333;
-    color: white;
 }
 
 .icons {
