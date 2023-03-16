@@ -108,8 +108,7 @@ RetrowaveScene.prototype.setPostProcessing = function () {
 
 	this.glitchPass = new GlitchPass();
 
-	this.effectFilm = new FilmPass(
-		0.2, // noise intensity
+	this.effectFilm = new FilmPass(0.2, // noise intensity
 		0.75, // scanline intensity
 		2048, // scanline count
 		false // grayscale
