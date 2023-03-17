@@ -19,7 +19,7 @@ import { InstancedBufferGeometry, InstancedBufferAttribute } from 'three';
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"; // To be able to load SVG graphics
 
-import { OrbitControls, Preload, useGLTF, Effects, Stars } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF, Effects, Stars, useTexture } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
@@ -344,8 +344,8 @@ const PalmTrees = () => {
     var palmTreePosition = [];
 
     for(let i = 0; i < 40; i++){
-        var resultLeft = randomize(20, 80, 1);
-        var resultRight = randomize(20, 80, 2);
+        var resultLeft = randomize(-25, -200, 1);
+        var resultRight = randomize(0, 160, 1);
 
         palmTreePosition.push(-10, 0, i * 2 * 15 - 10 - 50);
 		palmTreePosition.push(10, 0, i * 2 * 15 - 50);
@@ -435,6 +435,21 @@ const PalmTrees = () => {
     )
 };
 
+const SkyBox = () => {
+
+    const texture = useTexture('/skybox/2048/px.png')
+
+    return (
+        <>
+            <ambientLight/>
+            <mesh position={[0, 0, -520]}>
+            <planeBufferGeometry args={[1024, 1024]}/>
+            <meshBasicMaterial map={texture} />
+        </mesh>
+        </>
+        
+    )
+};
 
 const GroupedPyramids = () => {
     const material1Ref = useRef();
@@ -762,20 +777,35 @@ const SynthwaveCanvas = () => {
                 <filmPass args={[0.3, 0.5, 2048, false]} />
             </Effects>  */}
             <EffectComposer>
-                <Glitch delay={[2, 4]} duration={[0.5, 1]} strength={[0.04, 0.04]} />
-                {/* <ChromaticAberration offset={[0.001, 0.005]} />  */}
-                <SSAO />
-                <Bloom
+
+                {/* Can only pick the Glitch affect or Chromatic Aberration */}
+                {/* <Glitch delay={[2, 4]} duration={[0.5, 1]} strength={[0.04, 0.04]} /> */}
+                {/* <ChromaticAberration offset={[0.001, 0.007]} />  */}
+
+                {/* I dont think this does anything for this scene */}
+                {/* <SSAO /> */}
+
+                {/* <Bloom
                     luminanceThreshold={0}
                     luminanceSmoothing={0}
                     height={300}
-                    opacity={3.0}
-                /> 
-                <Scanline density={0.5} opacity={0.3} />
+                    opacity={2.0}
+                />  */}
+                {/* <Scanline density={0.7} opacity={0.3} /> */}
   
-                <Noise opacity={0.15} />
-                <Vignette eskil={false} offset={0.1} darkness={1.0} />
-                <ToneMapping exposure={Math.pow(1, 4.0)} toneMapping={THREE.ReinhardToneMapping} whitePoint={5.0}/>
+                {/* <Noise opacity={0.25} /> */}
+
+                {/* <Vignette eskil={false} offset={0.1} darkness={0.9} />  */}
+
+
+                {/*  Tone Mapping: https://threejs.org/docs/index.html#api/en/constants/Renderer*/}
+                {/* <ToneMapping exposure={Math.pow(1, 4.0)} toneMapping={THREE.ReinhardToneMapping} whitePoint={1.0}/> */}
+
+                {/* <ToneMapping
+                    exposure={0.1}
+                    toneMapping={THREE.Uncharted2ToneMapping}
+                    whitePoint={2.0}
+                /> */}
             </EffectComposer>
             
             <ambientLight />
@@ -786,7 +816,8 @@ const SynthwaveCanvas = () => {
                     // maxPolarAngle={Math.PI / 2}
                     // minPolarAngle={Math.PI / 2}
                 />
-                <Stars/>
+                {/* <Stars/> */}
+                <SkyBox />
                 <Road />
                 <Floor />
                 <RoadLines />
