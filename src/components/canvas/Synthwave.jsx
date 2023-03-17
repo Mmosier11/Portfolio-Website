@@ -1,13 +1,13 @@
-import React, { Suspense, useEffect, useState, useRef, useCallback } from "react";
+import React, { Suspense, useEffect, useState, useRef, useCallback, useMemo } from "react";
 
-import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
+import { Canvas, useFrame, useThree, extend, useLoader } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 
 import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 
-import { EffectComposer, Noise, Glitch, Bloom} from "@react-three/postprocessing";
+import { EffectComposer, Noise, Glitch, Bloom, Vignette, ChromaticAberration, SSAO, ToneMapping, Scanline} from "@react-three/postprocessing";
 import {GlitchMode} from 'postprocessing';
 
 import { UnrealBloomPass } from "three-stdlib";
@@ -17,12 +17,15 @@ import * as THREE from "three";
 import { InstancedBufferGeometry, InstancedBufferAttribute } from 'three';
 
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
+import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"; // To be able to load SVG graphics
 
 import { OrbitControls, Preload, useGLTF, Effects, Stars } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 extend({ UnrealBloomPass, GlitchPass, FilmPass, RenderPass });
+
+
 
 const Road = () => {
     const roadGeometry = new THREE.PlaneGeometry(12, 300, 1, 1);
@@ -103,8 +106,6 @@ const RoadLines = () => {
                 <mesh>
                     <primitive
                         object={roadLines}
-                        position={[0, 1, 0.2]}
-                        rotation={[0, 0, 0]}
                     />
                 </mesh>
             </>
@@ -186,7 +187,6 @@ const Floor = () => {
 
     return (
         <mesh
-            position={[0, 0, 0]}
             geometry={floorGeometry}
             material={materialRef.current}
         />
@@ -295,7 +295,6 @@ const SideWalk = () => {
             <>
                 <ambientLight/>
                 <mesh
-                    position={[0, 1, 0.5]}
                     geometry={sideWalkGeometry}
                     material={materialRef.current}
                 />
@@ -596,6 +595,53 @@ const GroupedPyramids = () => {
         
 };
 
+const SVGS = () => {
+    const sun = [`/scenery/sun.svg`, -62.5, 90, -500, 0.11, "sun"];
+    const city_far = [`/scenery/city_far.svg`, -68.5, 45, -450, 0.4, "cityFar"];
+    const city_close = [`/scenery/city_close.svg`, -30.5, 45, -300, 0.2, "cityClose"];
+  
+    // SVGURL | X | Y | Z | SCALE | objectName
+  
+    const SVGLoaderComponent = ({ url, position, scale, name }) => {
+      const {paths} = useLoader(SVGLoader, url);
+    
+      if (!paths) {
+        console.log("No paths");
+        return null;
+      }
+      console.log(paths);
+      return (
+        <>
+            <ambientLight/>
+            <group position={position} scale={[scale, -scale, scale]} name={name}>
+          {paths.map((path, index) => (
+            <mesh
+              key={index}
+              geometry={new THREE.ShapeGeometry(path.toShapes(true))}
+              material={
+                new THREE.MeshStandardMaterial({
+                  color: path.color,
+                  side: THREE.DoubleSide,
+                  depthWrite: false,
+                })
+              }
+            />
+          ))}
+        </group>
+        </>
+        
+      );
+    };
+  
+    return (
+      <>
+        <SVGLoaderComponent url={sun[0]} position={[sun[1], sun[2], sun[3]]} scale={sun[4]} name={sun[5]} />
+        <SVGLoaderComponent url={city_far[0]} position={[city_far[1], city_far[2], city_far[3]]} scale={city_far[4]} name={city_far[5]} />
+        <SVGLoaderComponent url={city_close[0]} position={[city_close[1], city_close[2], city_close[3]]} scale={city_close[4]} name={city_close[5]} />
+      </>
+    );
+  };
+
 const randomize = (min, max, setting) => {
     const [previousRandomFloat, setPreviousRandomFloat] = useState(0);
     const [previousRandomInteger, setPreviousRandomInteger] = useState(0);
@@ -696,28 +742,41 @@ const checkPositionHistory = (sizeOfGeometry, currentPositionX, currentPositionZ
 // --------------------------------- Synthwave Canvas --------------------------------- //
 
 const SynthwaveCanvas = () => {
+
     const camera = new THREE.PerspectiveCamera(
-        75,
+        50,
         window.innerWidth / window.innerHeight,
         0.1,
         2000
     );
-    camera.position.set(0, 3.2, 15);
+    camera.position.set(0, 10.0, 45.0);
+
 
     return (
         <Canvas
             camera={camera}
-            gl={{
-                toneMapping: THREE.ReinhardToneMapping,
-                toneMappingExposure: Math.pow(1, 4.0),
-            }}
         >
-            <Effects disableGamma>
-                {/* threshhold has to be 1, so nothing at all gets bloom by default  */}
-                {/* <glitchPass delay={10} duration={0} strength={0.24} attachArray="passes" /> */}
-                <unrealBloomPass threshold={0} strength={0.9} radius={1} />
+            {/* <Effects disableGamma>
+                <glitchPass delay={10} duration={0} strength={0.01} attachArray="passes" />
+                <unrealBloomPass threshold={0} strength={0.1} radius={0} />
                 <filmPass args={[0.3, 0.5, 2048, false]} />
-            </Effects> 
+            </Effects>  */}
+            <EffectComposer>
+                <Glitch delay={[2, 4]} duration={[0.5, 1]} strength={[0.04, 0.04]} />
+                {/* <ChromaticAberration offset={[0.001, 0.005]} />  */}
+                <SSAO />
+                <Bloom
+                    luminanceThreshold={0}
+                    luminanceSmoothing={0}
+                    height={300}
+                    opacity={3.0}
+                /> 
+                <Scanline density={0.5} opacity={0.3} />
+  
+                <Noise opacity={0.15} />
+                <Vignette eskil={false} offset={0.1} darkness={1.0} />
+                <ToneMapping exposure={Math.pow(1, 4.0)} toneMapping={THREE.ReinhardToneMapping} whitePoint={5.0}/>
+            </EffectComposer>
             
             <ambientLight />
             <Suspense fallback={null}>
@@ -734,6 +793,7 @@ const SynthwaveCanvas = () => {
                 <SideWalk />
                 <GroupedPyramids />
                 <PalmTrees/>
+                <SVGS/>
             </Suspense>
             <Preload all />
         </Canvas>
