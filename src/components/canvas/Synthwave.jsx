@@ -443,7 +443,7 @@ const SkyBox = () => {
         <>
             <ambientLight/>
             <mesh position={[0, 0, -520]}>
-            <planeBufferGeometry args={[1024, 1024]}/>
+            <planeGeometry args={[1024, 1024]}/>
             <meshBasicMaterial map={texture} />
         </mesh>
         </>
@@ -455,7 +455,104 @@ const GroupedPyramids = () => {
     const material1Ref = useRef();
     const material2Ref = useRef();
     const pyramidRef = useRef();
+
     const [mounted, setMounted] = useState(false);
+
+    let randomSize, translateX, translateZ, rotatePyramid;
+
+    let pyramidWireframe, wireframeMaterial;
+
+    let pyramidGeometry, pyramidInstance, pyramidMaterial, pyramid;
+
+    let pyramidGroupConception = [];
+
+    let positionHistory = [];
+
+    let count = 0;
+
+    let minRandomSize, maxRandomSize, minTranslateX, maxTranslateX;
+
+    let minRotatePyramid = 0, maxRotatePyramid = 2, minTranslateZ = 0, maxTranslateZ = 2;
+
+    for( let i = 0; i < 80; i++ ){
+        let ignoreGeometry = false;
+
+        if( i < 60 ) {
+            // Furthest
+            minRandomSize = 5;
+            maxRandomSize = 25;
+            minTranslateX = 27;
+            maxTranslateX = 120;
+        } else if ( i >= 60 ) {
+            // Closest Pyramids
+            minRandomSize = 3;
+            maxRandomSize = 8;
+            minTranslateX = 10;
+            maxTranslateX = 32;
+        }
+
+        if( i % 2 == 0 ) {
+            // For left side, make translateX negative as 0 is the center
+			minTranslateX *= -1;
+			maxTranslateX *= -1;
+        }
+
+        randomSize = randomize(minRandomSize, maxRandomSize, "int");
+        translateX = randomize(minTranslateX, maxTranslateX, "float");
+        translateZ = randomize(minTranslateZ, maxTranslateZ, "float");
+        rotatePyramid = randomize(minRotatePyramid, maxRotatePyramid, "float");
+
+        count = 0;
+        
+        // Check pyramid history
+        let checkHistory = checkPositionHistory(randomSize, translateX, translateZ, positionHistory);
+        if( checkHistory ) {
+            count++;
+            randomSize = randomize(minRandomSize, maxRandomSize, "int");
+            translateX = randomize(minTranslateX, maxTranslateX, "float");
+            translateZ = randomize(minTranslateZ, maxTranslateZ, "float");
+            if( count < 5000){
+                checkHistory = checkPositionHistory(randomSize, translateX, translateZ, positionHistory);
+            }
+        } else {
+            ignoreGeometry = true;
+        }
+
+        
+            
+            pyramidGeometry = new THREE.ConeGeometry(randomSize, randomSize, 4, 1, true, rotatePyramid);
+            pyramidGeometry.translate(translateX, 0, translateZ);
+
+            positionHistory.push({size: randomSize, positionX: translateX, positionZ: translateZ});
+            pyramidGroupConception.push(pyramidGeometry);
+         
+        
+    }
+
+    let pyramidGroupGeometry;
+    let pyramidGroupInstance;
+    if(pyramidGroupConception.length > 0){
+        pyramidGroupGeometry = mergeBufferGeometries(pyramidGroupConception, false);
+        pyramidGroupInstance = new THREE.InstancedBufferGeometry();
+        // pyramidGroupInstance.copy(pyramidGroupGeometry);
+
+        pyramidGroupInstance.attributes.position = pyramidGroupGeometry.attributes.position;
+        pyramidGroupInstance.attributes.uv = pyramidGroupGeometry.attributes.uv;
+        pyramidGroupInstance.index = pyramidGroupGeometry.index;
+
+        let pyramidGroupPosition = [
+            [0,0,0],
+            [0,0,200],
+            [0, 0, 520],
+            [0, 0, 780],
+        ];
+
+        pyramidGroupInstance.setAttribute('instPosition', new THREE.InstancedBufferAttribute(new Float32Array(pyramidGroupPosition), 3));
+    }
+    
+    
+
+
 
         useEffect(() => {
             const material1 = new THREE.ShaderMaterial({
@@ -569,14 +666,6 @@ const GroupedPyramids = () => {
 
         const geometry = new THREE.BoxGeometry(10, 10, 10);
 
-        const pyramidGeometry = new THREE.ConeGeometry(5, 10, 4);
-  const pyramidWireframeGeometry = new THREE.WireframeGeometry(pyramidGeometry);
-  const pyramidMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-  const pyramidWireframe = new THREE.LineSegments(
-    pyramidWireframeGeometry,
-    pyramidMaterial
-  );
-
         useFrame(({ clock }) => {
             if (mounted) {
                 material1Ref.current.uniforms.time.value = clock.elapsedTime;
@@ -590,21 +679,23 @@ const GroupedPyramids = () => {
         }, [])
 
 
-        if(material1Ref.current && material2Ref.current){
+        if(material1Ref.current && material2Ref.current && pyramidGroupInstance){
+            console.log("Grouped Pyramids Not Null");
+            console.log(pyramidGroupInstance);
             return (
-                <>
-                    <ambientLight/>
-                    
-                    <mesh
-                        geometry={geometry}
-                        material={[material1Ref.current, material2Ref.current]}
-                    >
-                        {/* <meshBasicMaterial ref={material1Ref} attach="material" /> */}
-                        {/* <meshBasicMaterial ref={material2Ref} attach="material" /> */}
-                    </mesh>
-                </>
+                
+        <>
+            <ambientLight/>
+            <mesh
+                geometry={pyramidGroupInstance}
+                material={material}
+            />
+            
+        </>
+    
             );
         } else {
+            console.log("Grouped Pyramids Null");
             return null;
         }
         
@@ -621,10 +712,9 @@ const SVGS = () => {
       const {paths} = useLoader(SVGLoader, url);
     
       if (!paths) {
-        console.log("No paths");
         return null;
       }
-      console.log(paths);
+
       return (
         <>
             <ambientLight/>
@@ -722,11 +812,10 @@ const randomize = (min, max, setting) => {
   
           setPreviousEvenRandomInteger(randomResult);
         }
-      }
+        }
     }
-  
     return randomResult;
-  };
+};
 
 const checkPositionHistory = (sizeOfGeometry, currentPositionX, currentPositionZ, positionHistory) => {
     let overlapDetected = false;
@@ -737,7 +826,9 @@ const checkPositionHistory = (sizeOfGeometry, currentPositionX, currentPositionZ
     } else {
         currentSize = 1;
     }
-
+    if(!positionHistory){
+        return false;
+    }
     for (let i = 0; i < positionHistory.length; i++) {
         if(
             // if current position + current size overlaps with previously set positions (-/+) their own size
