@@ -3,18 +3,11 @@ import React, { Suspense, useEffect, useState, useRef, useCallback, useMemo } fr
 import { Canvas, useFrame, useThree, extend, useLoader } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 
-import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
-import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
-
 import { EffectComposer, Noise, Glitch, Bloom, Vignette, ChromaticAberration, SSAO, ToneMapping, Scanline} from "@react-three/postprocessing";
-import {GlitchMode} from 'postprocessing';
 
-import { UnrealBloomPass } from "three-stdlib";
 
 import * as THREE from "three";
 
-import { InstancedBufferGeometry, InstancedBufferAttribute } from 'three';
 
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"; // To be able to load SVG graphics
@@ -22,10 +15,6 @@ import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"; // To be ab
 import { OrbitControls, Preload, useGLTF, Effects, Stars, useTexture } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-
-extend({ UnrealBloomPass, GlitchPass, FilmPass, RenderPass });
-
-
 
 const Road = () => {
     const roadGeometry = new THREE.PlaneGeometry(12, 300, 1, 1);
@@ -125,7 +114,7 @@ const Floor = () => {
     useEffect(() => {
         const material = new THREE.ShaderMaterial({
             uniforms: {
-                color: { value: new THREE.Color(0xff1e99) },
+                color: { value: new THREE.Color(0xef9af2) },
                 time: { value: 0.0 },
                 speed: { value: 10.0 },
             },
@@ -345,7 +334,7 @@ const PalmTrees = () => {
 
     for(let i = 0; i < 40; i++){
         var resultLeft = randomize(-25, -200, 1);
-        var resultRight = randomize(0, 160, 1);
+        var resultRight = randomize(25, 160, 1);
 
         palmTreePosition.push(-10, 0, i * 2 * 15 - 10 - 50);
 		palmTreePosition.push(10, 0, i * 2 * 15 - 50);
@@ -451,225 +440,127 @@ const SkyBox = () => {
     )
 };
 
+// 
 const GroupedPyramids = () => {
-    const material1Ref = useRef();
-    const material2Ref = useRef();
-    const pyramidRef = useRef();
+    const mergedMaterialRef = useRef();
+
+    const pyramidGroupConception = [];
 
     const [mounted, setMounted] = useState(false);
 
-    let randomSize, translateX, translateZ, rotatePyramid;
-
-    let pyramidWireframe, wireframeMaterial;
-
-    let pyramidGeometry, pyramidInstance, pyramidMaterial, pyramid;
-
-    let pyramidGroupConception = [];
-
-    let positionHistory = [];
-
-    let count = 0;
+    // Variables 
+    let pyramidGeometry;
 
     let minRandomSize, maxRandomSize, minTranslateX, maxTranslateX;
 
-    let minRotatePyramid = 0, maxRotatePyramid = 2, minTranslateZ = 0, maxTranslateZ = 2;
+    let minRotatePyramid = 0;
+    let maxRotatePyramid = 2;
+    let minTranslateZ = 0;
+    let maxTranslateZ = 1000;
 
-    for( let i = 0; i < 80; i++ ){
-        let ignoreGeometry = false;
+    for(let i = 0; i < 80; i++){
 
-        if( i < 60 ) {
-            // Furthest
-            minRandomSize = 5;
-            maxRandomSize = 25;
-            minTranslateX = 27;
-            maxTranslateX = 120;
-        } else if ( i >= 60 ) {
-            // Closest Pyramids
+        if( i < 60 ){
+            //Furthest
+            minRandomSize = 20;
+            maxRandomSize = 30;
+            minTranslateX = 40;
+            maxTranslateX = 200;
+            // minRandomSize = 5;
+            // maxRandomSize = 25;
+            // minTranslateX = 27;
+            // maxTranslateX = 120;
+        } else if ( i >= 60 ){
             minRandomSize = 3;
             maxRandomSize = 8;
-            minTranslateX = 10;
-            maxTranslateX = 32;
+            minTranslateX = 40;
+            maxTranslateX = 200;
         }
 
-        if( i % 2 == 0 ) {
-            // For left side, make translateX negative as 0 is the center
-			minTranslateX *= -1;
-			maxTranslateX *= -1;
+        if ( i % 2 == 0 ){
+            minTranslateX *= -1;
+            maxTranslateX *= -1;
         }
 
-        randomSize = randomize(minRandomSize, maxRandomSize, "int");
-        translateX = randomize(minTranslateX, maxTranslateX, "float");
-        translateZ = randomize(minTranslateZ, maxTranslateZ, "float");
-        rotatePyramid = randomize(minRotatePyramid, maxRotatePyramid, "float");
+        var randomSize = randomize(minRandomSize, maxRandomSize, 'int');
+        var translateX = randomize(minTranslateX, maxTranslateX, 'float');
+        var rotatePyramid = randomize(minRotatePyramid, maxRotatePyramid, 'float');
+        var translateZ = randomize(minTranslateZ, maxTranslateZ, 'float');
 
-        count = 0;
-        
-        // Check pyramid history
-        let checkHistory = checkPositionHistory(randomSize, translateX, translateZ, positionHistory);
-        if( checkHistory ) {
-            count++;
-            randomSize = randomize(minRandomSize, maxRandomSize, "int");
-            translateX = randomize(minTranslateX, maxTranslateX, "float");
-            translateZ = randomize(minTranslateZ, maxTranslateZ, "float");
-            if( count < 5000){
-                checkHistory = checkPositionHistory(randomSize, translateX, translateZ, positionHistory);
-            }
-        } else {
-            ignoreGeometry = true;
-        }
-
-        
-            
-            pyramidGeometry = new THREE.ConeGeometry(randomSize, randomSize, 4, 1, true, rotatePyramid);
-            pyramidGeometry.translate(translateX, 0, translateZ);
-
-            positionHistory.push({size: randomSize, positionX: translateX, positionZ: translateZ});
-            pyramidGroupConception.push(pyramidGeometry);
-         
-        
+        pyramidGeometry = new THREE.ConeGeometry(randomSize, randomSize, 4, 1, true, rotatePyramid);
+        pyramidGeometry.translate(translateX, 0, translateZ);
+        pyramidGroupConception.push(pyramidGeometry);
     }
 
-    let pyramidGroupGeometry;
-    let pyramidGroupInstance;
-    if(pyramidGroupConception.length > 0){
-        pyramidGroupGeometry = mergeBufferGeometries(pyramidGroupConception, false);
-        pyramidGroupInstance = new THREE.InstancedBufferGeometry();
-        // pyramidGroupInstance.copy(pyramidGroupGeometry);
 
-        pyramidGroupInstance.attributes.position = pyramidGroupGeometry.attributes.position;
-        pyramidGroupInstance.attributes.uv = pyramidGroupGeometry.attributes.uv;
-        pyramidGroupInstance.index = pyramidGroupGeometry.index;
+    let pyramidGroupGeometry = mergeBufferGeometries(pyramidGroupConception, false);
+    // let pyramidGroupInstance = new THREE.InstancedBufferGeometry().copy(pyramidGroupGeometry);
 
-        let pyramidGroupPosition = [
-            [0,0,0],
-            [0,0,200],
-            [0, 0, 520],
-            [0, 0, 780],
-        ];
+    let pyramidGroupPosition = [
+        0, 0, 0,
+        0, 0, 260,
+        0, 0, 520,
+        0, 0, 780,
+    ];
 
-        pyramidGroupInstance.setAttribute('instPosition', new THREE.InstancedBufferAttribute(new Float32Array(pyramidGroupPosition), 3));
+    let instPosition = new THREE.BufferAttribute(new Float32Array(pyramidGroupPosition), 2);
+
+    
+
+    useEffect(() => {
+  const mergedMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      color: { value: new THREE.Color(0x570296) },
+      speed: { value: 15 },
+      time: { value: 0 },
+      value1: { value: 950.0 },
+      value2: { value: 800.0 },
+      scale: { value: 1.0 },
+      transformedY: { value: 1.0 },
+      transformedX: { value: 1.0 },
+      emissiveIntensity: { value: 3.5 },
+      instPosition: { value: instPosition },
+    },
+    vertexShader: `
+    uniform float speed;
+    uniform float time;
+    uniform float value1;
+    uniform float value2;
+    uniform float scale;
+    uniform float transformedY;
+    uniform float transformedX;
+    attribute vec3 instPosition;
+
+    void main() {
+      vec3 transformed = position;
+      vec3 ip = instPosition;
+      ip.z = mod(ip.z + time * speed, value1) - value2;
+      transformed *= scale;
+      transformed.y *= transformedY;
+      transformed.x *= transformedX;
+      transformed += ip;
+
+      vec4 mvPosition = modelViewMatrix * vec4(transformed, 1.0);
+      gl_Position = projectionMatrix * mvPosition;
     }
-    
-    
+  `,
+    fragmentShader: `
+      uniform vec3 color;
+      uniform float emissiveIntensity;
 
+      void main() {
+         gl_FragColor = vec4(color * emissiveIntensity, 1.0);
+      }
+    `,
+  });
 
+  mergedMaterialRef.current = mergedMaterial;
+}, []);
 
-        useEffect(() => {
-            const material1 = new THREE.ShaderMaterial({
-                
-                uniforms: {
-                    color: { value: new THREE.Color(0x000000) },
-                    speed: { value: 15},
-                    time: { value: 0 },
-                    value1: { value: 950.0 },
-                    value2: { value: 800.0 },
-                    scale: { value: 0.5 },
-                    transformedY: { value: 0.5 },
-                    transformedX: { value: 0.5 },
-                },
-                vertexShader: `
-                uniform float speed;
-                uniform float time;
-                uniform float value1;
-                uniform float value2;
-                uniform float scale;
-                uniform float transformedY;
-                uniform float transformedX;
-                uniform vec3 color;
-                attribute vec3 instPosition;
-
-                void main() {
-                    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-                    gl_Position = projectionMatrix * mvPosition;
-                    
-                    float value1 = 1250.0;
-                    float value2 = 1100.0;
-                    float transformedX = 1.0;
-
-                    vec3 ip = instPosition;
-                    ip.z = mod(ip.z + time * speed, value1) - value2;
-                    mvPosition.xyz *= transformedX;
-                    mvPosition.xyz += ip;
-                    gl_Position = projectionMatrix * modelViewMatrix * mvPosition;
-                }
-                `,
-                fragmentShader: `
-                
-                uniform vec3 color;
-
-                void main() {
-                    gl_FragColor = vec4(color, 1.0);
-                }
-                `,
-            });
-
-            const material2 = new THREE.ShaderMaterial({
-                wireframe: true,
-                polygonOffset: true,
-                polygonOffsetFactor: 1,
-                polygonOffsetUnits: 1,
-                uniforms: {
-                    color: { value: new THREE.Color(0x1be9ff) },
-                    value1: { value: 950.0 },
-                    value2: { value: 800.0 },
-                    speed: { value: 15},
-                    time: { value: 0 },
-                    scale: { value: 0.5 },
-                    transformedY: { value: 0.5 },
-                    transformedX: { value: 0.5 },
-                },
-                vertexShader: `
-                uniform float speed;
-                uniform float time;
-                uniform float value1;
-                uniform float value2;
-                uniform float scale;
-                uniform float transformedY;
-                uniform float transformedX;
-                uniform vec3 color;
-                attribute vec3 instPosition;
-
-                void main() {
-                    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-                    gl_Position = projectionMatrix * mvPosition;
-                    
-                    float value1 = 1250.0;
-                    float value2 = 1100.0;
-                    float transformedX = 1.0;
-
-                    vec3 ip = instPosition;
-                    ip.z = mod(ip.z + time * speed, value1) - value2;
-                    mvPosition.xyz *= transformedX;
-                    mvPosition.xyz += ip;
-                    gl_Position = projectionMatrix * modelViewMatrix * mvPosition;
-                }
-                `,
-                fragmentShader: `
-                
-                uniform vec3 color;
-
-                void main() {
-                    gl_FragColor = vec4(color, 1.0);
-                }
-                `,
-            });
-
-            
-            material1Ref.current = material1;
-            material2Ref.current = material2;
-        }, []);
-
-        const material = new THREE.MeshBasicMaterial({
-            color: 0xff0000, // red
-          });
-        //Create multi mesh object
-
-        const geometry = new THREE.BoxGeometry(10, 10, 10);
 
         useFrame(({ clock }) => {
             if (mounted) {
-                material1Ref.current.uniforms.time.value = clock.elapsedTime;
-                material2Ref.current.uniforms.time.value = clock.elapsedTime;
+                mergedMaterialRef.current.uniforms.time.value = clock.elapsedTime;
             }
         });
     
@@ -679,16 +570,15 @@ const GroupedPyramids = () => {
         }, [])
 
 
-        if(material1Ref.current && material2Ref.current && pyramidGroupInstance){
+        if(mergedMaterialRef && pyramidGroupGeometry){
             console.log("Grouped Pyramids Not Null");
-            console.log(pyramidGroupInstance);
+            console.log(pyramidGroupGeometry);
             return (
-                
         <>
             <ambientLight/>
             <mesh
-                geometry={pyramidGroupInstance}
-                material={material}
+                geometry={pyramidGroupGeometry}
+                material={mergedMaterialRef.current}
             />
             
         </>
@@ -748,10 +638,10 @@ const SVGS = () => {
   };
 
 const randomize = (min, max, setting) => {
-    const [previousRandomFloat, setPreviousRandomFloat] = useState(0);
-    const [previousRandomInteger, setPreviousRandomInteger] = useState(0);
-    const [previousOddRandomInteger, setPreviousOddRandomInteger] = useState(0);
-    const [previousEvenRandomInteger, setPreviousEvenRandomInteger] = useState(0);
+    let previousRandomFloat = 0;
+    let previousRandomInteger = 0;
+    let previousOddRandomInteger = 0;
+    let previousEvenRandomInteger = 0;
   
     let randomResult;
   
@@ -763,7 +653,7 @@ const randomize = (min, max, setting) => {
         do {
           randomResult = Math.random() * (max - min + 1) + min;
         } while (randomResult === previousRandomFloat);
-        setPreviousRandomFloat(randomResult);
+        previousRandomFloat = randomResult;
       }
     } else if (setting === 'int') {
       // Get random integer
@@ -773,7 +663,7 @@ const randomize = (min, max, setting) => {
         do {
           randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
         } while (randomResult === previousRandomInteger);
-        setPreviousRandomInteger(randomResult);
+        previousRandomInteger = randomResult;
       }
     } else if (setting === 1 || setting === 2) {
       // Get random integer (Odd or Even)
@@ -796,7 +686,7 @@ const randomize = (min, max, setting) => {
             );
           }
   
-          setPreviousOddRandomInteger(randomResult);
+          previousOddRandomInteger = randomResult;
         } else if (setting === 2) {
           if (
             randomResult < previousEvenRandomInteger + 1 &&
@@ -810,100 +700,71 @@ const randomize = (min, max, setting) => {
             );
           }
   
-          setPreviousEvenRandomInteger(randomResult);
+          previousEvenRandomInteger = randomResult;
         }
         }
     }
     return randomResult;
 };
 
-const checkPositionHistory = (sizeOfGeometry, currentPositionX, currentPositionZ, positionHistory) => {
-    let overlapDetected = false;
-    let currentSize;
-
-    if (sizeOfGeometry !== undefined) {
-        currentSize = sizeOfGeometry;
-    } else {
-        currentSize = 1;
-    }
-    if(!positionHistory){
-        return false;
-    }
-    for (let i = 0; i < positionHistory.length; i++) {
-        if(
-            // if current position + current size overlaps with previously set positions (-/+) their own size
-            currentPositionX + currentSize > positionHistory[i].positionX - positionHistory[i].size &&
-            currentPositionZ + currentSize > positionHistory[i].positionZ - positionHistory[i].size &&
-            currentPositionX - currentSize < positionHistory[i].positionX + positionHistory[i].size &&
-            currentPositionZ - currentSize < positionHistory[i].positionZ + positionHistory[i].size
-        ) {
-            overlapDetected = true;
-        }
-    }
-
-    return overlapDetected;
-};
-
-
 // --------------------------------- Synthwave Canvas --------------------------------- //
 
 const SynthwaveCanvas = () => {
 
     const camera = new THREE.PerspectiveCamera(
-        50,
+        45, //45
         window.innerWidth / window.innerHeight,
-        0.1,
+        10,
         2000
     );
-    camera.position.set(0, 10.0, 45.0);
+    camera.position.set(0, 10.0, 45.0); // 0, 10.0, 45.0
+
+    const [ value, setValue] = useState(1);
 
 
     return (
         <Canvas
             camera={camera}
         >
-            {/* <Effects disableGamma>
-                <glitchPass delay={10} duration={0} strength={0.01} attachArray="passes" />
-                <unrealBloomPass threshold={0} strength={0.1} radius={0} />
-                <filmPass args={[0.3, 0.5, 2048, false]} />
-            </Effects>  */}
+            
             <EffectComposer>
 
                 {/* Can only pick the Glitch affect or Chromatic Aberration */}
                 {/* <Glitch delay={[2, 4]} duration={[0.5, 1]} strength={[0.04, 0.04]} /> */}
-                {/* <ChromaticAberration offset={[0.001, 0.007]} />  */}
+                <ChromaticAberration offset={[0.001, 0.004]} /> 
 
-                {/* I dont think this does anything for this scene */}
-                {/* <SSAO /> */}
-
-                {/* <Bloom
+                <Bloom
                     luminanceThreshold={0}
                     luminanceSmoothing={0}
                     height={300}
                     opacity={2.0}
-                />  */}
-                {/* <Scanline density={0.7} opacity={0.3} /> */}
-  
-                {/* <Noise opacity={0.25} /> */}
+                /> 
 
-                {/* <Vignette eskil={false} offset={0.1} darkness={0.9} />  */}
+                <Scanline density={0.7} opacity={0.2} />
+  
+                <Noise opacity={0.25} />
+
+                <Vignette eskil={false} offset={0.1} darkness={0.9} /> 
 
 
                 {/*  Tone Mapping: https://threejs.org/docs/index.html#api/en/constants/Renderer*/}
                 {/* <ToneMapping exposure={Math.pow(1, 4.0)} toneMapping={THREE.ReinhardToneMapping} whitePoint={1.0}/> */}
 
-                {/* <ToneMapping
+                <ToneMapping
                     exposure={0.1}
                     toneMapping={THREE.Uncharted2ToneMapping}
                     whitePoint={2.0}
-                /> */}
+                />
             </EffectComposer>
             
             <ambientLight />
             <Suspense fallback={null}>
                 {/* TODO: remove orbit controls */}
                 <OrbitControls
-                    enableZoom={true}
+                    enableZoom={false}
+                    enablePan={false}
+                    enabled={false}
+
                     // maxPolarAngle={Math.PI / 2}
                     // minPolarAngle={Math.PI / 2}
                 />
