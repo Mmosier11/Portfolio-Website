@@ -1,21 +1,45 @@
-import React, { Suspense, useEffect, useState, useRef, useCallback, useMemo } from "react";
+import React, {
+    Suspense,
+    useEffect,
+    useState,
+    useRef,
+} from "react";
 
-import { Canvas, useFrame, useThree, extend, useLoader } from "@react-three/fiber";
-import { shaderMaterial } from "@react-three/drei";
+import {
+    Canvas,
+    useFrame,
+    useLoader,
+} from "@react-three/fiber";
 
-import { EffectComposer, Noise, Glitch, Bloom, Vignette, ChromaticAberration, SSAO, ToneMapping, Scanline} from "@react-three/postprocessing";
-
+import {
+    EffectComposer,
+    Noise,
+    Bloom,
+    Vignette,
+    ChromaticAberration,
+    ToneMapping,
+    Scanline,
+} from "@react-three/postprocessing";
 
 import * as THREE from "three";
-
 
 import { mergeBufferGeometries } from "three/examples/jsm/utils/BufferGeometryUtils";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js"; // To be able to load SVG graphics
 
-import { OrbitControls, Preload, useGLTF, Effects, Stars, useTexture } from "@react-three/drei";
+import {
+    OrbitControls,
+    Preload,
+    useGLTF,
+    Effects,
+    Stars,
+    useTexture,
+} from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
+/***********************************************************************/
+/*                               ROAD                                  */
+/***********************************************************************/
 const Road = () => {
     const roadGeometry = new THREE.PlaneGeometry(12, 300, 1, 1);
     roadGeometry.translate(0, 110, 0.1);
@@ -40,6 +64,9 @@ const Road = () => {
     );
 };
 
+/***********************************************************************/
+/*                               ROAD LINES                            */
+/***********************************************************************/
 const RoadLines = () => {
     const [roadLines, setRoadLines] = useState(null);
     const roadLineLeftGeometry = new THREE.PlaneGeometry(0.35, 300, 1, 1);
@@ -93,9 +120,7 @@ const RoadLines = () => {
             <>
                 <ambientLight />
                 <mesh>
-                    <primitive
-                        object={roadLines}
-                    />
+                    <primitive object={roadLines} />
                 </mesh>
             </>
         );
@@ -104,6 +129,9 @@ const RoadLines = () => {
     }
 };
 
+/***********************************************************************/
+/*                               FLOOR                                 */
+/***********************************************************************/
 const Floor = () => {
     const materialRef = useRef();
     const [mounted, setMounted] = useState(false);
@@ -132,7 +160,7 @@ const Floor = () => {
                 vPos = pos;
             }
             `,
-                fragmentShader: `
+            fragmentShader: `
             uniform float time;
             uniform float speed;
             uniform vec3 color;
@@ -170,18 +198,16 @@ const Floor = () => {
     });
 
     useEffect(() => {
-        setMounted(true)
-        return () => setMounted(false)
-    }, [])
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
-    return (
-        <mesh
-            geometry={floorGeometry}
-            material={materialRef.current}
-        />
-    );
+    return <mesh geometry={floorGeometry} material={materialRef.current} />;
 };
 
+/***********************************************************************/
+/*                               SIDE WALK                             */
+/***********************************************************************/
 const SideWalk = () => {
     const materialRef = useRef();
     const [mounted, setMounted] = useState(false);
@@ -237,7 +263,7 @@ const SideWalk = () => {
                 vPos = pos;
             }
             `,
-                fragmentShader: `
+            fragmentShader: `
             uniform float time;
             uniform float speed;
             uniform vec3 color;
@@ -275,30 +301,31 @@ const SideWalk = () => {
     });
 
     useEffect(() => {
-        setMounted(true)
-        return () => setMounted(false)
-    }, [])
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
-    if(sideWalkGeometry){
+    if (sideWalkGeometry) {
         return (
             <>
-                <ambientLight/>
+                <ambientLight />
                 <mesh
                     geometry={sideWalkGeometry}
                     material={materialRef.current}
                 />
             </>
-            
         );
     } else {
         return null;
     }
-    
 };
 
+/***********************************************************************/
+/*                               PALM TREES                            */
+/***********************************************************************/
 const PalmTrees = () => {
     const materialRef = useRef();
-    
+
     const [mounted, setMounted] = useState(false);
 
     let palmTreeConception = [];
@@ -309,7 +336,7 @@ const PalmTrees = () => {
     palmTreeConception.push(logGeometry);
 
     // palm tree leaves
-    for(let i = 0; i < 35; i++ ){
+    for (let i = 0; i < 35; i++) {
         let leafGeometry = new THREE.CircleGeometry(1.25, 4);
         leafGeometry.translate(0, 1.25, 0);
         leafGeometry.rotateX(-Math.PI * 0.5);
@@ -332,26 +359,32 @@ const PalmTrees = () => {
 
     var palmTreePosition = [];
 
-    for(let i = 0; i < 40; i++){
+    for (let i = 0; i < 40; i++) {
         var resultLeft = randomize(-25, -200, 1);
         var resultRight = randomize(25, 160, 1);
 
         palmTreePosition.push(-10, 0, i * 2 * 15 - 10 - 50);
-		palmTreePosition.push(10, 0, i * 2 * 15 - 50);
-		palmTreePosition.push(resultLeft, 0, i * 2 * 15 - resultLeft - 50);
-		palmTreePosition.push(resultRight, 0, i * 2 * 15 + resultRight - 50);
+        palmTreePosition.push(10, 0, i * 2 * 15 - 50);
+        palmTreePosition.push(resultLeft, 0, i * 2 * 15 - resultLeft - 50);
+        palmTreePosition.push(resultRight, 0, i * 2 * 15 + resultRight - 50);
     }
 
-    palmTreeInstance.setAttribute('instPosition', new THREE.InstancedBufferAttribute(new Float32Array(palmTreePosition), 3));
+    palmTreeInstance.setAttribute(
+        "instPosition",
+        new THREE.InstancedBufferAttribute(
+            new Float32Array(palmTreePosition),
+            3
+        )
+    );
 
     useEffect(() => {
         const material = new THREE.ShaderMaterial({
             side: THREE.DoubleSide,
             wireframe: true,
-            
+
             uniforms: {
                 color: { value: new THREE.Color(0x056023) },
-                speed: { value: 15},
+                speed: { value: 15 },
                 time: { value: 0 },
                 value1: { value: 950.0 },
                 value2: { value: 800.0 },
@@ -397,13 +430,13 @@ const PalmTrees = () => {
             `,
         });
         materialRef.current = material;
-    }, [])
+    }, []);
 
     useEffect(() => {
-        setMounted(true)
-        return () => setMounted(false)
-    }, [])
-    
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
+
     useFrame(({ clock }) => {
         if (mounted) {
             if (materialRef.current) {
@@ -414,33 +447,30 @@ const PalmTrees = () => {
 
     return (
         <>
-            <ambientLight/>
-            <mesh
-                geometry={palmTreeInstance}
-                material={materialRef.current}
-            />
-            
+            <ambientLight />
+            <mesh geometry={palmTreeInstance} material={materialRef.current} />
         </>
-    )
+    );
 };
 
+/***********************************************************************/
+/*                               SKY BOX                               */
+/***********************************************************************/
 const SkyBox = () => {
-
-    const texture = useTexture('/skybox/2048/px.png')
+    const texture = useTexture("/skybox/2048/px.png");
 
     return (
         <>
-            <ambientLight/>
+            <ambientLight />
             <mesh position={[0, 0, -520]}>
-            <planeGeometry args={[1024, 1024]}/>
-            <meshBasicMaterial map={texture} />
-        </mesh>
+                <planeGeometry args={[1024, 1024]} />
+                <meshBasicMaterial map={texture} />
+            </mesh>
         </>
-        
-    )
+    );
 };
 
-// 
+//
 const GroupedPyramids = () => {
     const mergedMaterialRef = useRef();
 
@@ -448,7 +478,7 @@ const GroupedPyramids = () => {
 
     const [mounted, setMounted] = useState(false);
 
-    // Variables 
+    // Variables
     let pyramidGeometry;
 
     let minRandomSize, maxRandomSize, minTranslateX, maxTranslateX;
@@ -458,70 +488,73 @@ const GroupedPyramids = () => {
     let minTranslateZ = 0;
     let maxTranslateZ = 1000;
 
-    for(let i = 0; i < 80; i++){
-
-        if( i < 60 ){
+    for (let i = 0; i < 80; i++) {
+        if (i < 60) {
             //Furthest
             minRandomSize = 20;
             maxRandomSize = 30;
             minTranslateX = 40;
             maxTranslateX = 200;
-            // minRandomSize = 5;
-            // maxRandomSize = 25;
-            // minTranslateX = 27;
-            // maxTranslateX = 120;
-        } else if ( i >= 60 ){
+        } else if (i >= 60) {
             minRandomSize = 3;
             maxRandomSize = 8;
             minTranslateX = 40;
             maxTranslateX = 200;
         }
 
-        if ( i % 2 == 0 ){
+        if (i % 2 == 0) {
             minTranslateX *= -1;
             maxTranslateX *= -1;
         }
 
-        var randomSize = randomize(minRandomSize, maxRandomSize, 'int');
-        var translateX = randomize(minTranslateX, maxTranslateX, 'float');
-        var rotatePyramid = randomize(minRotatePyramid, maxRotatePyramid, 'float');
-        var translateZ = randomize(minTranslateZ, maxTranslateZ, 'float');
+        var randomSize = randomize(minRandomSize, maxRandomSize, "int");
+        var translateX = randomize(minTranslateX, maxTranslateX, "float");
+        var rotatePyramid = randomize(
+            minRotatePyramid,
+            maxRotatePyramid,
+            "float"
+        );
+        var translateZ = randomize(minTranslateZ, maxTranslateZ, "float");
 
-        pyramidGeometry = new THREE.ConeGeometry(randomSize, randomSize, 4, 1, true, rotatePyramid);
+        pyramidGeometry = new THREE.ConeGeometry(
+            randomSize,
+            randomSize,
+            4,
+            1,
+            true,
+            rotatePyramid
+        );
         pyramidGeometry.translate(translateX, 0, translateZ);
         pyramidGroupConception.push(pyramidGeometry);
     }
 
+    let pyramidGroupGeometry = mergeBufferGeometries(
+        pyramidGroupConception,
+        false
+    );
 
-    let pyramidGroupGeometry = mergeBufferGeometries(pyramidGroupConception, false);
-    // let pyramidGroupInstance = new THREE.InstancedBufferGeometry().copy(pyramidGroupGeometry);
+    let pyramidGroupPosition = [0, 0, 0, 0, 0, 260, 0, 0, 520, 0, 0, 780];
 
-    let pyramidGroupPosition = [
-        0, 0, 0,
-        0, 0, 260,
-        0, 0, 520,
-        0, 0, 780,
-    ];
-
-    let instPosition = new THREE.BufferAttribute(new Float32Array(pyramidGroupPosition), 2);
-
-    
+    let instPosition = new THREE.BufferAttribute(
+        new Float32Array(pyramidGroupPosition),
+        2
+    );
 
     useEffect(() => {
-  const mergedMaterial = new THREE.ShaderMaterial({
-    uniforms: {
-      color: { value: new THREE.Color(0x570296) },
-      speed: { value: 15 },
-      time: { value: 0 },
-      value1: { value: 950.0 },
-      value2: { value: 800.0 },
-      scale: { value: 1.0 },
-      transformedY: { value: 1.0 },
-      transformedX: { value: 1.0 },
-      emissiveIntensity: { value: 3.5 },
-      instPosition: { value: instPosition },
-    },
-    vertexShader: `
+        const mergedMaterial = new THREE.ShaderMaterial({
+            uniforms: {
+                color: { value: new THREE.Color(0x570296) },
+                speed: { value: 15 },
+                time: { value: 0 },
+                value1: { value: 950.0 },
+                value2: { value: 800.0 },
+                scale: { value: 1.0 },
+                transformedY: { value: 1.0 },
+                transformedX: { value: 1.0 },
+                emissiveIntensity: { value: 3.5 },
+                instPosition: { value: instPosition },
+            },
+            vertexShader: `
     uniform float speed;
     uniform float time;
     uniform float value1;
@@ -532,185 +565,214 @@ const GroupedPyramids = () => {
     attribute vec3 instPosition;
 
     void main() {
-      vec3 transformed = position;
-      vec3 ip = instPosition;
-      ip.z = mod(ip.z + time * speed, value1) - value2;
-      transformed *= scale;
-      transformed.y *= transformedY;
-      transformed.x *= transformedX;
-      transformed += ip;
+        vec3 transformed = position;
+        vec3 ip = instPosition;
+        ip.z = mod(ip.z + time * speed, value1) - value2;
+        transformed *= scale;
+        transformed.y *= transformedY;
+        transformed.x *= transformedX;
+        transformed += ip;
 
-      vec4 mvPosition = modelViewMatrix * vec4(transformed, 1.0);
-      gl_Position = projectionMatrix * mvPosition;
+        vec4 mvPosition = modelViewMatrix * vec4(transformed, 1.0);
+        gl_Position = projectionMatrix * mvPosition;
     }
-  `,
-    fragmentShader: `
-      uniform vec3 color;
-      uniform float emissiveIntensity;
-
-      void main() {
-         gl_FragColor = vec4(color * emissiveIntensity, 1.0);
-      }
     `,
-  });
+            fragmentShader: `
+        uniform vec3 color;
+        uniform float emissiveIntensity;
 
-  mergedMaterialRef.current = mergedMaterial;
-}, []);
-
-
-        useFrame(({ clock }) => {
-            if (mounted) {
-                mergedMaterialRef.current.uniforms.time.value = clock.elapsedTime;
-            }
-        });
-    
-        useEffect(() => {
-            setMounted(true)
-            return () => setMounted(false)
-        }, [])
-
-
-        if(mergedMaterialRef && pyramidGroupGeometry){
-            console.log("Grouped Pyramids Not Null");
-            console.log(pyramidGroupGeometry);
-            return (
-        <>
-            <ambientLight/>
-            <mesh
-                geometry={pyramidGroupGeometry}
-                material={mergedMaterialRef.current}
-            />
-            
-        </>
-    
-            );
-        } else {
-            console.log("Grouped Pyramids Null");
-            return null;
+        void main() {
+            gl_FragColor = vec4(color * emissiveIntensity, 1.0);
         }
-        
+    `,
+        });
+
+        mergedMaterialRef.current = mergedMaterial;
+    }, []);
+
+    useFrame(({ clock }) => {
+        if (mounted) {
+            mergedMaterialRef.current.uniforms.time.value = clock.elapsedTime;
+        }
+    });
+
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
+
+    if (mergedMaterialRef && pyramidGroupGeometry) {
+        console.log("Grouped Pyramids Not Null");
+        console.log(pyramidGroupGeometry);
+        return (
+            <>
+                <ambientLight />
+                <mesh
+                    geometry={pyramidGroupGeometry}
+                    material={mergedMaterialRef.current}
+                />
+            </>
+        );
+    } else {
+        console.log("Grouped Pyramids Null");
+        return null;
+    }
 };
 
+/***********************************************************************/
+/*                               SVGS                                  */
+/***********************************************************************/
 const SVGS = () => {
     const sun = [`/scenery/sun.svg`, -62.5, 90, -500, 0.11, "sun"];
     const city_far = [`/scenery/city_far.svg`, -68.5, 45, -450, 0.4, "cityFar"];
-    const city_close = [`/scenery/city_close.svg`, -30.5, 45, -300, 0.2, "cityClose"];
-  
-    // SVGURL | X | Y | Z | SCALE | objectName
-  
+    const city_close = [
+        `/scenery/city_close.svg`,
+        -30.5,
+        45,
+        -300,
+        0.2,
+        "cityClose",
+    ];
+
     const SVGLoaderComponent = ({ url, position, scale, name }) => {
-      const {paths} = useLoader(SVGLoader, url);
-    
-      if (!paths) {
-        return null;
-      }
+        const { paths } = useLoader(SVGLoader, url);
 
-      return (
-        <>
-            <ambientLight/>
-            <group position={position} scale={[scale, -scale, scale]} name={name}>
-          {paths.map((path, index) => (
-            <mesh
-              key={index}
-              geometry={new THREE.ShapeGeometry(path.toShapes(true))}
-              material={
-                new THREE.MeshStandardMaterial({
-                  color: path.color,
-                  side: THREE.DoubleSide,
-                  depthWrite: false,
-                })
-              }
-            />
-          ))}
-        </group>
-        </>
-        
-      );
+        if (!paths) {
+            return null;
+        }
+
+        return (
+            <>
+                <ambientLight />
+                <group
+                    position={position}
+                    scale={[scale, -scale, scale]}
+                    name={name}
+                >
+                    {paths.map((path, index) => (
+                        <mesh
+                            key={index}
+                            geometry={
+                                new THREE.ShapeGeometry(path.toShapes(true))
+                            }
+                            material={
+                                new THREE.MeshStandardMaterial({
+                                    color: path.color,
+                                    side: THREE.DoubleSide,
+                                    depthWrite: false,
+                                })
+                            }
+                        />
+                    ))}
+                </group>
+            </>
+        );
     };
-  
-    return (
-      <>
-        <SVGLoaderComponent url={sun[0]} position={[sun[1], sun[2], sun[3]]} scale={sun[4]} name={sun[5]} />
-        <SVGLoaderComponent url={city_far[0]} position={[city_far[1], city_far[2], city_far[3]]} scale={city_far[4]} name={city_far[5]} />
-        <SVGLoaderComponent url={city_close[0]} position={[city_close[1], city_close[2], city_close[3]]} scale={city_close[4]} name={city_close[5]} />
-      </>
-    );
-  };
 
+    return (
+        <>
+            <SVGLoaderComponent
+                url={sun[0]}
+                position={[sun[1], sun[2], sun[3]]}
+                scale={sun[4]}
+                name={sun[5]}
+            />
+            <SVGLoaderComponent
+                url={city_far[0]}
+                position={[city_far[1], city_far[2], city_far[3]]}
+                scale={city_far[4]}
+                name={city_far[5]}
+            />
+            <SVGLoaderComponent
+                url={city_close[0]}
+                position={[city_close[1], city_close[2], city_close[3]]}
+                scale={city_close[4]}
+                name={city_close[5]}
+            />
+        </>
+    );
+};
+
+/***********************************************************************/
+/*                               RANDOMIZE                             */
+/***********************************************************************/
 const randomize = (min, max, setting) => {
     let previousRandomFloat = 0;
     let previousRandomInteger = 0;
     let previousOddRandomInteger = 0;
     let previousEvenRandomInteger = 0;
-  
+
     let randomResult;
-  
-    if (setting === 'float') {
-      // Get random float
-      randomResult = Math.random() * (max - min + 1) + min;
-  
-      if (randomResult === previousRandomFloat) {
-        do {
-          randomResult = Math.random() * (max - min + 1) + min;
-        } while (randomResult === previousRandomFloat);
-        previousRandomFloat = randomResult;
-      }
-    } else if (setting === 'int') {
-      // Get random integer
-      randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-  
-      if (randomResult === previousRandomInteger) {
-        do {
-          randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-        } while (randomResult === previousRandomInteger);
-        previousRandomInteger = randomResult;
-      }
-    } else if (setting === 1 || setting === 2) {
-      // Get random integer (Odd or Even)
-      randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-  
-      if (
-        randomResult === previousOddRandomInteger ||
-        randomResult === previousEvenRandomInteger
-      ) {
-        if (setting === 1) {
-          if (
-            randomResult < previousOddRandomInteger + 1 &&
-            randomResult > previousOddRandomInteger - 1
-          ) {
+
+    if (setting === "float") {
+        // Get random float
+        randomResult = Math.random() * (max - min + 1) + min;
+
+        if (randomResult === previousRandomFloat) {
             do {
-              randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-            } while (
-              randomResult < previousOddRandomInteger + 1 &&
-              randomResult > previousOddRandomInteger - 1
-            );
-          }
-  
-          previousOddRandomInteger = randomResult;
-        } else if (setting === 2) {
-          if (
-            randomResult < previousEvenRandomInteger + 1 &&
-            randomResult > previousEvenRandomInteger - 1
-          ) {
-            do {
-              randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-            } while (
-              randomResult < previousEvenRandomInteger + 1 &&
-              randomResult > previousEvenRandomInteger - 1
-            );
-          }
-  
-          previousEvenRandomInteger = randomResult;
+                randomResult = Math.random() * (max - min + 1) + min;
+            } while (randomResult === previousRandomFloat);
+            previousRandomFloat = randomResult;
         }
+    } else if (setting === "int") {
+        // Get random integer
+        randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        if (randomResult === previousRandomInteger) {
+            do {
+                randomResult =
+                    Math.floor(Math.random() * (max - min + 1)) + min;
+            } while (randomResult === previousRandomInteger);
+            previousRandomInteger = randomResult;
+        }
+    } else if (setting === 1 || setting === 2) {
+        // Get random integer (Odd or Even)
+        randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        if (
+            randomResult === previousOddRandomInteger ||
+            randomResult === previousEvenRandomInteger
+        ) {
+            if (setting === 1) {
+                if (
+                    randomResult < previousOddRandomInteger + 1 &&
+                    randomResult > previousOddRandomInteger - 1
+                ) {
+                    do {
+                        randomResult =
+                            Math.floor(Math.random() * (max - min + 1)) + min;
+                    } while (
+                        randomResult < previousOddRandomInteger + 1 &&
+                        randomResult > previousOddRandomInteger - 1
+                    );
+                }
+
+                previousOddRandomInteger = randomResult;
+            } else if (setting === 2) {
+                if (
+                    randomResult < previousEvenRandomInteger + 1 &&
+                    randomResult > previousEvenRandomInteger - 1
+                ) {
+                    do {
+                        randomResult =
+                            Math.floor(Math.random() * (max - min + 1)) + min;
+                    } while (
+                        randomResult < previousEvenRandomInteger + 1 &&
+                        randomResult > previousEvenRandomInteger - 1
+                    );
+                }
+
+                previousEvenRandomInteger = randomResult;
+            }
         }
     }
     return randomResult;
 };
 
-// --------------------------------- Synthwave Canvas --------------------------------- //
-
+/***********************************************************************/
+/*                               SynthWave Canvas                      */
+/***********************************************************************/
 const SynthwaveCanvas = () => {
-
     const camera = new THREE.PerspectiveCamera(
         45, //45
         window.innerWidth / window.innerHeight,
@@ -719,33 +781,27 @@ const SynthwaveCanvas = () => {
     );
     camera.position.set(0, 10.0, 45.0); // 0, 10.0, 45.0
 
-    const [ value, setValue] = useState(1);
-
+    const [value, setValue] = useState(1);
 
     return (
-        <Canvas
-            camera={camera}
-        >
-            
+        <Canvas camera={camera}>
             <EffectComposer>
-
                 {/* Can only pick the Glitch affect or Chromatic Aberration */}
                 {/* <Glitch delay={[2, 4]} duration={[0.5, 1]} strength={[0.04, 0.04]} /> */}
-                <ChromaticAberration offset={[0.001, 0.004]} /> 
+                <ChromaticAberration offset={[0.001, 0.004]} />
 
                 <Bloom
                     luminanceThreshold={0}
                     luminanceSmoothing={0}
                     height={300}
                     opacity={2.0}
-                /> 
+                />
 
                 <Scanline density={0.7} opacity={0.2} />
-  
+
                 <Noise opacity={0.25} />
 
-                <Vignette eskil={false} offset={0.1} darkness={0.9} /> 
-
+                <Vignette eskil={false} offset={0.1} darkness={0.9} />
 
                 {/*  Tone Mapping: https://threejs.org/docs/index.html#api/en/constants/Renderer*/}
                 {/* <ToneMapping exposure={Math.pow(1, 4.0)} toneMapping={THREE.ReinhardToneMapping} whitePoint={1.0}/> */}
@@ -756,27 +812,25 @@ const SynthwaveCanvas = () => {
                     whitePoint={2.0}
                 />
             </EffectComposer>
-            
+
             <ambientLight />
-            <Suspense fallback={null}>
-                {/* TODO: remove orbit controls */}
+            <Suspense fallback={<CanvasLoader/>}>
+                {/* Orbit Controls Applies an Aspect Ratio I like */}
                 <OrbitControls
                     enableZoom={false}
                     enablePan={false}
                     enabled={false}
-
-                    // maxPolarAngle={Math.PI / 2}
-                    // minPolarAngle={Math.PI / 2}
                 />
                 {/* <Stars/> */}
                 <SkyBox />
+                
                 <Road />
                 <Floor />
                 <RoadLines />
                 <SideWalk />
                 <GroupedPyramids />
-                <PalmTrees/>
-                <SVGS/>
+                <PalmTrees />
+                <SVGS />
             </Suspense>
             <Preload all />
         </Canvas>
