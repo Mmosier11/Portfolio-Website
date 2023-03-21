@@ -602,8 +602,6 @@ const GroupedPyramids = () => {
     }, []);
 
     if (mergedMaterialRef && pyramidGroupGeometry) {
-        console.log("Grouped Pyramids Not Null");
-        console.log(pyramidGroupGeometry);
         return (
             <>
                 <ambientLight />
@@ -614,7 +612,6 @@ const GroupedPyramids = () => {
             </>
         );
     } else {
-        console.log("Grouped Pyramids Null");
         return null;
     }
 };
@@ -823,7 +820,7 @@ const SynthwaveCanvas = () => {
                 />
                 {/* <Stars/> */}
                 <SkyBox />
-                
+
                 <Road />
                 <Floor />
                 <RoadLines />
