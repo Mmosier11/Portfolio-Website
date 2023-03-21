@@ -107,7 +107,7 @@ const RoadLines = () => {
 const Floor = () => {
     const materialRef = useRef();
     const [mounted, setMounted] = useState(false);
-    const floorGeometry = new THREE.PlaneGeometry(300, 300, 1, 1);
+    const floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
     floorGeometry.translate(0, 110, 0);
     floorGeometry.rotateX(-Math.PI * 0.5);
 
