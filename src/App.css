@@ -1,0 +1,440 @@
+/* FONT-FAMILY */
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('src/assets/fonts/BebasNeue.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RetroSignature';
+  src: url('src/assets/fonts/RetroSignature.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'VT323';
+  src: url('src/assets/fonts/VT323.ttf') format('truetype');
+}
+
+/* Style for webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff00ff;
+    border-radius: 10px;
+    border: 2px solid #000;
+    box-shadow: inset 0 0 6px rgba(255, 0, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff66ff;
+}
+
+
+.body{
+  transform: translateY(100vh);
+}
+
+.content{
+  background: linear-gradient(180deg, #262E49 0%, #DC0C83 100%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* SELECTED WORKS */
+.selected-works{
+    /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 75px 0px;
+
+  width: 1920px;
+  height: 1052px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.name{
+  font-family: RetroSignature;
+  font-size: 64px;
+}
+
+.section-header{
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  width: 667px;
+  height: 138px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.section-title{
+  /* selected works */
+
+
+width: 1920px;
+height: 133px;
+
+font-family: BebasNeue;
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 115px;
+text-align: center;
+
+color: #DC0C83;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.horizontal-title-divider{
+  width: 667px;
+height: 5px;
+
+background: rgba(217, 217, 217, 0.25);
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.selected-work-title{
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  width: 615px;
+  height: 165px;
+  top: 225px;
+}
+
+.selected-work-title-main{
+  width: 615px;
+  height: 126px;
+  
+  font-family: BebasNeue;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 154px;
+  text-align: center;
+  
+  color: #FFFFFF;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.selected-work-title-sub{
+/* Teams management portal */
+
+
+width: 364px;
+height: 39px;
+
+font-family: BebasNeue;
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 43px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.section-content{
+  /* Auto layout */
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 27px;
+
+width: 1212px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.selected-work{
+  /* Section Content */
+
+
+max-width: 1212px;
+padding-top: 5rem;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.selected-work-buttons{
+  /* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+padding: 0px 65px;
+
+width: 1212px;
+height: 62px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.button-text-highlighted{
+  
+  font-family: BebasNeue;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+.button-text{
+  font-family: BebasNeue;
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 43px;
+text-align: center;
+
+color: #DC0C83;
+}
+
+.button{
+  /* Button */
+
+
+width: 176px;
+height: 62px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+/* Inside auto layout */
+
+order: 1;
+flex-grow: 0;
+box-sizing: border-box;
+border: 2.5px solid #DC0C83;
+}
+
+.button-highlighted{
+  /* Button */
+
+
+width: 176px;
+height: 62px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+background: #DC0C83;
+border: 2.5px solid #DC0C83;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.selected-work-image{
+  
+width: 1194px;
+height: 604px;
+
+  background: url(src/assets/projects/TeamBanditHome.png);
+  filter: drop-shadow(0px 4px 25px rgba(0, 0, 0, 0.25));
+}
+
+
+/* GRAIN EFFECT */
+.noise::before{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    opacity: 0.075; /* Change to increase opacity amount 0.075 */
+    z-index: 1000;
+    pointer-events: none;
+    background: url(noise.gif);
+}
+
+.retro-text{
+  font-family: VT323;
+  font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 32px;
+
+color: rgba(255, 255, 255, 0.65);
+}
+
+/* EXPERIMENTAL COVER */
+.top-left{
+  /* Top Left */
+
+
+/* Auto layout */
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 33px 34px;
+gap: 10px;
+
+position: fixed;
+width: 100%;
+height: 100vh;
+left: 0px;
+top: 0px;
+z-index: 100;
+}
+
+.top-right{
+  position: fixed;
+width: 100%;
+height: 100vh;
+left: 0px;
+top: 0px;
+z-index: 100;
+
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+padding: 33px 34px;
+gap: 10px;
+}
+
+.bottom-left{
+/* Auto layout */
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-start;
+padding: 33px 34px;
+gap: 10px;
+
+position: absolute;
+width: 100%;
+height: 100vh;
+left: 0px;
+top: 0px;
+
+z-index: 100;
+}
+
+.middle{
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+padding: 33px 34px;
+gap: 10px;
+
+position: absolute;
+width: 100%;
+height: 100vh;
+left: 0px;
+top: 0px;
+z-index: 100;
+}
+
+.bottom-right{
+  /* Bottom Right */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-end;
+padding: 33px 34px;
+gap: 10px;
+
+position: absolute;
+width: 100%;
+height: 100vh;
+left: 0px;
+top: 0px;
+z-index: 100;
+}

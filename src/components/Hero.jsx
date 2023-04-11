@@ -7,6 +7,7 @@ import { ComputersCanvas } from './canvas';
 import { SynthwaveCanvas } from './canvas';
 
 import gif from '/src/assets/max_mosier_hero_title.gif';
+import ExperimentalCover from './ExperimentalCover';
 
 /***********************************************************************/
 /*                               HERO                                  */
@@ -17,6 +18,7 @@ const Hero = () => {
       <div className='w-full h-screen absolute inset-0 z-10 bg-black bg-opacity-10'>
         <img src={gif} alt="loading..." className="w-full h-screen"/>
       </div>
+      <ExperimentalCover/>
       {/* <div className={`${styles.paddingX} absolute inset-0 top-[120px] z-10 max-w-7xl mx-auto flex flex-row items-start gap-5`}>
         <div className="flex flex-col justify-center items-center mt-5">
           <div className='w-5 h-5 rounded-full bg-[#915eff]'/>
@@ -33,7 +35,7 @@ const Hero = () => {
       </div> */}
       {/* <ComputersCanvas/>  */}
       <SynthwaveCanvas/>
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20">
+      {/* <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20">
         <a href="#about" className="cursor-pointer">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-white border-opacity-75 flex justify-center items-start p-2 cursor-pointer">
             <motion.div 
@@ -43,7 +45,7 @@ const Hero = () => {
             />
           </div>
         </a>
-      </div>
+      </div> */}
     </section>
   );
 }
