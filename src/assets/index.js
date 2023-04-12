@@ -7,7 +7,7 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import max from "./max.svg";
-import m from "./m.svg";
+import m from "./M.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
