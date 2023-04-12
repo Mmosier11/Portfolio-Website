@@ -1,17 +1,17 @@
 /* FONT-FAMILY */
 @font-face {
   font-family: 'BebasNeue';
-  src: url('src/assets/fonts/BebasNeue.ttf') format('truetype');
+  src: url('./assets/fonts/BebasNeue.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'RetroSignature';
-  src: url('src/assets/fonts/RetroSignature.otf') format('opentype');
+  src: url('./assets/fonts/RetroSignature.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'VT323';
-  src: url('src/assets/fonts/VT323.ttf') format('truetype');
+  src: url('./assets/fonts/VT323.ttf') format('truetype');
 }
 
 /* Style for webkit-based browsers (Chrome, Safari, Edge) */
