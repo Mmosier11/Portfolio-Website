@@ -34,19 +34,38 @@
     background-color: #ff66ff;
 }
 
-
-.body{
-  transform: translateY(100vh);
+body{
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
 }
 
+.main-content{
+  height: 0;
+  transform: translateY(100vh);
+  background-color: aqua;
+}
+
+.particles{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+}
 .content{
   background: linear-gradient(180deg, #262E49 0%, #DC0C83 100%);
   width: 100%;
+  height: max-content;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
+
 
 .other-works{
   /* Other Works */
@@ -151,6 +170,9 @@ flex: none;
 order: 0;
 flex-grow: 0;
 }
+
+
+
 .other-works-divider{
   width: 5px;
   height: 400px;
@@ -585,6 +607,8 @@ order: 0;
 flex-grow: 0;
 }
 
+
+
 .selected-work-image{
   
 width: 1194px;
@@ -593,6 +617,8 @@ height: 604px;
   background: url(./assets/projects/TeamBanditHome.png);
   filter: drop-shadow(0px 4px 25px rgba(0, 0, 0, 0.25));
 }
+
+
 
 
 /* GRAIN EFFECT */
@@ -607,6 +633,10 @@ height: 604px;
     z-index: 1000;
     pointer-events: none;
     background: url(noise.gif);
+}
+
+.smooth-provider{
+  height: 0;
 }
 
 .retro-text{

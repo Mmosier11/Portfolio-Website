@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import { BrowserRouter as Router, } from 'react-router-dom';
 import { Scrollama, Step } from 'react-scrollama';
 
@@ -6,6 +6,9 @@ import { SmoothProvider } from 'react-smooth-scrolling';
 
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
+
+import Particles from 'react-tsparticles';
+import { loadFull } from "tsparticles";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, ExperimentalCover } from './components';
@@ -15,6 +18,18 @@ const App = () => {
 
   const { scrollYProgress } = useScroll();
 
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+}, []);
+
+const particlesLoaded = useCallback(async container => {
+  await console.log(container);
+}, []);
+
   return (
     
     <Router>
@@ -23,14 +38,62 @@ const App = () => {
         style={{ scaleX: scrollYProgress }}
       />
       <div className="noise"></div>
+      
       <div className="relative z-0 bg-primary">
-        <div className='fixed bg-hero-pattern bg-cover bg-no-repeat bg-center w-full'>
+        <div className='fixed w-full'>
           {/* <Navbar/> */}
           <Hero/>
         </div>
-        <SmoothProvider>
-        <div className='body bg-transparent'>
+        
+        <div id="main-content" className='main-content'>
+        <SmoothProvider className="smooth-provider">  
           <div className='content'>
+          <Particles 
+          id="particles" 
+          className="particles"
+          options={{
+            
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    resize: true,
+                },
+            },
+            particles: {
+                color: {
+                    value: "#ffffff",
+                },
+                move: {
+                    direction: "top",
+                    enable: true,
+                    outModes: {
+                        default: "out",
+                    },
+                    random: false,
+                    speed: 3,
+                    straight: false,
+                },
+                number: {
+                    density: {
+                        enable: true,
+                        area: 800,
+                    },
+                    value: 80,
+                },
+                opacity: {
+                    value: 0.25,
+                },
+                shape: {
+                    type: "circle",
+                },
+                size: {
+                    value: { min: 1, max: 3 },
+                },
+            },
+            detectRetina: true,
+            width: "100%",
+            height: "100vh",
+        }} init={particlesInit} loaded={particlesLoaded} />
             <div className="selected-works">
               <div className="section-header">
                 <h1 className="section-title"> SELECTED WORKS </h1>
@@ -142,17 +205,17 @@ const App = () => {
                 interests
                 </p>
                 <p className="credits-text">
-                  Front-End Developer |Cognizant | 6/22-Present<br/>
-                  Senior Student technician | Joseph City high school | 6/21-8/21<br/>
-                  IT Help desk | United States Geological survey | 7/19-2/20<br/>
-                  student technician | Norther Arizona university | 7/18-4/19<br/>
-                  IT Assistant | Joseph City High School | 6/16-7/18
+                  Front-End Developer |Cognizant | JUNE 22-Present<br/>
+                  Senior Student technician | Joseph City high school | JUNE 21 - AUGUST 21<br/>
+                  IT Help desk | United States Geological survey | JULY 19 - FEBRUARY 20<br/>
+                  student technician | Norther Arizona university | JULY 18 - APRIL 19<br/>
+                  IT Assistant | Joseph City High School | JUNE 16 - JULY 18
                   <br/>
                   <br/>
-                  Bachelors of science in computer science | northern Arizona university | May  2022
+                  Bachelors of science in computer science | northern Arizona university | May 2022
                   <br/>
                   <br/>
-                  google professional ux design | Coursera | 1/23
+                  google professional ux design | Coursera | JANUARY 23
                   <br/>
                   <br/>
                   Board games<br/>
@@ -180,9 +243,11 @@ const App = () => {
             <Contact/>
             <StarsCanvas/>
           </div> */}
+          </SmoothProvider>
         </div>
-        </SmoothProvider>
+        
       </div>
+      
     </Router>
   );
 }
