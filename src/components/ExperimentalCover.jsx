@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+
 import '../App.css';
 
 const ExperimentalCover = () => {
+
+    const [ hideContent, setHideContent ] = useState(false);
+    const [scrollHeight, setScrollHeight] = useState(0);
+    const [viewPortHeight, setViewPortHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const position = window.pageYOffset;
+            setScrollHeight(position);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        if( scrollHeight >= viewPortHeight / 2 ) {
+            setHideContent(true);
+        } else {
+            setHideContent(false);
+        }
+    }, [scrollHeight]);
+
     return (
-        <div>
+        <div
+            className={hideContent ? 'display-none' : ''}
+        >
             <div className="top-left">
                 <p className="name">Max Mosier</p>
+                <p> {scrollHeight} </p>
+                <p> {viewPortHeight} </p>
             </div>
             <div className="top-right">
                 <p className="retro-text">001</p>

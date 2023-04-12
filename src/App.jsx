@@ -14,6 +14,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, ExperimentalCover } from './components';
 import './App.css';
 
+import particlesSettings from './assets/json/particles';
+
 const App = () => {
 
   const { scrollYProgress } = useScroll();
@@ -31,7 +33,6 @@ const particlesLoaded = useCallback(async container => {
 }, []);
 
   return (
-    
     <Router>
       <motion.div
         className="progress-bar"
@@ -49,51 +50,12 @@ const particlesLoaded = useCallback(async container => {
         <SmoothProvider className="smooth-provider">  
           <div className='content'>
           <Particles 
-          id="particles" 
-          className="particles"
-          options={{
-            
-            fpsLimit: 60,
-            interactivity: {
-                events: {
-                    resize: true,
-                },
-            },
-            particles: {
-                color: {
-                    value: "#ffffff",
-                },
-                move: {
-                    direction: "top",
-                    enable: true,
-                    outModes: {
-                        default: "out",
-                    },
-                    random: false,
-                    speed: 3,
-                    straight: false,
-                },
-                number: {
-                    density: {
-                        enable: true,
-                        area: 800,
-                    },
-                    value: 80,
-                },
-                opacity: {
-                    value: 0.25,
-                },
-                shape: {
-                    type: "circle",
-                },
-                size: {
-                    value: { min: 1, max: 3 },
-                },
-            },
-            detectRetina: true,
-            width: "100%",
-            height: "100vh",
-        }} init={particlesInit} loaded={particlesLoaded} />
+            id="particles" 
+            className="particles"
+            options={particlesSettings}
+            init={particlesInit} 
+            loaded={particlesLoaded} 
+          />
             <div className="selected-works">
               <div className="section-header">
                 <h1 className="section-title"> SELECTED WORKS </h1>
@@ -151,8 +113,8 @@ const particlesLoaded = useCallback(async container => {
                     Social Media App
                     Chat GPT Clone
                     A.I. and Three JS Store
-                    A.I. Image Generation App
-                    Persona 5 UI Website
+                    A.I. Image Generation App <br/>
+                    T3 Stack Twitter Clone
                   </p>
                   <div className="other-works-divider"></div>
                   <p className="other-works-list">
