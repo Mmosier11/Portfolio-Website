@@ -10,15 +10,22 @@ import { Tween, Timeline } from 'react-gsap';
 import Particles from 'react-tsparticles';
 import { loadFull } from "tsparticles";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, ExperimentalCover } from './components';
-import './App.css';
+import './App.scss';
 
 import particlesSettings from './assets/json/particles';
+import SelectedWorks from './components/SelectedWorks';
+import Test from './components/Test';
 
 const App = () => {
 
   const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   const particlesInit = useCallback(async engine => {
     console.log(engine);
@@ -35,10 +42,10 @@ const particlesLoaded = useCallback(async container => {
   return (
     <Router>
       <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
+        className="ProgressBar"
+        style={{ scaleX: scaleX }}
       />
-      <div className="noise"></div>
+      <div className="Noise"></div>
       
       <div className="relative z-0 bg-primary">
         <div className='fixed w-full'>
@@ -46,49 +53,17 @@ const particlesLoaded = useCallback(async container => {
           <Hero/>
         </div>
         
-        <div id="main-content" className='main-content'>
-        <SmoothProvider className="smooth-provider">  
-          <div className='content'>
-          <Particles 
-            id="particles" 
-            className="particles"
-            options={particlesSettings}
-            init={particlesInit} 
-            loaded={particlesLoaded} 
-          />
-            <div className="selected-works">
-              <div className="section-header">
-                <h1 className="section-title"> SELECTED WORKS </h1>
-                <div className="horizontal-title-divider"></div>
-              </div>
-              <div className="section-content">
-                <div className="selected-work">
-                  <div className="selected-work-image-opacity"></div>
-                  <div className="selected-work-image"></div>
-                  <div className="selected-work-title">
-                    <p className="selected-work-title-main"> TEAM BANDIT </p>
-                    <p className="selected-work-title-sub"> TEAMS MANAGEMENT PORTAL </p>
-                  </div>
-                  
-                </div>
-                <div className="selected-work-buttons">
-                  <div className="button-highlighted">
-                    <p className="button-text-highlighted">TEAM BANDIT</p>
-                  </div>
-                  <div className="button">
-                    <p className="button-text">NETZERO</p>
-                  </div>
-                  <div className="button">
-                    <p className="button-text">WORKMENTOR</p>
-                  </div>
-                  <div className="button">
-                    <p className="button-text">TASKERPG</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="section-divider-1"></div>
+        <div id="main-content" className='MainContent'>
+        <SmoothProvider className="MainContent__SmoothProvider">  
+          <div className='MainContent__Content'>
+            <Particles 
+              id="particles"
+              options={particlesSettings}
+              init={particlesInit} 
+              loaded={particlesLoaded} 
+            />
+            <SelectedWorks/>
+            <div className="MainContent__Content__SectionDivider"></div>
 
             <div className="other-works">
               <div className="section-header">
@@ -142,7 +117,7 @@ const particlesLoaded = useCallback(async container => {
               </div>
             </div>
 
-            <div className="section-divider-2"></div>
+            <div className="MainContent__Content__SectionDivider"></div>
 
             <div className="credits">
               <div className="section-header">

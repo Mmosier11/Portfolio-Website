@@ -24,6 +24,7 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^18.2.0",
     "react-gsap": "^3.2.1",
+    "react-intersection-observer": "^9.4.3",
     "react-particles": "^2.9.3",
     "react-router-dom": "^6.9.0",
     "react-scrollama": "^2.3.2",
@@ -32,6 +33,7 @@
     "react-tilt": "^0.1.4",
     "react-tsparticles": "^2.9.3",
     "react-vertical-timeline-component": "^3.6.0",
+    "sass": "^1.62.0",
     "three": "^0.150.1",
     "tsparticles": "^2.9.3"
   },

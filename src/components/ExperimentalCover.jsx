@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import '../App.css';
+import '../App.scss';
 
 const ExperimentalCover = () => {
 
     const [ hideContent, setHideContent ] = useState(false);
-    const [scrollHeight, setScrollHeight] = useState(0);
-    const [viewPortHeight, setViewPortHeight] = useState(window.innerHeight);
+    const [ scrollHeight, setScrollHeight ] = useState(0);
+    const [ viewPortHeight, setViewPortHeight ] = useState(window.innerHeight);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -34,8 +34,6 @@ const ExperimentalCover = () => {
         >
             <div className="top-left">
                 <p className="name">Max Mosier</p>
-                <p> {scrollHeight} </p>
-                <p> {viewPortHeight} </p>
             </div>
             <div className="top-right">
                 <p className="retro-text">001</p>

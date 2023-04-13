@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import gif from '/src/assets/max_mosier_hero_title.gif';
 
-import '../App.css';
+import '../App.scss';
 
 const Title = () => {
 
