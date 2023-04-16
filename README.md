@@ -6,6 +6,7 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Create Figma Design
 - [x] Implement Synthwave React Fiber Three Scene
 - [ ] Translate Figma Design to SCSS
+- [ ] Implement functionality of links and Selected Works
 - [ ] Implement Animations
 - [ ] Insure Responsivity
 - [ ] Clean Code
