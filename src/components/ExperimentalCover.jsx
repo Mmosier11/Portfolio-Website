@@ -30,34 +30,34 @@ const ExperimentalCover = () => {
 
     return (
         <div
-            className={hideContent ? 'display-none' : ''}
+            className={hideContent ? 'Cover DisplayNone' : 'Cover'}
         >
-            <div className="top-left">
-                <p className="name">Max Mosier</p>
+            <div className="Cover__TopLeft">
+                <p className="Cover__TopLeft__Name">Max Mosier</p>
             </div>
-            <div className="top-right">
-                <p className="retro-text">001</p>
-                <p className="retro-text">------------</p>
-                <p className="retro-text">Front-End Developer</p>
-                <p className="retro-text">002</p>
-                <p className="retro-text">------------</p>
-                <p className="retro-text">UI/UX Designer</p>
+            <div className="Cover__TopRight">
+                <p className="Cover__TopRight__RetroText">001</p>
+                <p className="Cover__TopRight__RetroText">------------</p>
+                <p className="Cover__TopRight__RetroText">Front-End Developer</p>
+                <p className="Cover__TopRight__RetroText">002</p>
+                <p className="Cover__TopRight__RetroText">------------</p>
+                <p className="Cover__TopRight__RetroText">UI/UX Designer</p>
             </div>
-            <div className="bottom-left">
-                <p className="retro-text"> LOCATION // '23 </p>
-                <p className="retro-text"> ---- </p>
-                <p className="retro-text"> DALLAS, TEXAS </p>
-                <p className="retro-text"> // AVAILABLE WORLD WIDE </p>
+            <div className="Cover__BottomLeft">
+                <p className="Cover__BottomLeft__RetroText"> LOCATION // '23 </p>
+                <p className="Cover__BottomLeft__RetroText"> ---- </p>
+                <p className="Cover__BottomLeft__RetroText"> DALLAS, TEXAS </p>
+                <p className="Cover__BottomLeft__RetroText"> // AVAILABLE WORLD WIDE </p>
             </div>
-            <div className="middle">
-                <p className="retro-text"> INITIALIZE:// </p>
-                <p className="retro-text"> ---- </p>
-                <p className="retro-text"> SCROLL TO BEGIN -{'>'} </p>
+            <div className="Cover__Middle">
+                <p className="Cover__Middle__RetroText"> INITIALIZE:// </p>
+                <p className="Cover__Middle__RetroText"> ---- </p>
+                <p className="Cover__Middle__RetroText"> SCROLL TO BEGIN -{'>'} </p>
             </div>
-            <div className="bottom-right">
-                <p className="retro-text"> SELECTED WORKS.[OK] </p>
-                <p className="retro-text"> OTHER WORKS....[OK] </p>
-                <p className="retro-text"> CREDITS........[OK] </p>
+            <div className="Cover__BottomRight">
+                <p className="Cover__BottomRight__RetroText"> SELECTED WORKS.[OK] </p>
+                <p className="Cover__BottomRight__RetroText"> OTHER WORKS....[OK] </p>
+                <p className="Cover__BottomRight__RetroText"> CREDITS........[OK] </p>
             </div>
         </div>
     );

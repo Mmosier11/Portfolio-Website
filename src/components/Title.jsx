@@ -32,7 +32,7 @@ const Title = () => {
 
     return (
         <div
-            className={hideContent ? 'display-none' : ''}
+            className={hideContent ? 'DisplayNone' : ''}
         >
             <img src={gif} alt="loading..." className="w-full h-screen"/>
         </div>
