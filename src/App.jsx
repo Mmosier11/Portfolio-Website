@@ -19,6 +19,7 @@ import SelectedWorks from './components/SelectedWorks';
 import Test from './components/Test';
 import OtherWorks from './components/OtherWorks';
 import Credits from './components/Credits';
+import AnimatedCursor from 'react-animated-cursor';
 
 const App = () => {
 
@@ -48,7 +49,30 @@ const particlesLoaded = useCallback(async container => {
         style={{ scaleX: scaleX }}
       />
       <div className="Noise"></div>
-      
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={35}
+        color='255, 255, 255'
+        innerScale={1.35}
+        outerScale={1.7}
+        outerAlpha={0}
+        outerStyle={{
+          border: '2px solid #fff'
+        }}
+        clickables={[
+          'p',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'textarea',
+          'button',
+          '.link'
+        ]}
+      />
       <div className="relative z-0 bg-primary">
         <div className='fixed w-full'>
           {/* <Navbar/> */}
@@ -57,7 +81,7 @@ const particlesLoaded = useCallback(async container => {
         
         <div id="main-content" className='MainContent'>
         
-        <SmoothProvider className="MainContent__SmoothProvider">  
+        <div className="MainContent__SmoothProvider">  
           <div className='MainContent__Content'>
             <Particles 
               id="particles"
@@ -87,7 +111,7 @@ const particlesLoaded = useCallback(async container => {
             <Contact/>
             <StarsCanvas/>
           </div> */}
-          </SmoothProvider>
+          </div>
         </div>
         
       </div>

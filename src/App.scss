@@ -38,19 +38,11 @@
   display: none;
 }
 
-body{
-  min-height: 100vh;
-  max-height: 100vh;
-  overflow: auto;
-}
-
 .MainContent{
-  height: 0;
+
   transform: translateY(100vh);
 
-  &__SmoothProvider{
-    height: 0;
-  }
+
 
   &__Content{
     background: linear-gradient(180deg, #262E49 0%, #DC0C83 100%);
@@ -125,7 +117,7 @@ body{
       }
 
       &__List{
-        font-family: 'Montserrat';
+        font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -142,8 +134,6 @@ body{
         }
       }
     }
-
-    
   }
 }
 
@@ -349,6 +339,39 @@ body{
   align-items: center;
   padding-top: 5vh;
   padding-bottom: 5vh;
+
+  &__HoveredSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__Title{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      &__Main{
+        font-family: BebasNeue;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 6vw;
+        text-align: center;
+        color: #FFFFFF;
+        margin-bottom: -2.5vw;
+      }
+  
+      &__Sub{
+        font-family: BebasNeue;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2vw;
+        text-align: center;
+        color: #FFFFFF;
+      }
+    }
+  }
 
   &__ImageContainer{
     width: 100%;
