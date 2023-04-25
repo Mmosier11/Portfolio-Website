@@ -61,6 +61,7 @@ const particlesLoaded = useCallback(async container => {
         }}
         clickables={[
           'p',
+          'a',
           'input[type="text"]',
           'input[type="email"]',
           'input[type="number"]',

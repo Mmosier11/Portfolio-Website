@@ -18,31 +18,32 @@ import ReactRouterLogo from '../assets/tech/react-router.svg';
 import PostgresLogo from '../assets/tech/postgresql.svg';
 import JWTLogo from '../assets/tech/jwt.png';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant }  from '../utils/motion';
 
 const SelectedWork = ({selected}) => {
 
     const [ isHovering, setIsHovering ] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsHovering(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovering(false);
+    const handleHover = () => {
+        setIsHovering(!isHovering);
     };
 
     return (
         <div className="SelectedWorkContainer">
             <motion.div 
                 className="SelectedWork" 
-                onMouseOver={handleMouseEnter} 
-                onMouseOut={handleMouseLeave}
+                onMouseEnter={handleHover} 
+                onMouseLeave={handleHover}
             >
+                <AnimatePresence>
                 { isHovering ? 
                     <motion.div
+                        key="HoverSection"
                         className="SelectedWork__HoveredSection"
+                        initial={{ opacity: 0, x: 600, scale: 0}}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0, x:600, scale: 0 }}
                     >
                         <div className="SelectedWork__HoveredSection__Title">
                             <span className="SelectedWork__HoveredSection__Title__Main"> TEAMBANDIT </span>
@@ -170,7 +171,13 @@ const SelectedWork = ({selected}) => {
                             </div>
                         </div>
                     </motion.div> : 
-                    <motion.div>
+                    <motion.div
+                        key="OriginalSection"
+                        className='SelectedWork__OriginalSection'
+                        initial={{ opacity: 0, x: -600, scale: 0 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        exit={{ opacity: 0 , x: -600, scale: 0}}
+                    >
                         <div className="SelectedWork__ImageContainer">
                             <img src={TeamBanditHome} alt="Selected Work Image" className="SelectedWork__ImageContainer__Image"/>
                         </div>
@@ -180,6 +187,7 @@ const SelectedWork = ({selected}) => {
                         </div> 
                     </motion.div>
                     }
+                </AnimatePresence>
             </motion.div>
         </div> 
         

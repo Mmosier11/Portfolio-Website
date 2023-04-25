@@ -38,6 +38,35 @@
   display: none;
 }
 
+.hover-reveal{
+    position: absolute;
+    width: 272px;
+    height: 140px;
+    top: 1ch;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.hover-reveal__img, .hover-reveal__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.OnHoverImage{
+  width: 250px;
+  position: fixed;
+  z-index: 5;
+  height: 250px;
+  background-color: cyan;
+}
+
+.OnHoverImage__Hidden{
+  display: none;
+}
+
 .MainContent{
 
   transform: translateY(100vh);
@@ -349,6 +378,8 @@
 
 .SelectedWork{
   position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -356,7 +387,17 @@
   padding-top: 5vh;
   padding-bottom: 5vh;
 
+  &__OriginalSection{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
   &__HoveredSection{
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -646,6 +687,7 @@
 
   &__ImageContainer{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

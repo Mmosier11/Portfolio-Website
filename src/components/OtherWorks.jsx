@@ -1,14 +1,74 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 import { SectionWrapper } from '../hoc';
 
+import { motion, AnimatePresence } from 'framer-motion';
+
 const OtherWorks = () => {
+    const [hovering, setHovering] = useState(false);
+    const [xPos, setXPos] = useState(0);
+    const [yPos, setYPos] = useState(0);
+
+    const [imgUrl, setImgUrl] = useState("https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Fheroes.webp?alt=media&token=2410b122-68f3-401b-a2cc-56c441c4df39");
+
+    const handleMouseOver = (e) => {
+        const boundingRect = e.target.getBoundingClientRect();
+        const xPos = e.clientX - boundingRect.left;
+        const yPos = e.clientY - boundingRect.top;
+        setXPos(xPos);
+        setYPos(yPos);
+        setHovering(true);
+      };
+    
+      const handleMouseOut = () => {
+        setHovering(false);
+      };
+
+
     return (
         <div className="OtherWorks">
             <div className="OtherWorks__Header">
                 <h1 className="OtherWorks__Header__Title"> OTHER WORKS </h1>
                 <div className="OtherWorks__Header__HorizontalDivider"></div>
             </div>
+            <motion.a
+                href="https://codepen.io/Yasio/details/eXBRYP"
+                data-img={imgUrl}
+                aria-label="Select Your Coding Hero!"
+                rel="noreferrer"
+                target="_blank"
+                data-fx="1"
+                onMouseMove={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                initial={{ opacity: 0, y: 200 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{duration: 1, delay: 1, ease: 'easeInOut'}}
+                style={{ position: 'relative', display: 'inline-block' }}
+            >
+                Select Your Coding Hero!
+                <AnimatePresence>
+                {hovering && (
+          <motion.div
+            className="hover-reveal"
+            style={{ top: yPos, left: xPos, zIndex: 1 }}
+            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 100, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="hover-reveal__inner">
+              <motion.div
+                className="hover-reveal__img"
+                style={{ backgroundImage: `url(${imgUrl})` }}
+                initial={{ x: "-100%" }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+            </div>
+          </motion.div>
+        )}
+        </AnimatePresence>
+            </motion.a>
             <div className="OtherWorks__Content">
                 <div className="OtherWorks__Content__Inside">
                 
