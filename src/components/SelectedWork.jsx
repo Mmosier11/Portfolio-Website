@@ -180,7 +180,6 @@ const SelectedWork = ({selected}) => {
                         </div> 
                     </motion.div>
                     }
-
             </motion.div>
         </div> 
         

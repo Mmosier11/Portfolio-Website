@@ -11,6 +11,7 @@ const OtherWorks = () => {
             </div>
             <div className="OtherWorks__Content">
                 <div className="OtherWorks__Content__Inside">
+                
                     <p className="OtherWorks__Content__Inside__List">
                         <span className="OtherWorks__Content__Inside__List__Title">live website projects</span>
                         <br/>
