@@ -22,9 +22,9 @@ const Credits = () => {
                     <br/>
                     <br/>
                     certificates
+                    {/* <br/>
                     <br/>
-                    <br/>
-                    interests
+                    interests */}
                 </p>
                 <p className="Credits__Content__Text">
                     Front-End Developer |Cognizant | JUNE 22-Present<br/>
@@ -38,14 +38,14 @@ const Credits = () => {
                     <br/>
                     <br/>
                     google professional ux design | Coursera | JANUARY 23
-                    <br/>
+                    {/* <br/>
                     <br/>
                     Board games<br/>
                     video games<br/>
                     TV shows<br/>
                     movies<br/>
                     Books<br/>
-                    80s Synthwave<br/>
+                    80s Synthwave<br/> */}
                 </p>  
             </div> 
         </div>

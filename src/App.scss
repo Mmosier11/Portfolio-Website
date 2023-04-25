@@ -159,7 +159,7 @@
       font-family: BebasNeue;
       font-style: normal;
       font-weight: 400;
-      font-size: 5vw;
+      font-size: 6rem;
       line-height: 115px;
       text-align: center;
       color: #DC0C83;
@@ -174,50 +174,66 @@
 
   &__SectionContent{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
     &__Buttons{
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      width: 100%;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 25%;
+      height: 600px;
 
-      &__Highlighted{
+      &__Tilt{
+        width: 100%;
+        height: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+
+      &__Highlighted{
+        height: 50%;
         background: #DC0C83;
         border: 2.5px solid #DC0C83;
+        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
 
         &__Text{
+          
           font-family: BebasNeue;
           font-style: normal;
           font-weight: 400;
-          font-size: 2vw;
-          line-height: 43px;
-          text-align: center;
-          margin: 1vw;
+          font-size: 2rem;
           color: #FFFFFF;
         }
       }
 
       &__Normal {
+        height: 50%;
+        width: 75%;
         display: flex;
         justify-content: center;
         align-items: center;
+        
         border: 2.5px solid #DC0C83;
+
+        &__Image{
+          width: 25%;
+          aspect-ratio: 1/1;
+        }
 
         &__Text{
           font-family: BebasNeue;
           font-style: normal;
+          
           font-weight: 400;
-          font-size: 2vw;
-          line-height: 43px;
-          text-align: center;
-          margin: 1vw;
+          font-size: 2rem;
           color: #DC0C83;
         }
       }
@@ -329,6 +345,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 600px;
+  width: 75%;
 }
 
 .SelectedWork{
@@ -346,6 +364,261 @@
     justify-content: center;
     align-items: center;
 
+    &__Content{
+
+      &__Blur{
+        background: rgba(124, 124, 124, 0.15);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(15px);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 10px;
+        height: 100%;
+
+        &__LeftSide{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          height: 100%;
+
+          &__Bottom{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &__Title{
+              display: flex;
+              width: 100%;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              background: linear-gradient(90.06deg, #5EE2FF 0.05%, #1791AC 99.95%);
+              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+              &__Text{
+                font-family: BebasNeue;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 36px;
+                line-height: 43px;
+                color: #262E49;
+              }
+            }
+
+            &__Technologies{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-evenly;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+
+              &__Group{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 100%;
+                
+
+                &__Technology{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  gap: 1ch;
+                  align-items: center;
+                  width: 100%;
+                  // background: linear-gradient(90deg, #262E49 0%, #5EE2FF 146.93%);
+                  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                  // border-radius: 10px;
+
+                  &__Image{
+                    width: 25%;
+                  }
+
+                  &__Text{
+                    font-family: BebasNeue;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                    
+                    color: rgba(255, 255, 255, 0.75);                    
+                  }
+                }
+              }
+            }
+          }
+
+          &__Top{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+
+            &__Contributions{
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+              margin: 0.5ch;
+              align-items: flex-start;
+
+              &__Text{
+                margin: 0.5ch;
+                font-family: Montserrat;
+                font-style: normal;
+                display: list-item;
+                font-weight: 500;
+                font-size: 0.75rem;
+                color: #FFFFFF;
+                opacity: 0.78;
+              }
+
+              &__Title{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background: linear-gradient(90.06deg, #5EE2FF 0.05%, #1791AC 99.95%);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                &__Text{
+                  font-family: BebasNeue;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 2rem;
+                  line-height: 43px;
+
+                  color: #262E49;
+                }
+              }
+            }
+
+            &__About{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0.5ch;
+              width: 50%;
+
+              &__Title{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                background: linear-gradient(90.06deg, #5EE2FF 0.05%, #1791AC 99.95%);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                &__Text{
+                  font-family: BebasNeue;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 2rem;
+                  line-height: 43px;
+                  color: #262E49;
+                }
+              }
+
+              &__Text{
+                margin: 0.5ch;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 0.85rem;
+                line-height: 20px;
+                color: #FFFFFF;
+                opacity: 0.78;
+              }
+            }
+          }
+
+          &__Bottom{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+
+        &__RightSide{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+
+          &__Top{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1ch;
+            margin: 0.5ch;
+
+            &__Button{
+              
+              display: flex;
+              width: 100%;
+              border: 2px solid rgba(94, 226, 255, 0.25);
+              justify-content: center;
+              align-self: center;
+
+              &__Text{
+                font-family: BebasNeue;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 2rem;
+
+                color: rgba(94, 226, 255, 0.25);
+              }
+            }
+          }
+
+          &__Bottom{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px;
+            margin: 0.5ch;
+
+            &__Team{
+              font-family: BebasNeue;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.5rem;
+              color: #5EE2FF;
+              text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            &__List{
+              font-family: Montserrat;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 0.85rem;
+              color: rgba(255, 255, 255, 0.75);
+            }
+          }
+        }
+      }
+
+      &__Image{
+        width: 100%;
+        opacity: 0.15;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        object-fit: cover;
+        backdrop-filter: blur(15px);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
+
     &__Title{
       display: flex;
       flex-direction: column;
@@ -356,17 +629,17 @@
         font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
-        font-size: 6vw;
+        font-size: 8rem;
         text-align: center;
         color: #FFFFFF;
-        margin-bottom: -2.5vw;
+        margin-bottom: -1ch;
       }
   
       &__Sub{
         font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
-        font-size: 2vw;
+        font-size: 1.5rem;
         text-align: center;
         color: #FFFFFF;
       }
@@ -388,27 +661,27 @@
   &__Title{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: absolute;
     top: 0;
-    left: 2vw;
+    left: 0;
 
     &__Main{
       font-family: BebasNeue;
       font-style: normal;
       font-weight: 400;
-      font-size: 6vw;
+      font-size: 7rem;
       text-align: center;
+      margin-bottom: -1ch;
       color: #FFFFFF;
-      margin-bottom: -2.5vw;
     }
 
     &__Sub{
       font-family: BebasNeue;
       font-style: normal;
       font-weight: 400;
-      font-size: 2vw;
+      font-size: 1rem;
       text-align: center;
       color: #FFFFFF;
     }
