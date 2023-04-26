@@ -159,7 +159,7 @@ import {
         "Max Mosier",
         "Peter Galvan",
         "Parker Cole",
-        "Alazar Megerrsa",
+        "Alazar Megerssa",
         "Aidan Ostapko",
       ]
     },
@@ -205,7 +205,7 @@ import {
       ],
       team: [
         "Max Mosier",
-        "Alazar Megerrsa",
+        "Alazar Megerssa",
       ]
     },
     {
