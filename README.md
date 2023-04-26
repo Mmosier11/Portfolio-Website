@@ -5,10 +5,17 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Create Vite Project through GitHub Pages
 - [x] Create Figma Design
 - [x] Implement Synthwave React Fiber Three Scene
-- [ ] Translate Figma Design to SCSS
-- [ ] Implement functionality of links and Selected Works
-- [ ] Implement Animations
-- [ ] Insure Responsivity
+- [x] Translate Figma Design to SCSS
+- [x] Implement functionality of links and Selected Works
+- [x] Implement Animations
+- [ ] Put Synthwave Scene on different deployment to be viewed
+- [ ] Add some kind of hero to identify website
+- [ ] Animation on hover is not intuitive
+- [ ] Credits needs to be arranged in a better way
+- [ ] Finish filling out information on each selected work
+- [ ] Add other works to the other works section
+- [ ] Insure Responsivity across devices
+- [ ] Remove unused assets and code
 - [ ] Clean Code
 
 # Deploy Vite Resources:

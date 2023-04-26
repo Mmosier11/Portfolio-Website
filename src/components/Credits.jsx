@@ -28,7 +28,7 @@ const Credits = () => {
                 </p>
                 <p className="Credits__Content__Text">
                     Front-End Developer | Cognizant | June 22-Present<br/>
-                    Senior Student technician | Joseph City High school | June 21 - August 21<br/>
+                    Senior Student Technician | Joseph City High School | June 21 - August 21<br/>
                     IT Help Desk | United States Geological Survey | July 19 - February 20<br/>
                     Student Technician | Norther Arizona University | July 18 - April 19<br/>
                     IT Assistant | Joseph City High School | June 16 - July 18

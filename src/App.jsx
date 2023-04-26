@@ -66,6 +66,7 @@ const particlesLoaded = useCallback(async container => {
               init={particlesInit} 
               loaded={particlesLoaded} 
             />
+            <span className="InProgressText">SITE IS IN PROGRESS</span>
             <SelectedWorks/>
             <div className="MainContent__Content__SectionDivider"></div>
             <OtherWorks/>

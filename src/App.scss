@@ -38,6 +38,14 @@
   display: none;
 }
 
+.InProgressText{
+  font-size: 5rem;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  opacity: 0.1;
+}
+
 .hover-reveal{
     position: absolute;
     width: 272px;
