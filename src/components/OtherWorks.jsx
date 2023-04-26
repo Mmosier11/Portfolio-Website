@@ -18,12 +18,11 @@ const OtherWorks = () => {
         setXPos(xPos);
         setYPos(yPos);
         setHovering(true);
-      };
+    };
     
-      const handleMouseOut = () => {
+    const handleMouseOut = () => {
         setHovering(false);
-      };
-
+    };
 
     return (
         <div className="OtherWorks">
@@ -50,7 +49,7 @@ const OtherWorks = () => {
                 {hovering && (
           <motion.div
             className="hover-reveal"
-            style={{ top: yPos, left: xPos, zIndex: 1 }}
+            style={{ top: yPos + 10, left: xPos, zIndex: 1 }}
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}

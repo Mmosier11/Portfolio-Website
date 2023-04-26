@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import '../App.scss';
 import { SectionWrapper } from '../hoc';
@@ -20,9 +20,20 @@ import Tilt from 'react-tilt';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant }  from '../utils/motion';
 
+import { selectedWorks } from '../constants/constants';
+
 const SelectedWorks = () => {
 
-    const [ selected, setSelected ] = useState('TeamBandit');
+    const [ clicked, setClicked ] = useState(false);
+    const [ selected, setSelected ] = useState('team-bandit');
+
+    const updateSelected = (selected) => {
+        setSelected(selected);
+    };
+
+    const handleClickedFalse = () => {
+        setClicked(false);
+    };
 
     return (
         <div className="SelectedWorks">
@@ -36,44 +47,26 @@ const SelectedWorks = () => {
             <div className="SelectedWorks__SectionContent">
                 
                 <div className="SelectedWorks__SectionContent__Buttons">
-                    <Tilt className="SelectedWorks__SectionContent__Buttons__Tilt">
-                        <motion.div
-                            variants={fadeIn("right", "spring", 0.5 * 1, 0.75)}
-                            className="SelectedWorks__SectionContent__Buttons__Highlighted"
-                        >
-                            <img className="SelectedWorks__SectionContent__Buttons__Normal__Image" src={TeamBanditLogo} alt="Netzero Home"/>
-                            <p className="SelectedWorks__SectionContent__Buttons__Highlighted__Text">TEAM BANDIT</p>
-                        </motion.div>
-                    </Tilt>
-                    <Tilt className="SelectedWorks__SectionContent__Buttons__Tilt">
-                        <motion.div 
-                            variants={fadeIn("right", "spring", 0.5 * 2, 0.75)}
-                            className="SelectedWorks__SectionContent__Buttons__Normal"
-                        >
-                            <img className="SelectedWorks__SectionContent__Buttons__Normal__Image" src={NetZeroLogo} alt="Netzero Home"/>
-                            <p className="SelectedWorks__SectionContent__Buttons__Normal__Text">NETZERO</p>
-                        </motion.div>
-                    </Tilt>
-                    <Tilt className="SelectedWorks__SectionContent__Buttons__Tilt">
-                        <motion.div 
-                            variants={fadeIn("right", "spring", 0.5 * 3, 0.75)}
-                            className="SelectedWorks__SectionContent__Buttons__Normal"
-                        >
-                            <img className="SelectedWorks__SectionContent__Buttons__Normal__Image" src={WorkMentorLogo} alt="Netzero Home"/>
-                            <p className="SelectedWorks__SectionContent__Buttons__Normal__Text">WORKMENTOR</p>
-                        </motion.div>
-                    </Tilt>
-                    <Tilt className="SelectedWorks__SectionContent__Buttons__Tilt">
-                        <motion.div 
-                            variants={fadeIn("right", "spring", 0.5 * 4, 0.75)}
-                            className="SelectedWorks__SectionContent__Buttons__Normal"
-                        >
-                        <img className="SelectedWorks__SectionContent__Buttons__Normal__Image" src={TaskerpgLogo} alt="Netzero Home"/>
-                            <p className="SelectedWorks__SectionContent__Buttons__Normal__Text">TASKERPG</p>
-                        </motion.div>
-                    </Tilt>
+                    { selectedWorks.map((work, index) => {
+                        return (
+                            <Tilt className="SelectedWorks__SectionContent__Buttons__Tilt" key={index}>
+                                <motion.div 
+                                    variants={fadeIn("right", "spring", 0.25 * (index + 1), 0.75)}
+                                    className="SelectedWorks__SectionContent__Buttons__Normal"
+                                    onClick={() => {
+                                        setClicked(true);
+                                        updateSelected(work.id);
+                                    }}
+                                >
+                                    <img className="SelectedWorks__SectionContent__Buttons__Normal__Image" src={work.logo} alt={work.title}/>
+                                    <p className="SelectedWorks__SectionContent__Buttons__Normal__Text">{work.name}</p>
+                                </motion.div>
+                            </Tilt>
+                        )
+                    })}
+                    
                 </div>
-                <SelectedWork selected={selected}/>
+                <SelectedWork selected={selected} clicked={clicked} handleClicked={handleClickedFalse}/>
             </div>
         </div>
     );

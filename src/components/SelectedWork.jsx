@@ -21,20 +21,42 @@ import JWTLogo from '../assets/tech/jwt.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant }  from '../utils/motion';
 
-const SelectedWork = ({selected}) => {
+import { selectedWorks } from '../constants/constants';
+
+const SelectedWork = ({selected, clicked, handleClicked}) => {
+    const [ currentSelected, setCurrentSelected ] = useState(selectedWorks[0]);
+
 
     const [ isHovering, setIsHovering ] = useState(false);
 
-    const handleHover = () => {
-        setIsHovering(!isHovering);
-    };
+    const hoverTrue = () => {
+        setIsHovering(true);
+    }
+
+    const hoverFalse = () => {
+        setIsHovering(false);
+    }
+
+    useEffect(() => {
+        setCurrentSelected(selectedWorks.find(work => work.id === selected));
+    }, [selected]);
+
+    const callHandleClick = () => {
+        handleClicked();
+    }
 
     return (
         <div className="SelectedWorkContainer">
             <motion.div 
-                className="SelectedWork" 
-                onMouseEnter={handleHover} 
-                onMouseLeave={handleHover}
+                className="SelectedWork"
+                onMouseEnter={hoverTrue} 
+                onMouseLeave={hoverFalse}
+                onAnimationComplete={callHandleClick}
+                animate={{
+                    opacity: clicked ? 0 : 1, 
+                    scale: clicked ? 0 : 1,
+                }}
+                transition={{duration: 0.20}}
             >
                 <AnimatePresence>
                 { isHovering ? 
@@ -43,11 +65,11 @@ const SelectedWork = ({selected}) => {
                         className="SelectedWork__HoveredSection"
                         initial={{ opacity: 0, x: 600, scale: 0}}
                         animate={{ opacity: 1, x: 0, scale: 1 }}
-                        exit={{ opacity: 0, x:600, scale: 0 }}
+                        exit={{ opacity: 0, x: 600, scale: 0 }}
                     >
                         <div className="SelectedWork__HoveredSection__Title">
-                            <span className="SelectedWork__HoveredSection__Title__Main"> TEAMBANDIT </span>
-                            <span className="SelectedWork__HoveredSection__Title__Sub"> TEAMS MANAGEMENT PORTAL </span>
+                            <span className="SelectedWork__HoveredSection__Title__Main"> {currentSelected.name} </span>
+                            <span className="SelectedWork__HoveredSection__Title__Sub"> {currentSelected.blurb} </span>
                         </div> 
                         <div className="SelectedWork__HoveredSection__Content">
                             {/* style={{backgroundImage: `url(${TeamBanditHome})`}} */}
@@ -60,7 +82,7 @@ const SelectedWork = ({selected}) => {
                                                 <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__About__Title__Text"> About</span>
                                             </div>
                                             <p className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__About__Text">
-                                                A revolutionary course management portal which combines every element of communication, administration, delegation, and organization to provide a seamless platform for teaching professional skills in the environment most practical to the modern workforce— in a team.
+                                                {currentSelected.about}
                                             </p>
                                         </div>
                                         <div className='SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions'>
@@ -68,11 +90,9 @@ const SelectedWork = ({selected}) => {
                                                 <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Title__Text"> Contributions</span>
                                             </div>
                                             <ul>
-                                                <li className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Text">- Set up Front-End and Back-End infrastructure</li>
-                                                <li className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Text">- Implemented CSV Upload Feature</li>
-                                                <li className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Text">- Built Team Sorting Algorithm and Manual Sort Page</li>
-                                                <li className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Text">- Implemented User Creation and User Authentication with JWT</li>
-                                                <li className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Text">- Implemented CRUD functionality for multiple data types</li>
+                                                {currentSelected.contributions.map((contribution, index) => {
+                                                    return <li key={index} className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Top__Contributions__Text">{contribution}</li>
+                                                })}
                                             </ul>
                                         </div>
                                     </div>
@@ -81,61 +101,16 @@ const SelectedWork = ({selected}) => {
                                             <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Title__Text">Technologies and Frameworks</span>
                                         </div>
                                         <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies">
-                                            <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group">
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={ReactLogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        REACT
-                                                    </span>
-                                                </div>
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={AWSLogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        AWS
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group">
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={PostgresLogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        POSTGRESQL
-                                                    </span>
-                                                </div>
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        BCRYPT
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group">
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={ExpressLogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        EXPRESS JS
-                                                    </span>
-                                                </div>
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={ReactRouterLogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        REACT ROUTER
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group">
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={MUILogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        Material UI
-                                                    </span>
-                                                </div>
-                                                <div className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology">
-                                                    <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Image" src={JWTLogo} alt="Image"/>
-                                                    <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Group__Technology__Text">
-                                                        JWT TOKENS
-                                                    </span>
-                                                </div>
-                                            </div>
+                                            {currentSelected.technologies.map((technology, index) => {
+                                                return (
+                                                    <div key={index} className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Technology">
+                                                        <img className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Technology__Image" src={technology.logo} alt="Image"/>
+                                                        <span className="SelectedWork__HoveredSection__Content__Blur__LeftSide__Bottom__Technologies__Technology__Text">
+                                                            {technology.name}
+                                                        </span>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                     
@@ -157,15 +132,11 @@ const SelectedWork = ({selected}) => {
                                     </div>
                                     <div className='SelectedWork__HoveredSection__Content__Blur__RightSide__Bottom'>
                                         <span className='SelectedWork__HoveredSection__Content__Blur__RightSide__Bottom__Team'>THE TEAM</span>
-                                        <span className='SelectedWork__HoveredSection__Content__Blur__RightSide__Bottom__List'>
-                                            Max Mosier
-                                            <br/>
-                                            Quinn Melssen
-                                            <br/>
-                                            Dakota Battle 
-                                            <br/>
-                                            Liam Scholl
-                                        </span>
+                                        {currentSelected.team.map((member, index) => {
+                                            return (
+                                                <span key={index} className='SelectedWork__HoveredSection__Content__Blur__RightSide__Bottom__List'>{member}</span>
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             </div>
@@ -179,12 +150,17 @@ const SelectedWork = ({selected}) => {
                         exit={{ opacity: 0 , x: -600, scale: 0}}
                     >
                         <div className="SelectedWork__ImageContainer">
-                            <img src={TeamBanditHome} alt="Selected Work Image" className="SelectedWork__ImageContainer__Image"/>
+                            <img src={currentSelected.image} alt="Selected Work Image" className="SelectedWork__ImageContainer__Image"/>
                         </div>
                         <div className="SelectedWork__Title">
-                            <p className="SelectedWork__Title__Main"> TEAM BANDIT </p>
-                            <p className="SelectedWork__Title_Sub"> TEAMS MANAGEMENT PORTAL </p>
+                            <p className="SelectedWork__Title__Main"> {currentSelected.name} </p>
+                            <p className="SelectedWork__Title__Sub"> {currentSelected.blurb} </p>
                         </div> 
+                        <div className="SelectedWork__Technologies">
+                            {currentSelected.technologies.map((technology, index) => {
+                                return <img key={index} src={technology.logo} alt="Technology" className="SelectedWork__Technologies__Technology"/>
+                            })}
+                        </div>
                     </motion.div>
                     }
                 </AnimatePresence>

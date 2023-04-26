@@ -1,29 +1,298 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
-    threejs,
-  } from "../assets";
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  figma,
+  docker,
+  meta,
+  starbucks,
+  tesla,
+  shopify,
+  carrent,
+  jobit,
+  tripguide,
+  threejs,
+  NetZero,
+  TeamBandit,
+  TaskeRPG,
+  WorkMentor,
+  NetZeroLogo,
+  TeamBanditLogo,
+  TaskeRPGLogo,
+  WorkMentorLogo,
+  ReactLogo,
+  ExpressLogo,
+  AWSLogo,
+  MUILogo,
+  ReactRouterLogo,
+  PostgresLogo,
+  JWTLogo,
+  BcryptLogo,
+  SpringBootLogo,
+  ReduxLogo,
+  SCSSLogo,
+  NextLogo,
+  PlanetScaleLogo,
+  VercelLogo,
+  ClerkLogo,
+  PrismaLogo,
+  AngularLogo,
+  S3Logo,
+  CognitoLogo,
+  MySqlLogo,
+  JasmineLogo,
+} from "../assets";
+
+
+  const selectedWorks = [
+    {
+      id: "team-bandit",
+      name: "Team Bandit",
+      blurb: "Teams Management Portal",
+      image: TeamBandit,
+      logo: TeamBanditLogo,
+      about: "For my final year in college I was assigned a team to work on a client project for my Capstone. We were tasked with creating TeamBandit, a web application whose goal was to streamline course and team management. This was primarily for my Capstone course but there was possibilities to move beyond.",
+      contributions: [
+        "- Set up Front-End and Back-End infrastructure",
+        "- Implemented CSV Upload Feature",
+        "- Built Team Sorting Algorithm and Manual Sort Page",
+        "- Implemented User Creation and User Authentication with JWT",
+        "- Implemented CRUD functionality for multiple data types",
+      ],
+      liveSiteLink: "",
+      githubLink: "https://github.com/eckdoerry/TeamBandit",
+      figmaLink: "",
+      googleDocLink: "",
+      technologies: [
+        {
+          name: "React",
+          logo: ReactLogo,
+        },
+        {
+          name: "AWS",
+          logo: AWSLogo,
+        },
+        {
+          name: "POSTGRESQL",
+          logo: PostgresLogo,
+        },
+        {
+          name: "BCRYPT",
+          logo: BcryptLogo,
+        },
+        {
+          name: "EXPRESS JS",
+          logo: ExpressLogo,
+        },
+        {
+          name: "REACT ROUTER",
+          logo: ReactRouterLogo,
+        },
+        {
+          name: "Material UI",
+          logo: MUILogo,
+        },
+        {
+          name: "JWT TOKENS",
+          logo: JWTLogo,
+        },
+      ],
+      team: [
+        "Max Mosier",
+        "Quinn Melssen",
+        "Dakota Battle",
+        "Liam Scholl",
+      ]
+    },
+    {
+      id: "net-zero",
+      name: "NetZero",
+      blurb: "Carbon Emission Tracking",
+      image: NetZero,
+      logo: NetZeroLogo,
+      about: "For my final year in college I was assigned a team to work on a client project for my Capstone. We were tasked with creating TeamBandit, a web application whose goal was to streamline course and team management. This was primarily for my Capstone course but there was possibilities to move beyond.",
+      contributions: [
+        "- Set up Front-End and Back-End infrastructure",
+        "- Implemented CSV Upload Feature",
+        "- Built Team Sorting Algorithm and Manual Sort Page",
+        "- Implemented User Creation and User Authentication with JWT",
+        "- Implemented CRUD functionality for multiple data types",
+      ],
+      liveSiteLink: "",
+      githubLink: "https://github.com/eckdoerry/TeamBandit",
+      figmaLink: "",
+      googleDocLink: "",
+      technologies: [
+        {
+          name: "REACT",
+          logo: ReactLogo,
+        },
+        {
+          name: "SPRING BOOT",
+          logo: SpringBootLogo,
+        },
+        {
+          name: "REDUX",
+          logo: ReduxLogo,
+        },
+        {
+          name: "REACT ROUTER",
+          logo: ReactRouterLogo,
+        },
+        {
+          name: "SCSS",
+          logo: SCSSLogo,
+        },
+      ],
+      team: [
+        "Max Mosier",
+        "Peter Galvan",
+        "Parker Cole",
+        "Alazar Megerrsa",
+        "Aidan Ostapko",
+      ]
+    },
+    {
+      id: "taskerpg",
+      name: "TaskeRPG",
+      blurb: "Gamified Task Management",
+      image: TaskeRPG,
+      logo: TaskeRPGLogo,
+      about: "For my final year in college I was assigned a team to work on a client project for my Capstone. We were tasked with creating TeamBandit, a web application whose goal was to streamline course and team management. This was primarily for my Capstone course but there was possibilities to move beyond.",
+      contributions: [
+        "- Set up Front-End and Back-End infrastructure",
+        "- Implemented CSV Upload Feature",
+        "- Built Team Sorting Algorithm and Manual Sort Page",
+        "- Implemented User Creation and User Authentication with JWT",
+        "- Implemented CRUD functionality for multiple data types",
+      ],
+      liveSiteLink: "",
+      githubLink: "",
+      figmaLink: "",
+      googleDocLink: "",
+      technologies: [
+        {
+          name: "NEXT JS",
+          logo: NextLogo,
+        },
+        {
+          name: "PLANET SCALE",
+          logo: PlanetScaleLogo,
+        },
+        {
+          name: "VERCEL",
+          logo: VercelLogo,
+        },
+        {
+          name: "CLERK",
+          logo: ClerkLogo,
+        },
+        {
+          name: "PRISMA",
+          logo: PrismaLogo,
+        },
+      ],
+      team: [
+        "Max Mosier",
+        "Alazar Megerrsa",
+      ]
+    },
+    {
+      id: "work-mentor",
+      name: "Work Mentor",
+      blurb: "Work mentorship program",
+      image: WorkMentor,
+      logo: WorkMentorLogo,
+      about: "During my time at Cognizant I was tasked with designing and creating a full-stack web application to showcase my skills. The application I choose to build was WorkMentor, an app tasked with pairing working professionals with those who are looking to get into the industry.",
+      contributions: [
+        "- Set up Front-End and Back-End infrastructure",
+        "- Implemented CSV Upload Feature",
+        "- Built Team Sorting Algorithm and Manual Sort Page",
+        "- Implemented User Creation and User Authentication with JWT",
+        "- Implemented CRUD functionality for multiple data types",
+      ],
+      liveSiteLink: "",
+      githubLink: "https://github.com/eckdoerry/TeamBandit",
+      figmaLink: "",
+      googleDocLink: "",
+      technologies: [
+        {
+          name: "ANGULAR",
+          logo: AngularLogo,
+        },
+        {
+          name: "SPRING BOOT",
+          logo: SpringBootLogo,
+        },
+        {
+          name: "S3",
+          logo: S3Logo,
+        },
+        {
+          name: "COGNITO",
+          logo: CognitoLogo,
+        },
+        {
+          name: "MYSQL",
+          logo: MySqlLogo,
+        },
+        {
+          name: "JASMINE",
+          logo: JasmineLogo,
+        },
+      ],
+      team: [
+        "Max Mosier",
+      ]
+    },
+  ];
+
+  const liveWebsites = [
+    {
+      id: "netflix-clone",
+      name: "Netflix Clone",
+      link: "https://netflix-clone-1a0d0.web.app/",
+      image: "https://i.imgur.com/2Z3QJ5O.png",
+    },
+  ];
+
+  const figmaProjects = [
+    {
+      id: "netflix-clone",
+      name: "Netflix Clone",
+      link: "https://netflix-clone-1a0d0.web.app/",
+      image: "https://i.imgur.com/2Z3QJ5O.png",
+    },
+  ];
+
+  const archived = [
+    {
+      id: "netflix-clone",
+      name: "Netflix Clone",
+      link: "https://netflix-clone-1a0d0.web.app/",
+      image: "https://i.imgur.com/2Z3QJ5O.png",
+    },
+  ];
+
+  const codepens = [
+    {
+      id: "netflix-clone",
+      name: "Netflix Clone",
+      link: "https://netflix-clone-1a0d0.web.app/",
+      image: "https://i.imgur.com/2Z3QJ5O.png",
+    },
+  ];
   
   export const navLinks = [
     {
@@ -262,4 +531,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, testimonials, projects, selectedWorks };

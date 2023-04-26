@@ -32,7 +32,70 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import NetZero from "./projects/NetZero.png";
+import TeamBandit from "./projects/TeamBanditHome.png";
+import TaskeRPG from "./projects/TaskeRPG.png";
+import WorkMentor from "./projects/WorkMentor.png";
+
+import NetZeroLogo from "./NetZeroLogo.svg";
+import TeamBanditLogo from "./TeamBanditLogo.png";
+import TaskeRPGLogo from "./TaskeRPGLogo.png";
+import WorkMentorLogo from "./WorkMentorLogo.png";
+
+import ReactLogo from "./tech/react.svg";
+import ExpressLogo from './tech/express.svg';
+import AWSLogo from './tech/aws.svg';
+import MUILogo from './tech/mui.svg';
+import ReactRouterLogo from './tech/react-router.svg';
+import PostgresLogo from './tech/postgresql.svg';
+import JWTLogo from './tech/jwt.png';
+import BcryptLogo from './tech/bcrypt.png';
+
+import SpringBootLogo from './tech/springboot.svg';
+import ReduxLogo from './tech/redux.svg';
+import SCSSLogo from  './tech/scss.svg';
+import NextLogo from './tech/next-js.svg';
+import PlanetScaleLogo from './tech/planetscale.svg';
+import VercelLogo from './tech/vercel.svg';
+import ClerkLogo from './tech/clerk.png';
+import PrismaLogo from './tech/prisma.svg';
+import AngularLogo from './tech/angular.svg';
+import S3Logo  from './tech/s3.svg';
+import CognitoLogo from './tech/cognito.svg';
+import MySqlLogo from './tech/mysql.svg';
+import JasmineLogo from './tech/jasmine.svg';
+
+
 export {
+  SpringBootLogo,
+  ReduxLogo,
+  SCSSLogo,
+  NextLogo,
+  PlanetScaleLogo,
+  VercelLogo,
+  ClerkLogo,
+  PrismaLogo,
+  AngularLogo,
+  S3Logo,
+  CognitoLogo,
+  MySqlLogo,
+  JasmineLogo,
+  NetZero,
+  TeamBandit,
+  TaskeRPG,
+  WorkMentor,
+  NetZeroLogo,
+  TeamBanditLogo,
+  TaskeRPGLogo,
+  WorkMentorLogo,
+  ReactLogo,
+  ExpressLogo,
+  AWSLogo,
+  MUILogo,
+  ReactRouterLogo,
+  PostgresLogo,
+  JWTLogo,
+  BcryptLogo,
   logo,
   backend,
   creator,
