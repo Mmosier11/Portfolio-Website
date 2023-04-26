@@ -69,9 +69,6 @@
 
 .MainContent{
 
-  transform: translateY(100vh);
-
-
 
   &__Content{
     background: linear-gradient(180deg, #262E49 0%, #DC0C83 100%);
@@ -160,10 +157,10 @@
 
         &__Item{
           width: fit-content;
-          font-family: BebasNeue;
+          font-family: Montserrat;
           font-style: normal;
           font-weight: 400;
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: rgba(255, 255, 255, 0.75);
 
           &:hover{
@@ -230,6 +227,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
       }
 
       &__Highlighted{
@@ -263,8 +261,10 @@
 
         &__Highlighted{
           height: 50%;
-          background: #FF5EDB;
-          border: 2.5px solid #FF5EDB;
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          
           width: 75%;
           display: flex;
           justify-content: center;
@@ -309,6 +309,8 @@
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
 
+  
+
   &__Text{
     font-family: BebasNeue;
     font-style: normal;
@@ -319,6 +321,23 @@
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+
+    &__Link{
+      font-family: BebasNeue;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+      cursor: pointer;
+
+      &:hover{
+        color: #5EE2FF;
+      }
+    }
 
     &__Name{
       font-family: RetroSignature;
@@ -381,19 +400,20 @@
       font-family: BebasNeue;
       font-style: normal;
       font-weight: 400;
-      font-size: 32px;
+      font-size: 2rem;
       line-height: 38px;
       text-align: right;
       color: #FF5EDB;
     }
 
     &__Text{
-      font-family: BebasNeue;
+      font-family: Montserrat;
       font-style: normal;
       font-weight: 400;
-      font-size: 32px;
+      font-size: 1.5rem;
       line-height: 38px;
-      color: #FFFFFF;
+      opacity: 0.75;
+      color: #ffffff;
     }
   }
 }
@@ -907,4 +927,16 @@
       color: rgba(255, 255, 255, 0.65);
     }
   }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

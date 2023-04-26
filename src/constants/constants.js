@@ -281,8 +281,8 @@ import {
 
   const figmaProjects = [
     {
-      id: "netflix-clone",
-      name: "Netflix Clone",
+      id: "walmart-clone",
+      name: "Walmart Clone",
       link: "https://netflix-clone-1a0d0.web.app/",
       image: "https://i.imgur.com/2Z3QJ5O.png",
     },
@@ -290,8 +290,8 @@ import {
 
   const archived = [
     {
-      id: "netflix-clone",
-      name: "Netflix Clone",
+      id: "twitter-clone",
+      name: "Twitter Clone",
       link: "https://netflix-clone-1a0d0.web.app/",
       image: "https://i.imgur.com/2Z3QJ5O.png",
     },
@@ -299,8 +299,17 @@ import {
 
   const codepens = [
     {
-      id: "netflix-clone",
-      name: "Netflix Clone",
+      id: "sabacc",
+      name: "Sabacc Card Game",
+      link: "https://netflix-clone-1a0d0.web.app/",
+      image: "https://i.imgur.com/2Z3QJ5O.png",
+    },
+  ];
+
+  const threeJS = [
+    {
+      id: "synthwave-scene",
+      name: "Synthwave Scene",
       link: "https://netflix-clone-1a0d0.web.app/",
       image: "https://i.imgur.com/2Z3QJ5O.png",
     },
@@ -543,4 +552,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects, selectedWorks, liveWebsites };
+  export { services, technologies, experiences, testimonials, projects, selectedWorks, liveWebsites, figmaProjects, archived, codepens, threeJS };

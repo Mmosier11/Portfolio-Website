@@ -4,7 +4,7 @@ import { SectionWrapper } from '../hoc';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { liveWebsites } from '../constants/constants';
+import { liveWebsites, figmaProjects, archived, codepens, threeJS } from '../constants/constants';
 
 const OtherWorks = () => {
     const [ currentHover, setCurrentHover ] = useState("");
@@ -105,27 +105,212 @@ const OtherWorks = () => {
                         T3 Stack Twitter Clone
                     </p> */}
                     <div className="OtherWorks__Content__Inside__Divider"></div>
-                    <p className="OtherWorks__Content__Inside__List">
+                    <div className="OtherWorks__Content__Inside__List">
                         <span className="OtherWorks__Content__Inside__List__Title">Figma Projects</span>
-                        <br/>
-                        Parallax Scroll with AI<br/>
-                        A.I. Web Design # 1<br/>
-                        A.I. Web Design # 2<br/>
-                        Discord Clone<br/>
-                        Sports Team Manager
-                    </p>
+                        {figmaProjects.map((website, index) => {
+                            return(
+                                <motion.a
+                                    key={website.id}
+                                    href={website.link}
+                                    data-img={website.image}
+                                    className="OtherWorks__Content__Inside__List__Item"
+                                    aria-label="Select Your Coding Hero!"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    data-fx="1"
+                                    onMouseMove={(event) => handleMouseOver(event, website.id)}
+                                    onMouseOut={handleMouseOut}
+                                    initial={{ opacity: 0, y: 200 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{duration: 1, delay: 0.25 * index, ease: 'easeInOut'}}
+                                    style={{ position: 'relative', display: 'inline-block' }}
+                                >
+                                    {website.name}
+                                    <AnimatePresence>
+                                    {(hovering && currentHover == website.id) && (
+                                        <motion.div
+                                            className="hover-reveal"
+                                            style={{ top: yPos + 10, left: xPos, zIndex: 1 }}
+                                            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                <div className="hover-reveal__inner">
+                                    <motion.div
+                                        className="hover-reveal__img"
+                                        style={{ backgroundImage: `url(${website.image})` }}
+                                        initial={{ x: "-100%" }}
+                                        animate={{ x: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                </div>
+                            </motion.div>
+                            )}
+                            </AnimatePresence>
+                                </motion.a>
+                            )
+                            
+                        })}
+                        <span className="OtherWorks__Content__Inside__List__Title">Three JS Projects</span>
+                        {threeJS.map((website, index) => {
+                            return(
+                                <motion.a
+                                    key={website.id}
+                                    href={website.link}
+                                    data-img={website.image}
+                                    className="OtherWorks__Content__Inside__List__Item"
+                                    aria-label="Select Your Coding Hero!"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    data-fx="1"
+                                    onMouseMove={(event) => handleMouseOver(event, website.id)}
+                                    onMouseOut={handleMouseOut}
+                                    initial={{ opacity: 0, y: 200 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{duration: 1, delay: 0.25 * index, ease: 'easeInOut'}}
+                                    style={{ position: 'relative', display: 'inline-block' }}
+                                >
+                                    {website.name}
+                                    <AnimatePresence>
+                                    {(hovering && currentHover == website.id) && (
+                                        <motion.div
+                                            className="hover-reveal"
+                                            style={{ top: yPos + 10, left: xPos, zIndex: 1 }}
+                                            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                <div className="hover-reveal__inner">
+                                    <motion.div
+                                        className="hover-reveal__img"
+                                        style={{ backgroundImage: `url(${website.image})` }}
+                                        initial={{ x: "-100%" }}
+                                        animate={{ x: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                </div>
+                            </motion.div>
+                            )}
+                            </AnimatePresence>
+                                </motion.a>
+                            )
+                            
+                        })}
+                    </div>
+                    
+                    {/* Parallax Scroll with AI<br/>
+                    A.I. Web Design # 1<br/>
+                    A.I. Web Design # 2<br/>
+                    Discord Clone<br/>
+                    Sports Team Manager */}
                     <div className="OtherWorks__Content__Inside__Divider"></div>
-                    <p className="OtherWorks__Content__Inside__List">
+                    <div className="OtherWorks__Content__Inside__List">
                         <span className="OtherWorks__Content__Inside__List__Title">archived</span>
-                        <br/>
-                        Portfolio Project V1
-                        <br/>
+                        {archived.map((website, index) => {
+                            return(
+                                <motion.a
+                                    key={website.id}
+                                    href={website.link}
+                                    data-img={website.image}
+                                    className="OtherWorks__Content__Inside__List__Item"
+                                    aria-label="Select Your Coding Hero!"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    data-fx="1"
+                                    onMouseMove={(event) => handleMouseOver(event, website.id)}
+                                    onMouseOut={handleMouseOut}
+                                    initial={{ opacity: 0, y: 200 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{duration: 1, delay: 0.25 * index, ease: 'easeInOut'}}
+                                    style={{ position: 'relative', display: 'inline-block' }}
+                                >
+                                    {website.name}
+                                    <AnimatePresence>
+                                    {(hovering && currentHover == website.id) && (
+                                        <motion.div
+                                            className="hover-reveal"
+                                            style={{ top: yPos + 10, left: xPos, zIndex: 1 }}
+                                            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                <div className="hover-reveal__inner">
+                                    <motion.div
+                                        className="hover-reveal__img"
+                                        style={{ backgroundImage: `url(${website.image})` }}
+                                        initial={{ x: "-100%" }}
+                                        animate={{ x: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                </div>
+                            </motion.div>
+                            )}
+                            </AnimatePresence>
+                                </motion.a>
+                            )
+                            
+                        })}
                         <span className="OtherWorks__Content__Inside__List__Title">Codepens</span>
-                        <br/>
-                        User Sign Up
-                        Fire Game
-                        Sabacc
-                    </p>
+                        {codepens.map((website, index) => {
+                            return(
+                                <motion.a
+                                    key={website.id}
+                                    href={website.link}
+                                    data-img={website.image}
+                                    className="OtherWorks__Content__Inside__List__Item"
+                                    aria-label="Select Your Coding Hero!"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    data-fx="1"
+                                    onMouseMove={(event) => handleMouseOver(event, website.id)}
+                                    onMouseOut={handleMouseOut}
+                                    initial={{ opacity: 0, y: 200 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{duration: 1, delay: 0.25 * index, ease: 'easeInOut'}}
+                                    style={{ position: 'relative', display: 'inline-block' }}
+                                >
+                                    {website.name}
+                                    <AnimatePresence>
+                                    {(hovering && currentHover == website.id) && (
+                                        <motion.div
+                                            className="hover-reveal"
+                                            style={{ top: yPos + 10, left: xPos, zIndex: 1 }}
+                                            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 100, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                <div className="hover-reveal__inner">
+                                    <motion.div
+                                        className="hover-reveal__img"
+                                        style={{ backgroundImage: `url(${website.image})` }}
+                                        initial={{ x: "-100%" }}
+                                        animate={{ x: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                </div>
+                            </motion.div>
+                            )}
+                            </AnimatePresence>
+                                </motion.a>
+                            )
+                            
+                        })}
+                    </div>
+                    
+                    {/* <span className="OtherWorks__Content__Inside__List__Title">archived</span>
+                    <br/>
+                    Portfolio Project V1
+                    <br/>
+                    <span className="OtherWorks__Content__Inside__List__Title">Codepens</span>
+                    <br/>
+                    User Sign Up
+                    Fire Game
+                    Sabacc */}
+                    
                 </div>
             </div>
         </div>

@@ -48,38 +48,13 @@ const particlesLoaded = useCallback(async container => {
         className="ProgressBar"
         style={{ scaleX: scaleX }}
       />
-      <div className="Noise"></div>
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={35}
-        color='255, 255, 255'
-        innerScale={1.35}
-        outerScale={1.7}
-        outerAlpha={0}
-        outerStyle={{
-          border: '2px solid #fff'
-        }}
-        clickables={[
-          'p',
-          'a',
-          'motion.a',
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          'label[for]',
-          'select',
-          'textarea',
-          'button',
-          '.link'
-        ]}
-      />
+      
       <div className="relative z-0 bg-primary">
-        <div className='fixed w-full'>
-          {/* <Navbar/> */}
-          <Hero/>
-        </div>
+        <Navbar/>
+        {/* <div className='fixed w-full'> */}
+          
+          {/* <Hero/>*/}
+        {/* </div>  */}
         
         <div id="main-content" className='MainContent'>
         
@@ -96,12 +71,16 @@ const particlesLoaded = useCallback(async container => {
             <OtherWorks/>
             <div className="MainContent__Content__SectionDivider"></div>
             <Credits/>
-          </div>
-          <div className="Footer">
+            <div className="Footer">
               <p className="Footer__Text"> 
-                <span className="Footer__Text__Name">Max Mosier</span> | LINKEDIN GITHUB CONTACT
-                </p>
+                <span className="Footer__Text__Name">Max Mosier</span> | 
+                <a href="https://www.linkedin.com/in/max-mosier/" target="_blank" className="Footer__Text__Link">LINKEDIN</a> &nbsp;
+                <a href="https://github.com/SenpaiSumpie" target="_blank" className="Footer__Text__Link">GITHUB</a> &nbsp; 
+                <a href="mailto:max.lee.mosier@gmail.com" target="_blank" rel="noopener noreferrer" className="Footer__Text__Link">CONTACT</a> &nbsp;
+              </p>
           </div>
+          </div>
+          
           
         
           {/* <About/>

@@ -27,17 +27,17 @@ const Credits = () => {
                     interests */}
                 </p>
                 <p className="Credits__Content__Text">
-                    Front-End Developer |Cognizant | JUNE 22-Present<br/>
-                    Senior Student technician | Joseph City high school | JUNE 21 - AUGUST 21<br/>
-                    IT Help desk | United States Geological survey | JULY 19 - FEBRUARY 20<br/>
-                    student technician | Norther Arizona university | JULY 18 - APRIL 19<br/>
-                    IT Assistant | Joseph City High School | JUNE 16 - JULY 18
+                    Front-End Developer | Cognizant | June 22-Present<br/>
+                    Senior Student technician | Joseph City High school | June 21 - August 21<br/>
+                    IT Help Desk | United States Geological Survey | July 19 - February 20<br/>
+                    Student Technician | Norther Arizona University | July 18 - April 19<br/>
+                    IT Assistant | Joseph City High School | June 16 - July 18
                     <br/>
                     <br/>
-                    Bachelors of science in computer science | northern Arizona university | May 2022
+                    Bachelors of Science in Computer Science | Northern Arizona University | May 22
                     <br/>
                     <br/>
-                    google professional ux design | Coursera | JANUARY 23
+                    Google Professional UX Design | Coursera | January 23
                     {/* <br/>
                     <br/>
                     Board games<br/>
