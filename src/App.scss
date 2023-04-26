@@ -146,11 +146,9 @@
       }
 
       &__List{
-        font-family: BebasNeue;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 2rem;
-        color: rgba(255, 255, 255, 0.75);
+        display: flex;
+        flex-direction: column;
+        
 
         &__Title{
           font-family: BebasNeue;
@@ -158,6 +156,19 @@
           font-weight: 400;
           font-size: 3rem;
           color: #FFFFFF;
+        }
+
+        &__Item{
+          width: fit-content;
+          font-family: BebasNeue;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 2rem;
+          color: rgba(255, 255, 255, 0.75);
+
+          &:hover{
+            color: #DC0C83;
+          }
         }
       }
     }
@@ -250,6 +261,29 @@
         
         border: 2.5px solid #DC0C83;
 
+        &__Highlighted{
+          height: 50%;
+          background: #FF5EDB;
+          border: 2.5px solid #FF5EDB;
+          width: 75%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          &__Text{
+          
+            font-family: BebasNeue;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 2rem;
+            color: #262E49;
+          }
+        }
+
+        &:hover{
+          background-color: #dc0c825e;
+        }
+
         &__Image{
           width: 25%;
           aspect-ratio: 1/1;
@@ -325,7 +359,7 @@
       font-size: 5vw;
       line-height: 115px;
       text-align: center;
-      color: #DC0C83;
+      color: #FF5EDB;
     }
 
     &__HorizontalDivider{

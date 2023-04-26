@@ -52,14 +52,16 @@ const SelectedWorks = () => {
                             <Tilt className="SelectedWorks__SectionContent__Buttons__Tilt" key={index}>
                                 <motion.div 
                                     variants={fadeIn("right", "spring", 0.25 * (index + 1), 0.75)}
-                                    className="SelectedWorks__SectionContent__Buttons__Normal"
+                                    className={work.id === selected ? "SelectedWorks__SectionContent__Buttons__Normal__Highlighted" : "SelectedWorks__SectionContent__Buttons__Normal"}
                                     onClick={() => {
                                         setClicked(true);
                                         updateSelected(work.id);
                                     }}
                                 >
                                     <img className="SelectedWorks__SectionContent__Buttons__Normal__Image" src={work.logo} alt={work.title}/>
-                                    <p className="SelectedWorks__SectionContent__Buttons__Normal__Text">{work.name}</p>
+                                    <p className={ work.id === selected ? "SelectedWorks__SectionContent__Buttons__Normal__Highlighted__Text" : "SelectedWorks__SectionContent__Buttons__Normal__Text"}>
+                                        {work.name}
+                                    </p>
                                 </motion.div>
                             </Tilt>
                         )

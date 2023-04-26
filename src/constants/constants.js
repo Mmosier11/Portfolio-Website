@@ -262,8 +262,20 @@ import {
     {
       id: "netflix-clone",
       name: "Netflix Clone",
-      link: "https://netflix-clone-1a0d0.web.app/",
-      image: "https://i.imgur.com/2Z3QJ5O.png",
+      link: "https://google.com/",
+      image: "https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Fheroes.webp?alt=media&token=2410b122-68f3-401b-a2cc-56c441c4df39",
+    },
+    {
+      id: "apple-clone",
+      name: "Apple Clone",
+      link: "https://google.com/",
+      image: "https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Fraingame.webp?alt=media&token=03865371-eca9-4d4a-b8e1-43160c4f9efc",
+    },
+    {
+      id: "target-clone",
+      name: "Target Clone",
+      link: "https://google.com/",
+      image: "https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Favocadogame.webp?alt=media&token=60d3bf3c-b059-4e9b-9177-26365a452cd0",
     },
   ];
 
@@ -531,4 +543,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects, selectedWorks };
+  export { services, technologies, experiences, testimonials, projects, selectedWorks, liveWebsites };
