@@ -9,6 +9,7 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Implement functionality of links and Selected Works
 - [x] Implement Animations
 - [ ] Put Synthwave Scene on different deployment to be viewed
+- [ ] Add T3 Twitter Clone
 - [ ] Add some kind of hero to identify website
 - [ ] Animation on hover is not intuitive
 - [ ] Credits needs to be arranged in a better way
