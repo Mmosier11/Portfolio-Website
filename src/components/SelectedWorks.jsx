@@ -74,4 +74,4 @@ const SelectedWorks = () => {
     );
 }
 
-export default SectionWrapper(SelectedWorks, 'SelectedWorks');
+export default SectionWrapper(SelectedWorks, 'works');

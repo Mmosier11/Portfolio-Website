@@ -24,11 +24,6 @@ import AnimatedCursor from 'react-animated-cursor';
 const App = () => {
 
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   const particlesInit = useCallback(async engine => {
     console.log(engine);
@@ -46,7 +41,7 @@ const particlesLoaded = useCallback(async container => {
     <Router>
       <motion.div
         className="ProgressBar"
-        style={{ scaleX: scaleX }}
+        style={{ scaleX: scrollYProgress }}
       />
       
       <div className="relative z-0 bg-primary">
@@ -58,28 +53,27 @@ const particlesLoaded = useCallback(async container => {
         
         <div id="main-content" className='MainContent'>
         
-        <div className="MainContent__SmoothProvider">  
-          <div className='MainContent__Content'>
-            <Particles 
-              id="particles"
-              options={particlesSettings}
-              init={particlesInit} 
-              loaded={particlesLoaded} 
-            />
-            <span className="InProgressText">SITE IS IN PROGRESS</span>
-            <SelectedWorks/>
-            <div className="MainContent__Content__SectionDivider"></div>
-            <OtherWorks/>
-            <div className="MainContent__Content__SectionDivider"></div>
-            <Credits/>
-            <div className="Footer">
-              <p className="Footer__Text"> 
-                <span className="Footer__Text__Name">Max Mosier</span> | 
-                <a href="https://www.linkedin.com/in/max-mosier/" target="_blank" className="Footer__Text__Link">LINKEDIN</a> &nbsp;
-                <a href="https://github.com/SenpaiSumpie" target="_blank" className="Footer__Text__Link">GITHUB</a> &nbsp; 
-                <a href="mailto:max.lee.mosier@gmail.com" target="_blank" rel="noopener noreferrer" className="Footer__Text__Link">CONTACT</a> &nbsp;
-              </p>
-          </div>
+          <div className="MainContent__SmoothProvider">  
+            <div className='MainContent__Content'>
+              <Particles 
+                id="particles"
+                options={particlesSettings}
+                init={particlesInit} 
+                loaded={particlesLoaded} 
+              />
+              <span className="InProgressText">SITE IS IN PROGRESS</span>
+              <Hero/>
+              <SelectedWorks/>            
+              <OtherWorks/>
+              <Credits/>
+              <div className="Footer">
+                <p className="Footer__Text"> 
+                  <span className="Footer__Text__Name">Max Mosier</span> | 
+                  <a href="https://www.linkedin.com/in/max-mosier/" target="_blank" className="Footer__Text__Link">LINKEDIN</a> &nbsp;
+                  <a href="https://github.com/SenpaiSumpie" target="_blank" className="Footer__Text__Link">GITHUB</a> &nbsp; 
+                  <a href="mailto:max.lee.mosier@gmail.com" target="_blank" rel="noopener noreferrer" className="Footer__Text__Link">CONTACT</a> &nbsp;
+                </p>
+            </div>
           </div>
           
           

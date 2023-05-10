@@ -20,6 +20,7 @@ import JWTLogo from '../assets/tech/jwt.png';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, textVariant }  from '../utils/motion';
+import Tilt from 'react-tilt';
 
 import { selectedWorks } from '../constants/constants';
 
@@ -31,6 +32,7 @@ const SelectedWork = ({selected, clicked, handleClicked}) => {
 
     const hoverTrue = () => {
         setIsHovering(true);
+        console.log("true");
     }
 
     const hoverFalse = () => {
@@ -49,8 +51,7 @@ const SelectedWork = ({selected, clicked, handleClicked}) => {
         <div className="SelectedWorkContainer">
             <motion.div 
                 className="SelectedWork"
-                onMouseEnter={hoverTrue} 
-                onMouseLeave={hoverFalse}
+                
                 onAnimationComplete={callHandleClick}
                 animate={{
                     opacity: clicked ? 0 : 1, 
@@ -67,6 +68,7 @@ const SelectedWork = ({selected, clicked, handleClicked}) => {
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0, x: 600, scale: 0 }}
                     >
+                    <Tilt className="SelectedWork__OriginalSection__Button" ><div onClick={()=> hoverFalse()} className="SelectedWork__OriginalSection__Button__Text">GO BACK</div></Tilt>
                         <div className="SelectedWork__HoveredSection__Title">
                             <span className="SelectedWork__HoveredSection__Title__Main"> {currentSelected.name} </span>
                             <span className="SelectedWork__HoveredSection__Title__Sub"> {currentSelected.blurb} </span>
@@ -149,6 +151,7 @@ const SelectedWork = ({selected, clicked, handleClicked}) => {
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         exit={{ opacity: 0 , x: -600, scale: 0}}
                     >
+                        <Tilt className="SelectedWork__OriginalSection__Button" ><div onClick={()=> hoverTrue()} className="SelectedWork__OriginalSection__Button__Text">LEARN MORE</div></Tilt>
                         <div className="SelectedWork__ImageContainer">
                             <img src={currentSelected.image} alt="Selected Work Image" className="SelectedWork__ImageContainer__Image"/>
                         </div>
