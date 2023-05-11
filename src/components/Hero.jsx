@@ -23,10 +23,13 @@ import EmailIcon from '../assets/email.svg';
 import GithubIcon from '../assets/github.svg';
 import LinkedinIcon from '../assets/linkedin.svg';
 
+import Max from '../assets/max-image.jpg';
+
 import DownArrow from '../assets/down-arrow.svg';
 
-const TEXTS = ['Front-End Developer', 'UI/UX Designer', 'Full-Stack Developer', 'Motion Designer'];
-
+const TEXTS = ['Front-End Developer', 'UI/UX Designer', 'Motion Designer', 'Movie Enthusiast'];
+import video from '../assets/akira.mp4';
+const src = "https://www.youtube.com/embed/ib7E9TEp5yI?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&";
 /***********************************************************************/
 /*                               HERO                                  */
 /***********************************************************************/
@@ -44,29 +47,51 @@ const Hero = () => {
     <section className='Hero'>
       <div className='Hero__Top'>
         <div className='Hero__Top__Introduction'>
-          <span className='Hero__Top__Introduction__Text'>Hi, I'm <span className='Hero__Top__Introduction__Name'>Max Mosier</span></span>
+          <span className='Hero__Top__Introduction__Text'><span className='Hero__Top__Introduction__Name'>Max Mosier</span></span>
           <span className='hero glitch layers' data-text={TEXTS[index % TEXTS.length]}><span><TextTransition springConfig={presets.gentle}>{TEXTS[index % TEXTS.length]}</TextTransition></span></span>
         </div>
-        <div className='Hero__Top__Tech'>
-          <div className='Hero__Top__Tech__Techy'>
-            <img src={EmailIcon} alt="Email"/>
-            <img src={GithubIcon} alt="Github"/>
-            <img src={LinkedinIcon} alt="Linked-In"/>
-          </div>
-        </div>
       </div>
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-20">
+      <div className="absolute xs:bottom-10 bottom-4 w-full flex justify-center items-center z-20">
         <a href="#works" className="cursor-pointer">
           <div className="w-[5rem] h-[64px] flex justify-center items-start p-2 cursor-pointer">
             <motion.div 
               className="down-arrow"
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 24, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
             >
               <img src={DownArrow} alt="DownArrow"/>
             </motion.div>
           </div>
         </a>
+      </div>
+      <div className="Hero__Images">
+        <div className="Hero__Images__ImageContainer">
+          
+          <video src={video} autoPlay loop muted playsInline className="Hero__Images__ImageContainer__Image"/>
+          <video src={video} autoPlay loop muted playsInline className="Hero__Images__ImageContainer__Image"/>
+          <video src={video} autoPlay loop muted playsInline className="Hero__Images__ImageContainer__Image"/>
+          
+        </div>
+        {/* <div className="Hero__Images__ImageContainer">
+          <iframe 
+              className="Hero__Images__Image" 
+              src={src} 
+              title="Youtube Player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+          />
+        </div>
+        <div className="Hero__Images__ImageContainer">
+          <iframe 
+              className="Hero__Images__Image" 
+              src={src} 
+              title="Youtube Player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+          />
+        </div> */}
       </div>
       
       {/* <div className='w-full h-screen absolute inset-0 z-10 bg-black bg-opacity-10'>
