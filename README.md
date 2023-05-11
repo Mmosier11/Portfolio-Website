@@ -8,15 +8,16 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Translate Figma Design to SCSS
 - [x] Implement functionality of links and Selected Works
 - [x] Implement Animations
-- [ ] Put Synthwave Scene on different deployment to be viewed
-- [ ] Add T3 Twitter Clone
-- [ ] Add some kind of hero to identify website
-- [ ] Animation on hover is not intuitive
-- [ ] Credits needs to be arranged in a better way
-- [ ] Finish filling out information on each selected work
-- [ ] Add other works to the other works section
+- [x] Put Synthwave Scene on different deployment to be viewed
+- [x] Add T3 Twitter Clone
+- [x] Add some kind of hero to identify website
+- [x] Animation on hover is not intuitive
+- [x] Credits needs to be arranged in a better way
+- [x] Finish filling out information on each selected work
+- [x] Add other works to the other works section
 - [ ] Insure Responsivity across devices
 - [ ] Remove unused assets and code
+- [ ] Think of different hero
 - [ ] Clean Code
 
 # Deploy Vite Resources:

@@ -70,8 +70,10 @@ import Honors from './projects/other/honors.png';
 import Lance from './projects/other/lance.png';
 import Prestige from './projects/other/prestige.png';
 import Shannon from './projects/other/shannon.png';
+import Synthwave from './projects/other/Synthwave.png';
 
 export {
+  Synthwave,
   EmojiTwitter,
   Honors,
   Lance,

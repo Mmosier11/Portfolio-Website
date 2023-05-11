@@ -145,7 +145,7 @@
       justify-content: space-between;
       align-items: flex-start;
       width: 100%;
-      gap: 1rem;
+      gap: 5rem;
 
       &__Divider{
         width: 5px;
@@ -257,7 +257,7 @@
           font-family: BebasNeue;
           font-style: normal;
           font-weight: 400;
-          font-size: 2rem;
+          font-size: clamp(0.5rem, 5vw, 2rem);
           color: #FFFFFF;
         }
       }
@@ -287,7 +287,7 @@
             font-family: BebasNeue;
             font-style: normal;
             font-weight: 400;
-            font-size: 2rem;
+            font-size: clamp(1rem, 2vw, 2rem);
             color: #262E49;
           }
         }
@@ -306,7 +306,7 @@
           font-style: normal;
           
           font-weight: 400;
-          font-size: 2rem;
+          font-size: clamp(1rem, 2vw, 2rem);
           color: #DC0C83;
         }
       }
@@ -1559,5 +1559,29 @@
 @keyframes move-bg {
   to {
     background-position: var(--bg-size) 0;
+  }
+}
+
+
+@media only screen and (max-width: 1215px) {
+  .SelectedWorks{
+    &__SectionContent{
+      flex-direction: column;
+
+      &__Buttons{
+        flex-direction: row;
+        width: 100%;
+        padding-top: 2rem;
+        height: max-content;
+      }
+    }
+  }
+
+  .OtherWorks{
+    &__Content{
+      &__Inside{
+        flex-direction: column;
+      }
+    }
   }
 }

@@ -56,7 +56,8 @@ import {
   Lance,
   Shannon,
   Prestige,
-  EmojiTwitter
+  EmojiTwitter,
+  Synthwave
 } from "../assets";
 
 
@@ -322,8 +323,8 @@ import {
     {
       id: "synthwave-scene",
       name: "Synthwave Scene",
-      link: "https://netflix-clone-1a0d0.web.app/",
-      image: "https://i.imgur.com/2Z3QJ5O.png",
+      link: "https://rtf-synthwave-scene-gadzzc9du-senpaisumpie.vercel.app/",
+      image: Synthwave,
     },
   ];
   
