@@ -52,4 +52,4 @@ const Credits = () => {
     );
 }
 
-export default SectionWrapper(Credits, 'Credits');
+export default SectionWrapper(Credits, 'credits');

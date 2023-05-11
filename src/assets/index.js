@@ -65,8 +65,18 @@ import CognitoLogo from './tech/cognito.svg';
 import MySqlLogo from './tech/mysql.svg';
 import JasmineLogo from './tech/jasmine.svg';
 
+import EmojiTwitter from './projects/other/emoji-twitter.png';
+import Honors from './projects/other/honors.png';
+import Lance from './projects/other/lance.png';
+import Prestige from './projects/other/prestige.png';
+import Shannon from './projects/other/shannon.png';
 
 export {
+  EmojiTwitter,
+  Honors,
+  Lance,
+  Prestige,
+  Shannon,
   SpringBootLogo,
   ReduxLogo,
   SCSSLogo,

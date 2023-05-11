@@ -52,6 +52,11 @@ import {
   CognitoLogo,
   MySqlLogo,
   JasmineLogo,
+  Honors,
+  Lance,
+  Shannon,
+  Prestige,
+  EmojiTwitter
 } from "../assets";
 
 
@@ -121,16 +126,12 @@ import {
       blurb: "Carbon Emission Tracking",
       image: NetZero,
       logo: NetZeroLogo,
-      about: "For my final year in college I was assigned a team to work on a client project for my Capstone. We were tasked with creating TeamBandit, a web application whose goal was to streamline course and team management. This was primarily for my Capstone course but there was possibilities to move beyond.",
+      about: "My time at Cognizant was primarily spent working on NetZero. Primarily a carbon credit tracking application to ",
       contributions: [
-        "- Set up Front-End and Back-End infrastructure",
-        "- Implemented CSV Upload Feature",
-        "- Built Team Sorting Algorithm and Manual Sort Page",
-        "- Implemented User Creation and User Authentication with JWT",
-        "- Implemented CRUD functionality for multiple data types",
+        "- Contributed to the conceptualization and design of the application",
       ],
       liveSiteLink: "",
-      githubLink: "https://github.com/eckdoerry/TeamBandit",
+      githubLink: "",
       figmaLink: "",
       googleDocLink: "",
       technologies: [
@@ -169,18 +170,14 @@ import {
       blurb: "Gamified Task Management",
       image: TaskeRPG,
       logo: TaskeRPGLogo,
-      about: "For my final year in college I was assigned a team to work on a client project for my Capstone. We were tasked with creating TeamBandit, a web application whose goal was to streamline course and team management. This was primarily for my Capstone course but there was possibilities to move beyond.",
+      about: "TaskeRPG is a web application that aims to promote good habits and encourage productivity by gamifying tasks. The application allows users to create a personalized character that represents them in the game, and complete tasks to complete quests and earn rewards.",
       contributions: [
-        "- Set up Front-End and Back-End infrastructure",
-        "- Implemented CSV Upload Feature",
-        "- Built Team Sorting Algorithm and Manual Sort Page",
-        "- Implemented User Creation and User Authentication with JWT",
-        "- Implemented CRUD functionality for multiple data types",
+        "- In Progress",
       ],
       liveSiteLink: "",
-      githubLink: "",
-      figmaLink: "",
-      googleDocLink: "",
+      githubLink: "https://github.com/SectorZStudios/TaskeRPG",
+      figmaLink: "https://www.figma.com/file/4AbghrgbaRi896KssdeLpo/TaskeRPG?type=design&node-id=0%3A1&t=uEnKfTJRHOt3XcRT-1",
+      googleDocLink: "https://docs.google.com/document/d/1amXtl52l1BMRt-0ZN_iXWaItLU34IYVF5rac0OU_93o/edit?usp=sharing",
       technologies: [
         {
           name: "NEXT JS",
@@ -217,13 +214,13 @@ import {
       about: "During my time at Cognizant I was tasked with designing and creating a full-stack web application to showcase my skills. The application I choose to build was WorkMentor, an app tasked with pairing working professionals with those who are looking to get into the industry.",
       contributions: [
         "- Set up Front-End and Back-End infrastructure",
-        "- Implemented CSV Upload Feature",
-        "- Built Team Sorting Algorithm and Manual Sort Page",
-        "- Implemented User Creation and User Authentication with JWT",
-        "- Implemented CRUD functionality for multiple data types",
+        "- Connect mentors and mentees by mentee applications",
+        "- Mentors and mentees to chat with each other",
+        "- Mentees can search for mentors",
+        "- Mentees can leave reviews for their mentors",
       ],
       liveSiteLink: "",
-      githubLink: "https://github.com/eckdoerry/TeamBandit",
+      githubLink: "https://github.com/SenpaiSumpie/WorkMentor",
       figmaLink: "",
       googleDocLink: "",
       technologies: [
@@ -258,24 +255,39 @@ import {
     },
   ];
 
+  const clientWork = [
+    {
+      id: "honors",
+      name: "Honors Way Group",
+      link: "https://honorswaygroup.com/",
+      image: Honors,
+    },
+    {
+      id: "lance",
+      name: "Nostalgia Notes Records",
+      link: "https://www.nostalgianotesrecords.com/",
+      image: Lance,
+    },
+    {
+      id: "shannon",
+      name: "Shannon Mosier",
+      link: "https://shannonstarr.org/",
+      image: Shannon,
+    },
+    {
+      id: "prestige",
+      name: "Prestige at Mayhill",
+      link: "https://theprestigeatmayhill.com/",
+      image: Prestige,
+    },
+  ];
+
   const liveWebsites = [
     {
-      id: "netflix-clone",
-      name: "Netflix Clone",
-      link: "https://google.com/",
-      image: "https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Fheroes.webp?alt=media&token=2410b122-68f3-401b-a2cc-56c441c4df39",
-    },
-    {
-      id: "apple-clone",
-      name: "Apple Clone",
-      link: "https://google.com/",
-      image: "https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Fraingame.webp?alt=media&token=03865371-eca9-4d4a-b8e1-43160c4f9efc",
-    },
-    {
-      id: "target-clone",
-      name: "Target Clone",
-      link: "https://google.com/",
-      image: "https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Favocadogame.webp?alt=media&token=60d3bf3c-b059-4e9b-9177-26365a452cd0",
+      id: "emoji-twitter",
+      name: "Twitter Clone (Emoji)",
+      link: "https://chirp-tau-ruddy.vercel.app/",
+      image: EmojiTwitter,
     },
   ];
 
@@ -317,16 +329,16 @@ import {
   
   export const navLinks = [
     {
-      id: "about",
-      title: "About",
+      id: "works",
+      title: "Selected Works",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "other",
+      title: "Other Works",
     },
     {
-      id: "contact",
-      title: "Contact",
+      id: "credits",
+      title: "Credits",
     },
   ];
   
@@ -552,4 +564,4 @@ import {
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects, selectedWorks, liveWebsites, figmaProjects, archived, codepens, threeJS };
+  export { services, technologies, experiences, testimonials, projects, selectedWorks, liveWebsites, figmaProjects, archived, codepens, threeJS, clientWork };
