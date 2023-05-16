@@ -18,5 +18,5 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Insure Responsivity across devices
 - [ ] Remove unused assets and code
 - [x] Think of different hero
-- [ ] Fix responsivity of selected works section
+- [x] Fix responsivity of selected works section
 - [ ] Clean Code

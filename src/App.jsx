@@ -61,8 +61,6 @@ const particlesLoaded = useCallback(async container => {
                 init={particlesInit} 
                 loaded={particlesLoaded} 
               />
-              <span className="InProgressText">SITE IS IN PROGRESS</span>
-              
               <SelectedWorks/>            
               <OtherWorks/>
               <Credits/>
