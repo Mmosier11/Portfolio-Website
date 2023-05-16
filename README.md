@@ -16,7 +16,7 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Finish filling out information on each selected work
 - [x] Add other works to the other works section
 - [x] Insure Responsivity across devices
-- [ ] Remove unused assets and code
+- [x] Remove unused assets and code
 - [x] Think of different hero
 - [x] Fix responsivity of selected works section
-- [ ] Clean Code
+- [x] Clean Code

@@ -1,18 +1,16 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react'
 
 import { SectionWrapper } from '../hoc';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { liveWebsites, figmaProjects, archived, codepens, threeJS, clientWork } from '../constants/constants';
+import { liveWebsites, threeJS, clientWork } from '../constants/constants';
 
 const OtherWorks = () => {
     const [ currentHover, setCurrentHover ] = useState("");
     const [hovering, setHovering] = useState(false);
     const [xPos, setXPos] = useState(0);
     const [yPos, setYPos] = useState(0);
-
-    const [imgUrl, setImgUrl] = useState("https://firebasestorage.googleapis.com/v0/b/portfolio-vue-2019.appspot.com/o/webp%2Fheroes.webp?alt=media&token=2410b122-68f3-401b-a2cc-56c441c4df39");
 
     const handleMouseOver = (e, id) => {
         const boundingRect = e.target.getBoundingClientRect();

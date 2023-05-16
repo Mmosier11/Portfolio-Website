@@ -5,17 +5,6 @@ import { SectionWrapper } from '../hoc';
 
 import SelectedWork from './SelectedWork';
 
-import NetZeroIcon from '../assets/MaxLogo.png';
-import MobileIcon from '../assets/mobile.png';
-import WebIcon  from '../assets/web.png';
-import CreatorIcon from '../assets/creator.png';
-import BackendIcon from '../assets/backend.png';
-
-import NetZeroLogo from '../assets/NetZeroLogo.svg';
-import TeamBanditLogo from '../assets/TeamBanditLogo.png';
-import WorkMentorLogo from '../assets/WorkMentorLogo.png';
-import TaskerpgLogo from '../assets/TaskeRPGLogo.png';
-
 import Tilt from 'react-tilt';
 import { motion } from 'framer-motion';
 import { fadeIn, textVariant }  from '../utils/motion';

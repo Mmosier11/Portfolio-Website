@@ -1,25 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import '../App.scss';
 
-
-import { SectionWrapper } from '../hoc';
-
-import TeamBanditHome from '../assets/projects/TeamBanditHome.png';
-import NetzeroHome from '../assets/projects/NetZero.png';
-import WorkmentorHome from '../assets/projects/WorkMentor.png';
-import TaskerpgHome from '../assets/projects/TaskeRPG.png';
-
-import ReactLogo from '../assets/tech/react.svg';
-import ExpressLogo from '../assets/tech/express.svg';
-import AWSLogo from '../assets/tech/aws.svg';
-import MUILogo from '../assets/tech/mui.svg';
-import ReactRouterLogo from '../assets/tech/react-router.svg';
-import PostgresLogo from '../assets/tech/postgresql.svg';
-import JWTLogo from '../assets/tech/jwt.png';
-
 import { motion, AnimatePresence } from 'framer-motion';
-import { fadeIn, textVariant }  from '../utils/motion';
 import Tilt from 'react-tilt';
 
 import { selectedWorks } from '../constants/constants';
@@ -78,7 +61,6 @@ const SelectedWork = ({selected, clicked, handleClicked}) => {
                             <span className="SelectedWork__HoveredSection__Title__Sub"> {currentSelected.blurb} </span>
                         </div> 
                         <div className="SelectedWork__HoveredSection__Content">
-                            {/* style={{backgroundImage: `url(${TeamBanditHome})`}} */}
                             <div  className="SelectedWork__HoveredSection__Content__Blur">
                                 
                                 <div className='SelectedWork__HoveredSection__Content__Blur__LeftSide'>
