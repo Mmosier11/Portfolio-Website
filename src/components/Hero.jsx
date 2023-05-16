@@ -44,8 +44,8 @@ const Hero = () => {
     return () => clearTimeout(intervalId);
   }, []);
   return (
-    <section className='Hero'>
-      <div className='Hero__Top'>
+    <section className='relative w-full h-screen mx-auto'>
+      {/* <div className='Hero__Top'>
         <div className='Hero__Top__Introduction'>
           <span className='Hero__Top__Introduction__Text'><span className='Hero__Top__Introduction__Name'>Max Mosier</span></span>
           <span className='hero glitch layers' data-text={TEXTS[index % TEXTS.length]}><span><TextTransition springConfig={presets.gentle}>{TEXTS[index % TEXTS.length]}</TextTransition></span></span>
@@ -72,31 +72,24 @@ const Hero = () => {
           <video src={video} autoPlay loop muted playsInline className="Hero__Images__ImageContainer__Image"/>
           
         </div>
-        {/* <div className="Hero__Images__ImageContainer">
-          <iframe 
-              className="Hero__Images__Image" 
-              src={src} 
-              title="Youtube Player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-          />
-        </div>
-        <div className="Hero__Images__ImageContainer">
-          <iframe 
-              className="Hero__Images__Image" 
-              src={src} 
-              title="Youtube Player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-          />
-        </div> */}
-      </div>
-      
-      {/* <div className='w-full h-screen absolute inset-0 z-10 bg-black bg-opacity-10'>
-        <Title/> 
       </div> */}
+      <div className='w-full h-screen absolute inset-0 z-10 bg-black bg-opacity-10'>
+        <Title/> 
+      </div>
+      <div className="absolute xs:bottom-10 bottom-4 w-full flex justify-center items-center z-20">
+        <a href="#works" className="cursor-pointer">
+          <div className="w-[5rem] h-[64px] flex justify-center items-start p-2 cursor-pointer">
+            <motion.div 
+              className="down-arrow"
+              animate={{ y: [0, 24, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
+            >
+              <img src={DownArrow} alt="DownArrow"/>
+            </motion.div>
+          </div>
+        </a>
+      </div>
+      <video src={video} autoPlay loop muted playsInline className="w-full h-screen absolute"/>
       {/* <ExperimentalCover/> */}
       {/* <div className={`${styles.paddingX} absolute inset-0 top-[120px] z-10 max-w-7xl mx-auto flex flex-row items-start gap-5`}>
         <div className="flex flex-col justify-center items-center mt-5">
@@ -129,4 +122,4 @@ const Hero = () => {
   );
 }
 
-export default SectionWrapper(Hero, 'hero')
+export default Hero;

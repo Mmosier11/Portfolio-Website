@@ -46,10 +46,10 @@ const particlesLoaded = useCallback(async container => {
       
       <div className="relative z-0 bg-primary">
         <Navbar/>
-        {/* <div className='fixed w-full'> */}
+        <div className='fixed w-full'>
           
-          {/* <Hero/>*/}
-        {/* </div>  */}
+          <Hero/>
+        </div> 
         
         <div id="main-content" className='MainContent'>
         
@@ -62,7 +62,7 @@ const particlesLoaded = useCallback(async container => {
                 loaded={particlesLoaded} 
               />
               <span className="InProgressText">SITE IS IN PROGRESS</span>
-              <Hero/>
+              
               <SelectedWorks/>            
               <OtherWorks/>
               <Credits/>
@@ -73,20 +73,8 @@ const particlesLoaded = useCallback(async container => {
                   <a href="https://github.com/SenpaiSumpie" target="_blank" className="Footer__Text__Link">GITHUB</a> &nbsp; 
                   <a href="mailto:max.lee.mosier@gmail.com" target="_blank" rel="noopener noreferrer" className="Footer__Text__Link">CONTACT</a> &nbsp;
                 </p>
-            </div>
+              </div>
           </div>
-          
-          
-        
-          {/* <About/>
-          <Experience/>
-          <Tech/>
-          <Works/>
-          <Feedbacks/>
-          <div className='relative z-0'>
-            <Contact/>
-            <StarsCanvas/>
-          </div> */}
           </div>
         </div>
         

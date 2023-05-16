@@ -11,20 +11,7 @@ const Credits = () => {
             </div>
             <div className="Credits__Content">
                 <p className="Credits__Content__Sections">
-                    Work History
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    education
-                    <br/>
-                    <br/>
-                    certificates
-                    {/* <br/>
-                    <br/>
-                    interests */}
+                    WORK HISTORY
                 </p>
                 <p className="Credits__Content__Text">
                     Front-End Developer | Cognizant | June '22 - Present<br/>
@@ -32,20 +19,18 @@ const Credits = () => {
                     IT Help Desk | United States Geological Survey | July '19 - February '20<br/>
                     Student Technician | Norther Arizona University | July '18 - April '19<br/>
                     IT Assistant | Joseph City High School | June '16 - July '18
-                    <br/>
-                    <br/>
+                </p>
+                <p className="Credits__Content__Sections">
+                    EDUCATION
+                </p>
+                <p className="Credits__Content__Text">
                     Bachelors of Science in Computer Science | Northern Arizona University | May '22
-                    <br/>
-                    <br/>
+                </p>
+                <p className="Credits__Content__Sections">
+                    CERTIFICATIONS
+                </p>
+                <p className="Credits__Content__Text">
                     Google Professional UX Design | Coursera | January '23
-                    {/* <br/>
-                    <br/>
-                    Board games<br/>
-                    video games<br/>
-                    TV shows<br/>
-                    movies<br/>
-                    Books<br/>
-                    80s Synthwave<br/> */}
                 </p>  
             </div> 
         </div>
