@@ -28,7 +28,7 @@ import Max from '../assets/max-image.jpg';
 import DownArrow from '../assets/down-arrow.svg';
 
 const TEXTS = ['Front-End Developer', 'UI/UX Designer', 'Motion Designer', 'Movie Enthusiast'];
-import video from '../assets/akira.mp4';
+import video from '../assets/synthwave.mp4';
 const src = "https://www.youtube.com/embed/ib7E9TEp5yI?autoplay=1&mute=1&loop=1&color=white&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1&";
 /***********************************************************************/
 /*                               HERO                                  */
@@ -73,10 +73,11 @@ const Hero = () => {
           
         </div>
       </div> */}
-      <div className='w-full h-screen absolute inset-0 z-10 bg-black bg-opacity-10'>
+
+      <div className='w-full h-screen absolute inset-0 z-10 bg-black bg-opacity-20'>
         <Title/> 
       </div>
-      <div className="absolute xs:bottom-10 bottom-4 w-full flex justify-center items-center z-20">
+      <div className="absolute xs:bottom-20 bottom-8 w-full flex justify-center items-center z-20">
         <a href="#works" className="cursor-pointer">
           <div className="w-[5rem] h-[64px] flex justify-center items-start p-2 cursor-pointer">
             <motion.div 
@@ -89,7 +90,8 @@ const Hero = () => {
           </div>
         </a>
       </div>
-      <video src={video} autoPlay loop muted playsInline className="w-full h-screen absolute"/>
+      <video src={video} autoPlay loop muted playsInline className="w-full h-screen absolute object-cover"/>
+
       {/* <ExperimentalCover/> */}
       {/* <div className={`${styles.paddingX} absolute inset-0 top-[120px] z-10 max-w-7xl mx-auto flex flex-row items-start gap-5`}>
         <div className="flex flex-col justify-center items-center mt-5">

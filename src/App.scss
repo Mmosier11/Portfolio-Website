@@ -206,7 +206,6 @@
       font-style: normal;
       font-weight: 400;
       font-size: clamp(3rem, 4vw, 6rem);
-      line-height: 115px;
       text-align: center;
       color: #DC0C83;
       filter: drop-shadow(0 1px 3px);
@@ -547,7 +546,7 @@
                 font-family: BebasNeue;
                 font-style: normal;
                 font-weight: 400;
-                font-size: 36px;
+                font-size: clamp(1.25rem, 2vw, 2rem);
                 line-height: 43px;
                 color: #262E49;
               }
@@ -577,7 +576,7 @@
                   font-family: BebasNeue;
                   font-style: normal;
                   font-weight: 400;
-                  font-size: 1.5rem;
+                  font-size: clamp(0.5rem, 2vw, 1.5rem);
                   
                   color: rgba(255, 255, 255, 0.75);                    
                 }
@@ -594,7 +593,7 @@
             &__Contributions{
               display: flex;
               flex-direction: column;
-              width: 50%;
+              width: 100%;
               margin: 0.5ch;
               align-items: flex-start;
 
@@ -604,7 +603,7 @@
                 font-style: normal;
                 display: list-item;
                 font-weight: 500;
-                font-size: 0.75rem;
+                font-size: clamp(0.65rem, 1vw, 0.75rem);
                 color: #FFFFFF;
                 opacity: 0.78;
               }
@@ -622,7 +621,7 @@
                   font-family: BebasNeue;
                   font-style: normal;
                   font-weight: 400;
-                  font-size: 2rem;
+                  font-size: clamp(1.25rem, 2vw, 2rem);
                   line-height: 43px;
 
                   color: #262E49;
@@ -635,7 +634,7 @@
               flex-direction: column;
               align-items: flex-start;
               padding: 0.5ch;
-              width: 50%;
+              width: 100%;
 
               &__Title{
                 display: flex;
@@ -650,7 +649,7 @@
                   font-family: BebasNeue;
                   font-style: normal;
                   font-weight: 400;
-                  font-size: 2rem;
+                  font-size: clamp(1.25rem, 2vw, 2rem);
                   line-height: 43px;
                   color: #262E49;
                 }
@@ -661,7 +660,7 @@
                 font-family: Montserrat;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 0.85rem;
+                font-size: clamp(0.65rem, 1vw, 0.75rem);
                 line-height: 20px;
                 color: #FFFFFF;
                 opacity: 0.78;
@@ -702,7 +701,7 @@
                 font-family: BebasNeue;
                 font-style: normal;
                 font-weight: 400;
-                font-size: 2rem;
+                font-size: clamp(1.25rem, 2vw, 2rem);
 
                 color: rgba(94, 226, 255, 0.25);
               }
@@ -761,7 +760,7 @@
         font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
-        font-size: 8rem;
+        font-size: clamp(1rem, 2vw, 8rem);
         text-align: center;
         color: #FFFFFF;
         margin-bottom: -1ch;
@@ -771,7 +770,7 @@
         font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 2vw, 1.5rem);
         text-align: center;
         color: #FFFFFF;
       }
@@ -1564,7 +1563,6 @@
 @media only screen and (max-width: 1215px) {
   .SelectedWorkContainer{
     margin-top: 1rem;
-    height: 400px;
   }
 
   .SelectedWorks{
@@ -1610,6 +1608,19 @@
     }
 
     .SelectedWork{
+      &__HoveredSection{
+        &__Content{
+          &__Blur{
+            flex-direction: column;
+            &__LeftSide{
+              &__Top{
+                flex-direction: column;
+              }
+            }
+          }
+        }
+      }
+
       &__ImageContainer{
         &__Image{
           height: 100%;
