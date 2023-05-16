@@ -486,7 +486,7 @@
         font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
-        font-size: 2rem;
+        font-size: clamp(1rem, 2vw, 2rem);
         color: white;
       }
     }
@@ -1563,7 +1563,7 @@
 
 @media only screen and (max-width: 1215px) {
   .SelectedWorkContainer{
-    height: 300px;
+    height: 400px;
   }
   .SelectedWorks{
     &__SectionContent{
@@ -1604,6 +1604,22 @@
     .Credits{
       &__Content{
         flex-direction: column;
+      }
+    }
+
+    .SelectedWork{
+      &__ImageContainer{
+        &__Image{
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__OriginalSection{
+        &__Button{
+          &__Text{
+            
+          }
+        }
       }
     }
 }

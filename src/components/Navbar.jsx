@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 z-20"
           onClick={()=>{
             setActive("");
             window.scrollTo(0, 0);
@@ -64,13 +64,13 @@ const Navbar = () => {
               <img
                 src={toggle ? close : menu}
                 alt="menu"
-                className="w-[28px] h-[28px] object-contain cursor-pointer"
+                className="w-[28px] h-[28px] object-contain cursor-pointer z-20"
                 onClick={() => setToggle(!toggle)}
               />
               <div
-                className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
+                className={`${!toggle ? 'hidden' : 'flex'} p-6 black-gradient absolute top-0 right-0 my-2 w-full z-10`}
               >
-                <ul className='list-none flex justify-end items-start flex-col gap-4'>
+                <ul className='list-none flex justify-end items-start flex-col gap-4 mt-10'>
                   {navLinks.map((link, index) => (
                     <li 
                       key={index}
