@@ -186,6 +186,7 @@
 /* SELECTED WORKS */
 .SelectedWorks{
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -223,6 +224,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
 
     &__Buttons{
       display: flex;
@@ -431,13 +433,11 @@
 
 
 .SelectedWorkContainer{
-  // overflow: scroll;
-  // height: fit-content;
+  height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 600px;
   width: 75%;
 }
 
@@ -576,7 +576,7 @@
                   font-family: BebasNeue;
                   font-style: normal;
                   font-weight: 400;
-                  font-size: clamp(0.5rem, 2vw, 1.5rem);
+                  font-size: clamp(1rem, 2vw, 1.5rem);
                   
                   color: rgba(255, 255, 255, 0.75);                    
                 }
@@ -760,8 +760,7 @@
         font-family: BebasNeue;
         font-style: normal;
         font-weight: 400;
-        font-size: clamp(1rem, 2vw, 8rem);
-        text-align: center;
+        font-size: clamp(1rem, 4vw, 8rem);
         color: #FFFFFF;
         margin-bottom: -1ch;
       }
@@ -771,7 +770,6 @@
         font-style: normal;
         font-weight: 400;
         font-size: clamp(1rem, 2vw, 1.5rem);
-        text-align: center;
         color: #FFFFFF;
       }
     }
@@ -1563,11 +1561,16 @@
 @media only screen and (max-width: 1215px) {
   .SelectedWorkContainer{
     margin-top: 1rem;
+    height: 100%;
   }
 
   .SelectedWorks{
+    height: 100%;
+    width: 100%;
+
     &__SectionContent{
       flex-direction: column;
+      height: min-content;
 
       &__Buttons{
         flex-direction: row;
@@ -1608,13 +1611,52 @@
     }
 
     .SelectedWork{
+      height: 100%;
+
       &__HoveredSection{
+        height:900px;
+        padding-top: 5rem;
+        margin-bottom: 20rem;
+
+        &__Title{
+          text-align: start;
+          width: 100%;
+          justify-content: flex-start;
+
+          &__Main{
+            text-align: start;
+            width: 100%;
+            justify-content: flex-start;
+          }
+          &__Sub{
+            width: 100%;
+            text-align: start;
+          }
+        }
         &__Content{
+          height: 100%;
           &__Blur{
+            height: 100%;
             flex-direction: column;
             &__LeftSide{
+              height: 100%;
               &__Top{
+                height: 100%;
                 flex-direction: column;
+              }
+              &__Bottom{
+                height: 100%;
+                &__Technologies{
+                  height: 100%;
+                  grid-template-columns: repeat(2, 1fr);
+                  padding-bottom: 2rem;
+
+                  &__Technology{
+                    &__Image{
+                      width: 35%;
+                    }
+                  }
+                }
               }
             }
           }
@@ -1636,6 +1678,7 @@
       }
 
       &__OriginalSection{
+        
         &__Button{
           top: 0.5rem;
           &__Text{
@@ -1644,4 +1687,8 @@
         }
       }
     }
+}
+
+.test{
+  height: 100%;
 }

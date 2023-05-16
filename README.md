@@ -15,12 +15,8 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Credits needs to be arranged in a better way
 - [x] Finish filling out information on each selected work
 - [x] Add other works to the other works section
-- [ ] Insure Responsivity across devices
+- [x] Insure Responsivity across devices
 - [ ] Remove unused assets and code
-- [ ] Think of different hero
+- [x] Think of different hero
+- [ ] Fix responsivity of selected works section
 - [ ] Clean Code
-
-# Deploy Vite Resources:
-https://vitejs.dev/guide/static-deploy.html
-https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
-https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane

@@ -26,29 +26,33 @@ import { selectedWorks } from '../constants/constants';
 
 const SelectedWork = ({selected, clicked, handleClicked}) => {
     const [ currentSelected, setCurrentSelected ] = useState(selectedWorks[0]);
+    const [ height, setHeight ] = useState('600px');
 
 
     const [ isHovering, setIsHovering ] = useState(false);
 
     const hoverTrue = () => {
         setIsHovering(true);
-        console.log("true");
+        if(window.innerWidth < 1215){
+            setHeight('1100px');
+        }
     }
 
     const hoverFalse = () => {
         setIsHovering(false);
+        setHeight('600px');
+    }
+
+    const callHandleClick = () => {
+        handleClicked();
     }
 
     useEffect(() => {
         setCurrentSelected(selectedWorks.find(work => work.id === selected));
     }, [selected]);
 
-    const callHandleClick = () => {
-        handleClicked();
-    }
-
     return (
-        <div className="SelectedWorkContainer">
+        <div className="SelectedWorkContainer" style={{height: height}}>
             <motion.div 
                 className="SelectedWork"
                 
@@ -59,7 +63,7 @@ const SelectedWork = ({selected, clicked, handleClicked}) => {
                 }}
                 transition={{duration: 0.20}}
             >
-                <AnimatePresence>
+                <AnimatePresence className="test">
                 { isHovering ? 
                     <motion.div
                         key="HoverSection"
