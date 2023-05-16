@@ -816,7 +816,7 @@
       font-family: BebasNeue;
       font-style: normal;
       font-weight: 400;
-      font-size: rem;
+      font-size: clamp(2rem, 8vw, 8rem);
       text-align: center;
       margin-bottom: -1ch;
       color: #FFFFFF;
@@ -826,7 +826,7 @@
       font-family: BebasNeue;
       font-style: normal;
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.5rem);
       text-align: center;
       color: #FFFFFF;
     }
@@ -1563,8 +1563,10 @@
 
 @media only screen and (max-width: 1215px) {
   .SelectedWorkContainer{
+    margin-top: 1rem;
     height: 400px;
   }
+
   .SelectedWorks{
     &__SectionContent{
       flex-direction: column;
@@ -1614,8 +1616,17 @@
           object-fit: cover;
         }
       }
+
+      &__Technologies{
+        bottom: 0;
+        &__Technology{
+          width: 12.5%;
+        }
+      }
+
       &__OriginalSection{
         &__Button{
+          top: 0.5rem;
           &__Text{
             
           }
