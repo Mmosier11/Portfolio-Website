@@ -9,32 +9,10 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
-  const [ hideContent, setHideContent ] = useState(true);
-  const [ scrollHeight, setScrollHeight ] = useState(0);
-  
-
-  useEffect(() => {
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollHeight(position);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if( scrollHeight >= 500 ) {
-        setHideContent(false);
-    } else {
-        setHideContent(true);
-    }
-  }, [scrollHeight]);
 
   return (
     <nav
-      className={hideContent ? 'DisplayNone' : `${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link

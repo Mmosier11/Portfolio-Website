@@ -248,7 +248,7 @@ import {
     {
       id: "shannon",
       name: "Shannon Mosier",
-      link: "https://shannonstarr.org/",
+      link: "https://shannon-mosier-website.vercel.app/",
       image: Shannon,
     },
     {
@@ -312,10 +312,6 @@ import {
     {
       id: "other",
       title: "Other Works",
-    },
-    {
-      id: "credits",
-      title: "Credits",
     },
   ];
   
