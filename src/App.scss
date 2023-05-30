@@ -167,7 +167,7 @@
 
         &__Item{
           width: fit-content;
-          font-family: Montserrat;
+          font-family: 'Montserrat';
           font-style: normal;
           font-weight: 400;
           font-size: 1.5rem;
@@ -418,7 +418,7 @@
     }
 
     &__Text{
-      font-family: Montserrat;
+      font-family: 'Montserrat';
       font-style: normal;
       font-weight: 400;
       font-size: clamp(1rem, 2vw, 1.75rem);
@@ -595,7 +595,7 @@
 
               &__Text{
                 margin: 0.5ch;
-                font-family: Montserrat;
+                font-family: 'Montserrat';
                 font-style: normal;
                 display: list-item;
                 font-weight: 500;
@@ -653,7 +653,7 @@
 
               &__Text{
                 margin: 0.5ch;
-                font-family: Montserrat;
+                font-family: 'Montserrat';
                 font-style: normal;
                 font-weight: 500;
                 font-size: clamp(0.65rem, 1vw, 0.75rem);
@@ -721,7 +721,7 @@
             }
 
             &__List{
-              font-family: Montserrat;
+              font-family: 'Montserrat';
               font-style: normal;
               font-weight: 400;
               font-size: 0.85rem;
@@ -962,7 +962,7 @@
   width: 100%;
 
   &__Email{
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-size: clamp(0.8rem, 2vw, 1rem);
   }
 
@@ -979,7 +979,7 @@
     }
 
     &__Intro{
-      font-family: Montserrat;
+      font-family: 'Montserrat';
       font-size: clamp(1rem, 2vw, 2rem);
     }
   }
@@ -1022,7 +1022,7 @@
       gap: 1rem;
 
       &__Description{
-        font-family: Montserrat;
+        font-family: 'Montserrat';
         font-size: clamp(0.7rem, 2vw, 1.4rem);
         margin-top: -2rem;
       }
