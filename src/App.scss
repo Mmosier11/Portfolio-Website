@@ -225,6 +225,15 @@
     align-items: center;
     height: 100%;
 
+    &__Reverse{
+      margin: 3ch;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
     &__Work{
       margin: 3ch;
       display: flex;
@@ -275,7 +284,7 @@
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 400;
-            font-size: 1.5rem;
+            font-size: clamp(0.75rem, 2vw, 1.5rem);
             color: #ffffff;
             margin-right: 0.2ch;
             opacity: 1;
@@ -306,6 +315,7 @@
             margin: 1ch 1ch 1ch 4ch;
             font-weight: 700;
             font-family: 'Montserrat';
+            font-size: clamp(0.75rem, 2vw, 1rem);
           }
         }
 
@@ -325,17 +335,17 @@
         &__Name{
           font-weight: bold;
           font-family: 'Montserrat';
-          font-size: 2rem;
+          font-size: clamp(1.5rem, 2vw, 2rem);
         }
 
         &__Blurb{
           font-family: 'Montserrat';
-          font-size: 1rem;
+          font-size: clamp(0.75rem, 2vw, 1rem);
         }
 
         &__About{
           font-family: 'Montserrat';
-          font-size: 0.95rem;
+          font-size: clamp(0.65rem, 2vw, 0.95rem);
           opacity: 0.8;
           margin: 2ch;
         }
@@ -1220,6 +1230,19 @@
 @keyframes move-bg {
   to {
     background-position: var(--bg-size) 0;
+  }
+}
+
+@media only screen and (max-width: 1225px){
+  .SelectedWorks{
+    &__SectionContent{
+      &__Reverse{
+        flex-direction: column-reverse;
+      }
+      &__Work{
+        flex-direction: column;
+      }
+    }
   }
 }
 

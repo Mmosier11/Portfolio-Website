@@ -122,7 +122,7 @@ const SelectedWorks = () => {
                         return (
                             <div
                                 key={index}
-                                className="SelectedWorks__SectionContent__Work"
+                                className="SelectedWorks__SectionContent__Reverse"
                             >
                                 <div className='SelectedWorks__SectionContent__Work__Content' data-aos="fade-right">
                                 <p className='SelectedWorks__SectionContent__Work__Content__Name'> {work.name} </p>
