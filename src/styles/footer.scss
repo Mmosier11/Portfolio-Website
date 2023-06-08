@@ -1,0 +1,42 @@
+.Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+
+    &__Text {
+        font-family: 'BebasNeue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(1rem, 2vw, 2rem);
+        line-height: 38px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+
+        &__Link {
+            font-family: 'BebasNeue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            line-height: 38px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            cursor: pointer;
+
+            &:hover {
+                color: #5ee2ff;
+            }
+        }
+
+        &__Name {
+            font-family: RetroSignature;
+            font-size: clamp(2rem, 2vw, 5rem);
+            filter: drop-shadow(0 1px 3px);
+        }
+    }
+}

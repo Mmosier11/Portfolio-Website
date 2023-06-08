@@ -20,3 +20,7 @@ This will be a website to host a portfolio for myself and my projects.
 - [x] Think of different hero
 - [x] Fix responsivity of selected works section
 - [x] Clean Code
+- [x] Clean up files for unused assets and code
+- [ ] Finish projects for the selected works section
+- [x] Break up CSS into different files per section
+- [x] Look into import fonts directly from google

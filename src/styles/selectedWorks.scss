@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+$bebas-neue: 'BebasNeue', sans-serif;
+
+/* SELECTED WORKS */
+.SelectedWorks {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+    width: 100%;
+
+    &__SectionHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+
+        &__SectionTitle {
+            font-family: $bebas-neue;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(3rem, 4vw, 6rem);
+            text-align: center;
+            color: #dc0c83;
+        }
+
+        &__HorizontalDivider {
+            width: 33%;
+            height: 5px;
+            background: rgba(217, 217, 217, 0.25);
+        }
+    }
+
+    &__SectionContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        &__Reverse {
+            margin: 3ch;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__Work {
+            margin: 3ch;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+            &__Links {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                gap: 1.5ch;
+
+                &__ActiveLink {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    opacity: 0.8;
+                }
+
+                &__ActiveLink:hover {
+                    opacity: 1;
+                    cursor: pointer;
+                }
+
+                &__DisabledLink {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    opacity: 0.1;
+                }
+
+                &__Link {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    &__Text {
+                        font-family: "Montserrat";
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: clamp(0.75rem, 2vw, 1.5rem);
+                        color: #ffffff;
+                        margin-right: 0.2ch;
+                        opacity: 1;
+                    }
+
+                    &__Image {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+            }
+
+            &__Image {
+                width: 100%;
+
+                &__ProgressBox {
+                    position: absolute;
+                    display: flex;
+                    justify-content: flex-end;
+                    top: 0;
+                    right: 0;
+                    width: 250px;
+                    background-color: #262e49;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+                        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+                    &__Progress {
+                        margin: 1ch 1ch 1ch 4ch;
+                        font-weight: 700;
+                        font-family: "Montserrat";
+                        font-size: clamp(0.75rem, 2vw, 1rem);
+                    }
+                }
+
+                &__img {
+                    border-radius: 2%;
+                }
+            }
+
+            &__Content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 3ch;
+
+                &__Name {
+                    font-weight: bold;
+                    font-family: "Montserrat";
+                    font-size: clamp(1.5rem, 2vw, 2rem);
+                }
+
+                &__Blurb {
+                    font-family: "Montserrat";
+                    font-size: clamp(0.75rem, 2vw, 1rem);
+                }
+
+                &__About {
+                    font-family: "Montserrat";
+                    font-size: clamp(0.65rem, 2vw, 0.95rem);
+                    opacity: 0.8;
+                    margin: 2ch;
+                }
+
+                &__Technologies {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 1ch;
+
+                    &__Tech {
+                        margin: 0.5ch;
+                        padding: 0.5ch;
+                        border-radius: 5px;
+                        background-color: #262e49;
+                        font-family: "Montserrat";
+                        font-size: 0.75rem;
+                        opacity: 0.85;
+                    }
+
+                    &__Tech:hover {
+                        opacity: 1;
+                    }
+
+                    &__Text {
+                        margin: 0.5ch;
+                        padding: 0.5ch;
+                        border-radius: 5px;
+                        background-color: #262e49;
+                        font-family: "Montserrat";
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        &__Buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 25%;
+            height: 600px;
+
+            &__Tilt {
+                width: 100%;
+                height: 25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            &__Highlighted {
+                height: 50%;
+                background: #dc0c83;
+                border: 2.5px solid #dc0c83;
+                width: 75%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__Text {
+                    font-family: $bebas-neue;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: clamp(0.5rem, 5vw, 2rem);
+                    color: #ffffff;
+                }
+            }
+
+            &__Normal {
+                height: 50%;
+                width: 75%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border: 2.5px solid #dc0c83;
+
+                &__Highlighted {
+                    height: 50%;
+                    background: linear-gradient(
+                        -45deg,
+                        #ee7752,
+                        #e73c7e,
+                        #23a6d5,
+                        #23d5ab
+                    );
+                    animation: gradient 15s ease infinite;
+                    background-size: 400% 400%;
+
+                    width: 75%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &__Text {
+                        font-family: $bebas-neue;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: clamp(1rem, 2vw, 2rem);
+                        color: #262e49;
+                    }
+                }
+
+                &:hover {
+                    background-color: #dc0c825e;
+                }
+
+                &__Image {
+                    width: 25%;
+                    aspect-ratio: 1/1;
+                }
+
+                &__Text {
+                    font-family: $bebas-neue;
+                    font-style: normal;
+
+                    font-weight: 400;
+                    font-size: clamp(1rem, 2vw, 2rem);
+                    color: #dc0c83;
+                }
+            }
+        }
+    }
+}

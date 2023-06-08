@@ -12,7 +12,6 @@ import './App.scss';
 import particlesSettings from './assets/json/particles';
 import SelectedWorks from './components/SelectedWorks';
 import OtherWorks from './components/OtherWorks';
-import Credits from './components/Credits';
 
 const App = () => {
 

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+$bebas-neue: 'BebasNeue';
+
+.OtherWorks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__Header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        &__Title {
+            font-family: $bebas-neue;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(3rem, 4vw, 6rem);
+            line-height: 115px;
+            text-align: center;
+            color: #ff5edb;
+        }
+
+        &__HorizontalDivider {
+            width: 33%;
+            height: 5px;
+            background: rgba(217, 217, 217, 0.25);
+        }
+    }
+
+    &__Content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+
+        &__Inside {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            gap: 5rem;
+
+            &__Divider {
+                width: 5px;
+                height: 400px;
+                background: rgba(217, 217, 217, 0.25);
+            }
+
+            &__List {
+                display: flex;
+                flex-direction: column;
+
+                &__Title {
+                    font-family: $bebas-neue;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 3rem;
+                    color: #ffffff;
+                }
+
+                &__Item {
+                    width: fit-content;
+                    font-family: "Montserrat";
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                    color: rgba(255, 255, 255, 0.75);
+
+                    &:hover {
+                        color: #ff5edb;
+                        filter: drop-shadow(0 1px 3px);
+                    }
+                }
+            }
+        }
+    }
+}
