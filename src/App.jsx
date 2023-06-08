@@ -39,7 +39,7 @@ const particlesLoaded = useCallback(async container => {
         <div id="main-content" className='MainContent'>
           <div className="MainContent__SmoothProvider">  
             <div className='MainContent__Content'>
-              <span className='InProgress'> Site is in progress, working on Project links </span>
+              {/* <span className='InProgress'> Site is in progress, working on Project links </span> */}
               <Particles 
                 id="particles"
                 options={particlesSettings}

@@ -16,6 +16,7 @@
     "@react-three/drei": "^9.57.2",
     "@react-three/fiber": "^8.12.0",
     "@react-three/postprocessing": "^2.7.0",
+    "aos": "^2.3.4",
     "babel-plugin-glsl": "^1.0.0",
     "framer-motion": "^10.2.4",
     "gsap": "^3.11.5",

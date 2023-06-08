@@ -41,7 +41,12 @@ import Prestige from './projects/other/prestige.png';
 import Shannon from './projects/other/shannon.png';
 import Synthwave from './projects/other/Synthwave.png';
 
+import NewTeamBandit from './projects/TeamBanditWebsite.png';
+import Sushiman from './projects/Sushiman_Website.png';
+
 export {
+  Sushiman,
+  NewTeamBandit,
   close,
   menu,
   Synthwave,

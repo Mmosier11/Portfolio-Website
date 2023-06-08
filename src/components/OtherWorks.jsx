@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { SectionWrapper } from '../hoc';
 
 import { motion, AnimatePresence } from 'framer-motion';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { liveWebsites, threeJS, clientWork } from '../constants/constants';
 
@@ -26,17 +29,24 @@ const OtherWorks = () => {
         setHovering(false);
     };
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            offset: 100,
+        });
+    }, []);
+
     return (
         <div className="OtherWorks">
             <div className="OtherWorks__Header">
-                <h1 className="OtherWorks__Header__Title"> OTHER WORKS </h1>
+                <h1 className="OtherWorks__Header__Title" data-aos="fade-up"> OTHER WORKS </h1>
                 <div className="OtherWorks__Header__HorizontalDivider"></div>
             </div>
             
             <div className="OtherWorks__Content">
                 <div className="OtherWorks__Content__Inside">
                     <div className="OtherWorks__Content__Inside__List">
-                        <span className="OtherWorks__Content__Inside__List__Title">client work</span>
+                        <span className="OtherWorks__Content__Inside__List__Title" data-aos="fade-up">client work</span>
                         {clientWork.map((website, index) => {
                             return(
                                 <motion.a
@@ -84,7 +94,7 @@ const OtherWorks = () => {
                         })}
                     </div>
                     <div className="OtherWorks__Content__Inside__List">
-                        <span className="OtherWorks__Content__Inside__List__Title">live website projects</span>
+                        <span className="OtherWorks__Content__Inside__List__Title" data-aos="fade-up">Other website projects</span>
                         {liveWebsites.map((website, index) => {
                             return(
                                 <motion.a
@@ -132,7 +142,7 @@ const OtherWorks = () => {
                         })}
                     </div>
                     <div className="OtherWorks__Content__Inside__List">
-                        <span className="OtherWorks__Content__Inside__List__Title">Three JS Projects</span>
+                        <span className="OtherWorks__Content__Inside__List__Title" data-aos="fade-up">Three JS Projects</span>
                         {threeJS.map((website, index) => {
                             return(
                                 <motion.a

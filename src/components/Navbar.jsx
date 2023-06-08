@@ -5,16 +5,27 @@ import { styles } from '../styles';
 import { navLinks } from '../constants/constants';
 import { menu, close } from '../assets';
 
+//******** AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+        duration: 1000,
+        offset: 100,
+    });
+  }, []);
 
 
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto" data-aos="fade-down">
         <Link
           to="/"
           className="flex items-center gap-2 z-20"
