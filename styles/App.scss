@@ -1,0 +1,297 @@
+/* FONT-FAMILY */
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../assets/fonts/BebasNeue.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RetroSignature';
+    src: url('../assets/fonts/RetroSignature.otf') format('opentype');
+}
+
+@import './styles/selectedWorks.scss';
+@import './styles/otherWorks.scss';
+@import './styles/footer.scss';
+@import './styles/hero.scss';
+
+/* Style for webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff00ff;
+    border-radius: 10px;
+    border: 2px solid #000;
+    box-shadow: inset 0 0 6px rgba(255, 0, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff66ff;
+}
+
+.DisplayNone {
+    display: none;
+}
+
+.InProgress {
+    font-family: 'BebasNeue';
+    font-size: clamp(1rem, 2vw, 3rem);
+    position: absolute;
+    top: 0;
+    opacity: 0.24;
+}
+
+.hover-reveal {
+    position: absolute;
+    width: 272px;
+    height: 140px;
+    top: 1ch;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.hover-reveal__img,
+.hover-reveal__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+}
+
+.MainContent {
+    // transform: translateY(100vh);
+
+    &__Content {
+        background: linear-gradient(180deg, #262e49 0%, #dc0c83 100%);
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        &__SectionDivider {
+            width: 66%;
+            height: 5px;
+            background: rgba(217, 217, 217, 0.25);
+        }
+    }
+}
+
+.ProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: #ff5edb;
+    transform-origin: 0%;
+    z-index: 111;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes move-bg {
+    to {
+        background-position: var(--bg-size) 0;
+    }
+}
+
+@media only screen and (max-width: 1225px) {
+    .SelectedWorks {
+        &__SectionContent {
+            &__Reverse {
+                flex-direction: column-reverse;
+            }
+            &__Work {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1025px) {
+    .Hero {
+        height: 100vh;
+
+        &__TechStack {
+            &__Logo {
+                width: 10%;
+            }
+        }
+
+        &__Inner {
+            flex-direction: column;
+        }
+
+        &__Content {
+            &__Image {
+                width: 100%;
+                &__Picture {
+                    aspect-ratio: 1/1;
+                    flex-grow: 0;
+                    width: 50%;
+                }
+            }
+
+            &__Overview {
+                &__Links {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &__Container {
+                        width: 10%;
+                    }
+                }
+                &__Description {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1215px) {
+    .SelectedWorkContainer {
+        margin-top: 1rem;
+        height: 100%;
+    }
+
+    .SelectedWorks {
+        height: 100%;
+        width: 100%;
+
+        &__SectionContent {
+            flex-direction: column;
+            height: min-content;
+
+            &__Buttons {
+                flex-direction: row;
+                width: 100%;
+                padding-top: 2rem;
+                height: max-content;
+
+                &__Normal {
+                    &__Image {
+                        width: 50%;
+                        margin: 1rem;
+                    }
+                    &__Highlighted {
+                        &__Text {
+                            display: none;
+                        }
+                    }
+                    &__Text {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .OtherWorks {
+        &__Content {
+            &__Inside {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .Credits {
+        &__Content {
+            flex-direction: column;
+        }
+    }
+
+    .SelectedWork {
+        height: 100%;
+
+        &__HoveredSection {
+            height: 900px;
+            padding-top: 5rem;
+
+            &__Title {
+                text-align: start;
+                width: 100%;
+                justify-content: flex-start;
+
+                &__Main {
+                    text-align: start;
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+                &__Sub {
+                    width: 100%;
+                    text-align: start;
+                }
+            }
+            &__Content {
+                height: 100%;
+                &__Blur {
+                    height: 1100px;
+                    flex-direction: column;
+                    &__LeftSide {
+                        height: 100%;
+                        &__Top {
+                            height: 100%;
+                            flex-direction: column;
+                        }
+                        &__Bottom {
+                            height: 100%;
+                            &__Technologies {
+                                height: 100%;
+                                margin-bottom: 2rem;
+                                grid-template-columns: repeat(2, 1fr);
+                                padding-bottom: 2rem;
+
+                                &__Technology {
+                                    &__Image {
+                                        width: 35%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__ImageContainer {
+            &__Image {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__Technologies {
+            bottom: 0;
+            &__Technology {
+                width: 12.5%;
+            }
+        }
+
+        &__OriginalSection {
+            &__Button {
+                top: 0.5rem;
+            }
+        }
+    }
+}
