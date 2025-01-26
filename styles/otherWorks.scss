@@ -69,11 +69,13 @@ $bebas-neue: 'BebasNeue';
 
                 &__Item {
                     width: fit-content;
-                    font-family: "Montserrat";
+                    font-family: 'Montserrat';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 1.5rem;
                     color: rgba(255, 255, 255, 0.75);
+                    z-index: 1;
+                    position: relative;
 
                     &:hover {
                         color: #ff5edb;

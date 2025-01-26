@@ -93,7 +93,7 @@ const OtherWorks = () => {
                                                     style={{
                                                         top: yPos + 10,
                                                         left: xPos,
-                                                        zIndex: 1
+                                                        zIndex: 10000
                                                     }}
                                                     initial={{
                                                         opacity: 0,
@@ -179,7 +179,7 @@ const OtherWorks = () => {
                                                     style={{
                                                         top: yPos + 10,
                                                         left: xPos,
-                                                        zIndex: 1
+                                                        zIndex: 9999
                                                     }}
                                                     initial={{
                                                         opacity: 0,
@@ -265,7 +265,7 @@ const OtherWorks = () => {
                                                     style={{
                                                         top: yPos + 10,
                                                         left: xPos,
-                                                        zIndex: 1
+                                                        zIndex: 9999
                                                     }}
                                                     initial={{
                                                         opacity: 0,

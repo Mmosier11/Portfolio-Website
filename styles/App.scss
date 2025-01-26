@@ -56,6 +56,7 @@
     opacity: 0;
     overflow: hidden;
     background-size: cover;
+    z-index: 1000000;
 }
 
 .hover-reveal__img,
@@ -78,6 +79,17 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+
+        &__Container {
+            background: linear-gradient(180deg, #262e49 0%, #dc0c83 100%);
+            width: 100%;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
 
         &__SectionDivider {
             width: 66%;

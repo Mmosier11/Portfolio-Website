@@ -245,25 +245,25 @@ const clientWork = [
         id: 'honors',
         name: 'Honors Way Group',
         link: 'https://honorswaygroup.com/',
-        image: Honors
+        image: '/assets/projects/other/honors.png'
     },
     {
         id: 'lance',
         name: 'Nostalgia Notes Records',
         link: 'https://www.nostalgianotesrecords.com/',
-        image: Lance
+        image: '/assets/projects/other/lance.png'
     },
     {
         id: 'shannon',
         name: 'Shannon Mosier',
         link: 'https://shannon-mosier-website.vercel.app/',
-        image: Shannon
+        image: '/assets/projects/other/shannon.png'
     },
     {
         id: 'prestige',
         name: 'Prestige at Mayhill',
         link: 'https://theprestigeatmayhill.com/',
-        image: Prestige
+        image: '/assets/projects/other/prestige.png'
     }
 ];
 
@@ -272,7 +272,7 @@ const liveWebsites = [
         id: 'emoji-twitter',
         name: 'Twitter Clone (Emoji)',
         link: 'https://chirp-tau-ruddy.vercel.app/',
-        image: EmojiTwitter
+        image: '/assets/projects/other/emoji-twitter.png'
     }
 ];
 
@@ -281,7 +281,7 @@ const threeJS = [
         id: 'synthwave-scene',
         name: 'Synthwave Scene',
         link: 'https://rtf-synthwave-scene-gadzzc9du-senpaisumpie.vercel.app/',
-        image: Synthwave
+        image: '/assets/projects/other/Synthwave.png'
     }
 ];
 

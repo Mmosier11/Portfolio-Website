@@ -15,6 +15,7 @@ import { selectedWorks } from '../constants/constants';
 import GitHub from '../assets/github-mono.svg';
 import LinkImg from '../assets/link.svg';
 import FigmaLink from '../assets/figma-mono.svg';
+import WorksLayout from './WorksLayout';
 
 const SelectedWorks = () => {
     const [clicked, setClicked] = useState(false);
@@ -52,179 +53,170 @@ const SelectedWorks = () => {
                                 key={index}
                                 className="SelectedWorks__SectionContent__Work"
                             >
-                                <div
-                                    className="SelectedWorks__SectionContent__Work__Image"
-                                    data-aos="fade-right"
-                                >
-                                    <div className="SelectedWorks__SectionContent__Work__Image__ProgressBox">
-                                        <p
-                                            className="SelectedWorks__SectionContent__Work__Image__ProgressBox__Progress"
-                                            style={{
-                                                color: `${work.progressTextColor}`
-                                            }}
-                                        >
+                                <WorksLayout>
+                                    <div
+                                        className="SelectedWorks__SectionContent__Work__Image"
+                                        data-aos="fade-right"
+                                    >
+                                        <Image
+                                            src={work.image}
+                                            alt="Selected Works Image"
+                                            className="SelectedWorks__SectionContent__Work__Image__img"
+                                        />
+                                    </div>
+                                    <div
+                                        className="SelectedWorks__SectionContent__Work__Content"
+                                        data-aos="fade-left"
+                                    >
+                                        <p className="SelectedWorks__SectionContent__Work__Content__Name">
                                             {' '}
-                                            {work.progressText}{' '}
+                                            {work.name}{' '}
                                         </p>
-                                    </div>
-                                    <Image
-                                        src={work.image}
-                                        alt="Selected Works Image"
-                                        className="SelectedWorks__SectionContent__Work__Image__img"
-                                    />
-                                </div>
-                                <div
-                                    className="SelectedWorks__SectionContent__Work__Content"
-                                    data-aos="fade-left"
-                                >
-                                    <p className="SelectedWorks__SectionContent__Work__Content__Name">
-                                        {' '}
-                                        {work.name}{' '}
-                                    </p>
-                                    <p className="SelectedWorks__SectionContent__Work__Content__Blurb">
-                                        {' '}
-                                        {work.blurb}{' '}
-                                    </p>
-                                    <p className="SelectedWorks__SectionContent__Work__Content__About">
-                                        {' '}
-                                        {work.about}{' '}
-                                    </p>
-                                    <div className="SelectedWorks__SectionContent__Work__Content__Technologies">
-                                        {work.technologies.map(
-                                            (tech, index) => {
-                                                return (
-                                                    <div
-                                                        key={index}
-                                                        className="SelectedWorks__SectionContent__Work__Content__Technologies__Tech"
-                                                        style={{
-                                                            backgroundColor: `${tech.primaryColor}`,
-                                                            color: `${tech.textColor}`
-                                                        }}
-                                                    >
-                                                        <p className="SelectedWorks__SectionContent__Work__Content__Tech__Technologies__Text">
-                                                            {' '}
-                                                            {tech.name}{' '}
-                                                        </p>
-                                                    </div>
-                                                );
-                                            }
-                                        )}
-                                    </div>
+                                        <p className="SelectedWorks__SectionContent__Work__Content__Blurb">
+                                            {' '}
+                                            {work.blurb}{' '}
+                                        </p>
+                                        <p className="SelectedWorks__SectionContent__Work__Content__About">
+                                            {' '}
+                                            {work.about}{' '}
+                                        </p>
+                                        <div className="SelectedWorks__SectionContent__Work__Content__Technologies">
+                                            {work.technologies.map(
+                                                (tech, index) => {
+                                                    return (
+                                                        <div
+                                                            key={index}
+                                                            className="SelectedWorks__SectionContent__Work__Content__Technologies__Tech"
+                                                            style={{
+                                                                backgroundColor: `${tech.primaryColor}`,
+                                                                color: `${tech.textColor}`
+                                                            }}
+                                                        >
+                                                            <p className="SelectedWorks__SectionContent__Work__Content__Tech__Technologies__Text">
+                                                                {' '}
+                                                                {tech.name}{' '}
+                                                            </p>
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
+                                        </div>
 
-                                    <div className="SelectedWorks__SectionContent__Work__Links">
-                                        {work.githubLink !== '' ? (
-                                            <a
-                                                href={work.githubLink}
-                                                target="_blank"
-                                                className={
-                                                    work.githubLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    GitHub
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={GitHub}
-                                                    alt="Github"
-                                                />
-                                            </a>
-                                        ) : (
-                                            <div
-                                                className={
-                                                    work.githubLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    GitHub
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={GitHub}
-                                                    alt="Github"
-                                                />
-                                            </div>
-                                        )}
-                                        {work.liveSiteLink !== '' ? (
-                                            <a
-                                                href={work.liveSiteLink}
-                                                target="_blank"
-                                                className={
-                                                    work.liveSiteLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Live Demo
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={LinkImg}
-                                                    alt="Link"
-                                                />
-                                            </a>
-                                        ) : (
-                                            <div
-                                                className={
-                                                    work.liveSiteLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Live Demo
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={LinkImg}
-                                                    alt="Link"
-                                                />
-                                            </div>
-                                        )}
-                                        {work.figmaLink !== '' ? (
-                                            <a
-                                                href={work.figmaLink}
-                                                target="_blank"
-                                                className={
-                                                    work.figmaLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Figma Design
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={FigmaLink}
-                                                    alt="Figma Link"
-                                                />
-                                            </a>
-                                        ) : (
-                                            <div
-                                                className={
-                                                    work.figmaLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Figma Design
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={FigmaLink}
-                                                    alt="Figma Link"
-                                                />
-                                            </div>
-                                        )}
+                                        <div className="SelectedWorks__SectionContent__Work__Links">
+                                            {work.githubLink !== '' ? (
+                                                <a
+                                                    href={work.githubLink}
+                                                    target="_blank"
+                                                    className={
+                                                        work.githubLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        GitHub
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={GitHub}
+                                                        alt="Github"
+                                                    />
+                                                </a>
+                                            ) : (
+                                                <div
+                                                    className={
+                                                        work.githubLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        GitHub
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={GitHub}
+                                                        alt="Github"
+                                                    />
+                                                </div>
+                                            )}
+                                            {work.liveSiteLink !== '' ? (
+                                                <a
+                                                    href={work.liveSiteLink}
+                                                    target="_blank"
+                                                    className={
+                                                        work.liveSiteLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Live Demo
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={LinkImg}
+                                                        alt="Link"
+                                                    />
+                                                </a>
+                                            ) : (
+                                                <div
+                                                    className={
+                                                        work.liveSiteLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Live Demo
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={LinkImg}
+                                                        alt="Link"
+                                                    />
+                                                </div>
+                                            )}
+                                            {work.figmaLink !== '' ? (
+                                                <a
+                                                    href={work.figmaLink}
+                                                    target="_blank"
+                                                    className={
+                                                        work.figmaLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Figma Design
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={FigmaLink}
+                                                        alt="Figma Link"
+                                                    />
+                                                </a>
+                                            ) : (
+                                                <div
+                                                    className={
+                                                        work.figmaLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Figma Design
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={FigmaLink}
+                                                        alt="Figma Link"
+                                                    />
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
-                                </div>
+                                </WorksLayout>
                             </div>
                         );
                     } else {
@@ -233,179 +225,170 @@ const SelectedWorks = () => {
                                 key={index}
                                 className="SelectedWorks__SectionContent__Reverse"
                             >
-                                <div
-                                    className="SelectedWorks__SectionContent__Work__Content"
-                                    data-aos="fade-right"
-                                >
-                                    <p className="SelectedWorks__SectionContent__Work__Content__Name">
-                                        {' '}
-                                        {work.name}{' '}
-                                    </p>
-                                    <p className="SelectedWorks__SectionContent__Work__Content__Blurb">
-                                        {' '}
-                                        {work.blurb}{' '}
-                                    </p>
-                                    <p className="SelectedWorks__SectionContent__Work__Content__About">
-                                        {' '}
-                                        {work.about}{' '}
-                                    </p>
-                                    <div className="SelectedWorks__SectionContent__Work__Content__Technologies">
-                                        {work.technologies.map(
-                                            (tech, index) => {
-                                                return (
-                                                    <div
-                                                        key={index}
-                                                        className="SelectedWorks__SectionContent__Work__Content__Technologies__Tech"
-                                                        style={{
-                                                            backgroundColor: `${tech.primaryColor}`,
-                                                            color: `${tech.textColor}`
-                                                        }}
-                                                    >
-                                                        <p className="SelectedWorks__SectionContent__Work__Content__Tech__Technologies__Text">
-                                                            {' '}
-                                                            {tech.name}{' '}
-                                                        </p>
-                                                    </div>
-                                                );
-                                            }
-                                        )}
-                                    </div>
-
-                                    <div className="SelectedWorks__SectionContent__Work__Links">
-                                        {work.githubLink !== '' ? (
-                                            <a
-                                                href={work.githubLink}
-                                                target="_blank"
-                                                className={
-                                                    work.githubLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    GitHub
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={GitHub}
-                                                    alt="Github"
-                                                />
-                                            </a>
-                                        ) : (
-                                            <div
-                                                className={
-                                                    work.githubLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    GitHub
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={GitHub}
-                                                    alt="Github"
-                                                />
-                                            </div>
-                                        )}
-                                        {work.liveSiteLink !== '' ? (
-                                            <a
-                                                href={work.liveSiteLink}
-                                                target="_blank"
-                                                className={
-                                                    work.liveSiteLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Live Demo
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={LinkImg}
-                                                    alt="Link"
-                                                />
-                                            </a>
-                                        ) : (
-                                            <div
-                                                className={
-                                                    work.liveSiteLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Live Demo
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={LinkImg}
-                                                    alt="Link"
-                                                />
-                                            </div>
-                                        )}
-                                        {work.figmaLink !== '' ? (
-                                            <a
-                                                href={work.figmaLink}
-                                                target="_blank"
-                                                className={
-                                                    work.figmaLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Figma Design
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={FigmaLink}
-                                                    alt="Figma Link"
-                                                />
-                                            </a>
-                                        ) : (
-                                            <div
-                                                className={
-                                                    work.figmaLink !== ''
-                                                        ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
-                                                        : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
-                                                }
-                                            >
-                                                <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
-                                                    Figma Design
-                                                </p>
-                                                <Image
-                                                    className="SelectedWorks__SectionContent__Work__Links__Link__Image"
-                                                    src={FigmaLink}
-                                                    alt="Figma Link"
-                                                />
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                                <div
-                                    className="SelectedWorks__SectionContent__Work__Image"
-                                    data-aos="fade-left"
-                                >
-                                    <div className="SelectedWorks__SectionContent__Work__Image__ProgressBox">
-                                        <p
-                                            className="SelectedWorks__SectionContent__Work__Image__ProgressBox__Progress"
-                                            style={{
-                                                color: `${work.progressTextColor}`
-                                            }}
-                                        >
+                                <WorksLayout>
+                                    <div
+                                        className="SelectedWorks__SectionContent__Work__Content"
+                                        data-aos="fade-right"
+                                    >
+                                        <p className="SelectedWorks__SectionContent__Work__Content__Name">
                                             {' '}
-                                            {work.progressText}{' '}
+                                            {work.name}{' '}
                                         </p>
+                                        <p className="SelectedWorks__SectionContent__Work__Content__Blurb">
+                                            {' '}
+                                            {work.blurb}{' '}
+                                        </p>
+                                        <p className="SelectedWorks__SectionContent__Work__Content__About">
+                                            {' '}
+                                            {work.about}{' '}
+                                        </p>
+                                        <div className="SelectedWorks__SectionContent__Work__Content__Technologies">
+                                            {work.technologies.map(
+                                                (tech, index) => {
+                                                    return (
+                                                        <div
+                                                            key={index}
+                                                            className="SelectedWorks__SectionContent__Work__Content__Technologies__Tech"
+                                                            style={{
+                                                                backgroundColor: `${tech.primaryColor}`,
+                                                                color: `${tech.textColor}`
+                                                            }}
+                                                        >
+                                                            <p className="SelectedWorks__SectionContent__Work__Content__Tech__Technologies__Text">
+                                                                {' '}
+                                                                {tech.name}{' '}
+                                                            </p>
+                                                        </div>
+                                                    );
+                                                }
+                                            )}
+                                        </div>
+
+                                        <div className="SelectedWorks__SectionContent__Work__Links">
+                                            {work.githubLink !== '' ? (
+                                                <a
+                                                    href={work.githubLink}
+                                                    target="_blank"
+                                                    className={
+                                                        work.githubLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        GitHub
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={GitHub}
+                                                        alt="Github"
+                                                    />
+                                                </a>
+                                            ) : (
+                                                <div
+                                                    className={
+                                                        work.githubLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        GitHub
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={GitHub}
+                                                        alt="Github"
+                                                    />
+                                                </div>
+                                            )}
+                                            {work.liveSiteLink !== '' ? (
+                                                <a
+                                                    href={work.liveSiteLink}
+                                                    target="_blank"
+                                                    className={
+                                                        work.liveSiteLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Live Demo
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={LinkImg}
+                                                        alt="Link"
+                                                    />
+                                                </a>
+                                            ) : (
+                                                <div
+                                                    className={
+                                                        work.liveSiteLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Live Demo
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={LinkImg}
+                                                        alt="Link"
+                                                    />
+                                                </div>
+                                            )}
+                                            {work.figmaLink !== '' ? (
+                                                <a
+                                                    href={work.figmaLink}
+                                                    target="_blank"
+                                                    className={
+                                                        work.figmaLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Figma Design
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={FigmaLink}
+                                                        alt="Figma Link"
+                                                    />
+                                                </a>
+                                            ) : (
+                                                <div
+                                                    className={
+                                                        work.figmaLink !== ''
+                                                            ? 'SelectedWorks__SectionContent__Work__Links__ActiveLink'
+                                                            : 'SelectedWorks__SectionContent__Work__Links__DisabledLink'
+                                                    }
+                                                >
+                                                    <p className="SelectedWorks__SectionContent__Work__Links__Link__Text">
+                                                        Figma Design
+                                                    </p>
+                                                    <Image
+                                                        className="SelectedWorks__SectionContent__Work__Links__Link__Image"
+                                                        src={FigmaLink}
+                                                        alt="Figma Link"
+                                                    />
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
-                                    <Image
-                                        src={work.image}
-                                        alt="Selected Works Image"
-                                        className="SelectedWorks__SectionContent__Work__Image__img"
-                                    />
-                                </div>
+                                    <div
+                                        className="SelectedWorks__SectionContent__Work__Image"
+                                        data-aos="fade-left"
+                                    >
+                                        <Image
+                                            src={work.image}
+                                            alt="Selected Works Image"
+                                            className="SelectedWorks__SectionContent__Work__Image__img"
+                                        />
+                                    </div>
+                                </WorksLayout>
                             </div>
                         );
                     }

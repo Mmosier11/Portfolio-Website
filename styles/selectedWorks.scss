@@ -15,7 +15,7 @@ $bebas-neue: 'BebasNeue', sans-serif;
     &__SectionHeader {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
 
         width: 100%;
@@ -63,8 +63,6 @@ $bebas-neue: 'BebasNeue', sans-serif;
             &__Links {
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
-                align-items: center;
                 width: 100%;
                 gap: 1.5ch;
 
@@ -98,7 +96,7 @@ $bebas-neue: 'BebasNeue', sans-serif;
                     align-items: center;
 
                     &__Text {
-                        font-family: "Montserrat";
+                        font-family: 'Montserrat';
                         font-style: normal;
                         font-weight: 400;
                         font-size: clamp(0.75rem, 2vw, 1.5rem);
@@ -131,7 +129,7 @@ $bebas-neue: 'BebasNeue', sans-serif;
                     &__Progress {
                         margin: 1ch 1ch 1ch 4ch;
                         font-weight: 700;
-                        font-family: "Montserrat";
+                        font-family: 'Montserrat';
                         font-size: clamp(0.75rem, 2vw, 1rem);
                     }
                 }
@@ -145,26 +143,25 @@ $bebas-neue: 'BebasNeue', sans-serif;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 margin: 3ch;
 
                 &__Name {
                     font-weight: bold;
-                    font-family: "Montserrat";
+                    font-family: 'Montserrat';
                     font-size: clamp(1.5rem, 2vw, 2rem);
                 }
 
                 &__Blurb {
-                    font-family: "Montserrat";
+                    font-family: 'Montserrat';
                     font-size: clamp(0.75rem, 2vw, 1rem);
                 }
 
                 &__About {
-                    font-family: "Montserrat";
+                    font-family: 'Montserrat';
                     font-size: clamp(0.65rem, 2vw, 0.95rem);
                     opacity: 0.8;
-                    margin: 2ch;
+                    margin-top: 2ch;
+                    margin-bottom: 2ch;
                 }
 
                 &__Technologies {
@@ -178,7 +175,7 @@ $bebas-neue: 'BebasNeue', sans-serif;
                         padding: 0.5ch;
                         border-radius: 5px;
                         background-color: #262e49;
-                        font-family: "Montserrat";
+                        font-family: 'Montserrat';
                         font-size: 0.75rem;
                         opacity: 0.85;
                     }
@@ -192,7 +189,7 @@ $bebas-neue: 'BebasNeue', sans-serif;
                         padding: 0.5ch;
                         border-radius: 5px;
                         background-color: #262e49;
-                        font-family: "Montserrat";
+                        font-family: 'Montserrat';
                         font-size: 0.75rem;
                     }
                 }
