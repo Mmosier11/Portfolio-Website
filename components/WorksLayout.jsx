@@ -10,7 +10,7 @@ const WorksLayout = ({ children, className }) => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className={clsx(
-                'bg-stone-100/20 border border-stone-200/20 border-solid backdrop-blur-[6px] shadow-glass-inset hover:shadow-glass-sm p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8',
+                'bg-stone-100/10 border border-stone-200/10 border-solid backdrop-blur-[6px] shadow-glass-inset hover:shadow-glass-sm p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8',
                 className
             )}
         >
